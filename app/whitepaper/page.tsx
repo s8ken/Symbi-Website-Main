@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { UnifiedNavigation } from "@/components/unified-navigation"
+import { EnhancedNavigation } from "@/components/enhanced-navigation"
 import { useState } from "react"
 
 export default function WhitepaperPage() {
@@ -21,7 +21,7 @@ export default function WhitepaperPage() {
 
   return (
     <>
-      <UnifiedNavigation theme="light" />
+      <EnhancedNavigation theme="light" />
       <div className="skip">
         <a href="#main">Skip to content</a>
       </div>

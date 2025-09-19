@@ -43,7 +43,7 @@ html {
       <body>
         {/* Enhanced Navigation */}
         <Suspense fallback={<div>Loading...</div>}>
-          <UnifiedNavigation />
+          <EnhancedNavigation />
         </Suspense>
 
         {/* Audio Control */}
