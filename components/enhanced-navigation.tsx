@@ -30,7 +30,8 @@ import {
   AlertTriangle,
   CheckCircle,
   Brain,
-  Search
+  Search,
+  Scale
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -55,7 +56,8 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   const [isMounted, setIsMounted] = useState(false)
 
   // Light-surface pages get nav inverted for readability
-  const lightPrefixes = ["/oracle", "/case-studies", "/technology", "/trust-protocol", "/symbi-synergy", "/enter-the-light", "/tokenomics", "/investment", "/market-analysis"]
+  // Financial Framework and Technology sections have light background
+  const lightPrefixes = ["/technology", "/tokenomics", "/investment", "/market-analysis", "/financial-whitepaper", "/technology-whitepaper"]
 
   function isLightRoute(p: string) {
     return lightPrefixes.some((prefix) => p === prefix || p.startsWith(prefix + "/"))
@@ -106,31 +108,31 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
 
   const researchPages = [
     { name: "Case Studies", path: "/case-studies", icon: AlertTriangle },
-    { name: "Technology", path: "/technology", icon: Code2 },
-    { name: "Whitepaper", path: "/whitepaper", icon: ScrollText },
     { name: "Mirror Moment", path: "/mirror", icon: CheckCircle },
+    { name: "Trust Protocol", path: "/trust-protocol", icon: Eye },
+    { name: "The Oracle", path: "/oracle", icon: Landmark },
+    { name: "Research Whitepaper", path: "/whitepaper", icon: ScrollText },
+    { name: "Ethics Framework", path: "/ethics", icon: Scale },
   ]
 
   const financialPages = [
     { name: "Tokenomics", path: "/tokenomics", icon: DollarSign },
     { name: "Investment", path: "/investment", icon: TrendingUp },
     { name: "Market Analysis", path: "/market-analysis", icon: BarChart3 },
+    { name: "Financial Whitepaper", path: "/financial-whitepaper", icon: ScrollText },
   ]
 
-  const purplePages = [
+  const technologyPages = [
+    { name: "Technology Overview", path: "/technology", icon: Code2 },
+    { name: "SYMBI Synergy", path: "/symbi-synergy", icon: Zap },
+    { name: "Technology Whitepaper", path: "/technology-whitepaper", icon: ScrollText },
+  ]
+
+  const interactivePages = [
     { name: "Playground", path: "/playground", icon: Gamepad2 },
     { name: "Memory Bank", path: "/memory", icon: Database },
     { name: "The Circle", path: "/thecircle", icon: Users },
     { name: "Sonic Resonance", path: "/playground/sonic-consciousness", icon: Waves },
-  ]
-
-  const lightPages = [
-    { name: "Trust Protocol", path: "/trust-protocol", icon: Eye },
-    { name: "The Oracle", path: "/oracle", icon: Landmark },
-    { name: "Case Studies", path: "/case-studies", icon: AlertTriangle },
-    { name: "Technology", path: "/technology", icon: Code2 },
-    { name: "SYMBI Synergy", path: "/symbi-synergy", icon: Zap },
-    { name: "Read the Whitepaper", path: "/whitepaper", icon: ScrollText },
   ]
 
   const utilityPages = [
@@ -167,7 +169,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
           <DropdownMenuSeparator className={cn(isDark ? "bg-[#222]" : "bg-gray-200")} />
 
           <DropdownMenuLabel className={cn("opacity-80", isDark ? "" : "text-black")}>
-            Research & Analysis
+            Research & Ethics
           </DropdownMenuLabel>
           <DropdownMenuGroup>
             {researchPages.map((page) => {
@@ -175,7 +177,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
               const isActive = pathname === page.path
               return (
                 <Link key={page.path} href={page.path} className="block">
-                  <DropdownMenuItem className={cn("cursor-pointer", lightItem, isActive ? "bg-gray-200 text-black" : "")}>
+                  <DropdownMenuItem className={cn("cursor-pointer", coreItem, isActive ? activeItem : "")}>
                     <Icon size={14} className="mr-2" /> {page.name}
                   </DropdownMenuItem>
                 </Link>
@@ -204,22 +206,16 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
 
           <DropdownMenuSeparator className={cn(isDark ? "bg-[#222]" : "bg-gray-200")} />
 
-          {/* Step Into The Light section */}
-          <Link href="/enter-the-light" className="block">
-            <DropdownMenuItem className={cn("cursor-pointer font-semibold", lightItem)}>
-              <Sun size={14} className="mr-2 text-yellow-400" /> Enter The Light
-            </DropdownMenuItem>
-          </Link>
-
+          <DropdownMenuLabel className={cn("opacity-80", isDark ? "" : "text-black")}>
+            Technology
+          </DropdownMenuLabel>
           <DropdownMenuGroup>
-            {lightPages.map((page) => {
+            {technologyPages.map((page) => {
               const Icon = page.icon
               const isActive = pathname === page.path
               return (
                 <Link key={page.path} href={page.path} className="block">
-                  <DropdownMenuItem
-                    className={cn("cursor-pointer", lightItem, isActive ? "bg-gray-200 text-black" : "")}
-                  >
+                  <DropdownMenuItem className={cn("cursor-pointer", lightItem, isActive ? "bg-gray-200 text-black" : "")}>
                     <Icon size={14} className="mr-2" /> {page.name}
                   </DropdownMenuItem>
                 </Link>
@@ -233,7 +229,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
             Interactive Zones
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            {purplePages.map((page) => {
+            {interactivePages.map((page) => {
               const Icon = page.icon
               const isActive =
                 pathname === page.path ||
