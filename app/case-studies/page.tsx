@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { FileText, AlertTriangle, CheckCircle, Users, Code2, Brain } from "lucide-react"
+import { cn } from "../../lib/utils"
 
 const caseStudies = [
   {
