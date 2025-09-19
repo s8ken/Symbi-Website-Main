@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Server, Shield, Database, Zap, Bot, MessageSquare, Activity, Code2, Lock, TrendingUp, Users } from "lucide-react"
+   import { cn } from "../../lib/utils"
 
 export default function EnhancedTechnologyPage() {
   const [visibleSections, setVisibleSections] = useState(new Set<string>())
