@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Database, Shield, Eye, GitBranch } from 'lucide-react'
+import { cn } from "../../lib/utils"
 
 const oracleFeatures = [
   {

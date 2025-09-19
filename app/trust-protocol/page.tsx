@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { Shield, Users, Eye, CheckCircle, AlertCircle } from 'lucide-react'
+import { cn } from "../../lib/utils"
 
 const trustSteps = [
   { id: 1, title: 'Human Identity Declaration', description: 'User provides consent envelope with identity assertion', icon: Users, color: '#2563eb' },
