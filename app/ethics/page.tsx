@@ -3,8 +3,14 @@
 import { cn } from "../../lib/utils"
 import Link from "next/link"
 import { Scale, Shield, Users, Eye, AlertTriangle, CheckCircle, Brain } from "lucide-react"
+import EnhancedEthicsPage from "./enhanced-page"
 
 export default function EthicsPage() {
+  return <EnhancedEthicsPage />
+}
+
+// Original EthicsPage component preserved for reference
+function OriginalEthicsPage() {
   return (
     <main className="min-h-screen bg-[#0f0f0f] text-[#e0e0e0] font-mono">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
