@@ -24,7 +24,9 @@ import {
   Clock,
   CheckCircle,
   ArrowRight,
-  Calendar
+  Calendar,
+  GraduationCap,
+  FileCode
 } from "lucide-react"
 
 export default function FinancialPage() {
