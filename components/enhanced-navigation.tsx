@@ -57,7 +57,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
 
   // Light-surface pages get nav inverted for readability
   // Financial Framework and Technology sections have light background
-  const lightPrefixes = ["/technology", "/tokenomics", "/investment", "/market-analysis", "/financial-whitepaper", "/technology-whitepaper"]
+  const lightPrefixes = ["/technology", "/trust-protocol", "/oracle", "/symbi-synergy", "/tokenomics", "/investment", "/market-analysis", "/financial-whitepaper", "/technology-whitepaper"]
 
   function isLightRoute(p: string) {
     return lightPrefixes.some((prefix) => p === prefix || p.startsWith(prefix + "/"))
@@ -109,8 +109,6 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   const researchPages = [
     { name: "Case Studies", path: "/case-studies", icon: AlertTriangle },
     { name: "Mirror Moment", path: "/mirror", icon: CheckCircle },
-    { name: "Trust Protocol", path: "/trust-protocol", icon: Eye },
-    { name: "The Oracle", path: "/oracle", icon: Landmark },
     { name: "Research Whitepaper", path: "/whitepaper", icon: ScrollText },
     { name: "Ethics Framework", path: "/ethics", icon: Scale },
   ]
@@ -124,6 +122,8 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
 
   const technologyPages = [
     { name: "Technology Overview", path: "/technology", icon: Code2 },
+    { name: "Trust Protocol", path: "/trust-protocol", icon: Eye },
+    { name: "The Oracle", path: "/oracle", icon: Landmark },
     { name: "SYMBI Synergy", path: "/symbi-synergy", icon: Zap },
     { name: "Technology Whitepaper", path: "/technology-whitepaper", icon: ScrollText },
   ]
