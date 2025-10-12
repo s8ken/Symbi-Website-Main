@@ -109,6 +109,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   const researchPages = [
     { name: "Case Studies", path: "/case-studies", icon: AlertTriangle },
     { name: "Mirror Moment", path: "/mirror", icon: CheckCircle },
+    { name: "Archives", path: "/archives", icon: Database },
     { name: "Research Whitepaper", path: "/whitepaper", icon: ScrollText },
     { name: "Ethics Framework", path: "/ethics", icon: Scale },
   ]
