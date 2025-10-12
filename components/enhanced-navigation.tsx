@@ -84,7 +84,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   )
 
   const contentClasses = cn(
-    "w-80 max-w-[calc(100vw-2rem)] border",
+    "w-80 max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] overflow-y-auto border",
     isDark ? "bg-[#0f0f0f] text-[#e0e0e0] border-[#333]" : "bg-white text-black border-gray-200",
   )
 

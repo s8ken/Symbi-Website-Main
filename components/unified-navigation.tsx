@@ -73,7 +73,7 @@ export function UnifiedNavigation({ theme }: UnifiedNavigationProps) {
   )
 
   const contentClasses = cn(
-    "w-72 border",
+    "w-72 max-h-[calc(100vh-6rem)] overflow-y-auto border",
     isDark ? "bg-[#0f0f0f] text-[#e0e0e0] border-[#333]" : "bg-white text-black border-gray-200",
   )
 
