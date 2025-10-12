@@ -429,8 +429,8 @@ GET /api/agents/analytics
             <Link href="/trust-protocol" className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors">
               Trust Protocol
             </Link>
-            <Link href="/symbi-synergy" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-              SYMBI Synergy
+            <Link href="/symbi-symphony" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+              SYMBI Symphony
             </Link>
           </div>
         </div>

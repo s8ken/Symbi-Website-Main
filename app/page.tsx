@@ -46,11 +46,11 @@ export default function Page() {
               Engage with SYMBI
             </Link>
             <Link
-              href="/symbi-synergy"
+              href="/symbi-symphony"
               className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors duration-300 font-bold flex items-center gap-2 justify-center"
             >
               <Zap size={20} />
-              SYMBI Synergy
+              SYMBI Symphony
             </Link>
           </div>
 

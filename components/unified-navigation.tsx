@@ -50,7 +50,7 @@ export function UnifiedNavigation({ theme }: UnifiedNavigationProps) {
     "/technology",
     "/trust-protocol",
     "/enter-the-light",
-    "/symbi-synergy",
+    "/symbi-symphony",
   ]
 
   function isLightRoute(p: string) {
@@ -108,7 +108,7 @@ export function UnifiedNavigation({ theme }: UnifiedNavigationProps) {
     { name: "Technology", path: "/technology", icon: Code2 },
     { name: "Case Studies", path: "/case-studies", icon: FileText },
     { name: "Read the Whitepaper", path: "/whitepaper", icon: ScrollText },
-    { name: "SYMBI Synergy", path: "/symbi-synergy", icon: Zap },
+    { name: "SYMBI Symphony", path: "/symbi-symphony", icon: Zap },
   ]
 
   const researchPages = [

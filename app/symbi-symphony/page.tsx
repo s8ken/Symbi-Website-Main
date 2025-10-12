@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 
-export default function SymbiSynergyPage() {
+export default function SymbiSymphonyPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const toggleFaq = (index: number) => {
@@ -31,7 +31,12 @@ export default function SymbiSynergyPage() {
     {
       question: 'How is this different from "just using ChatGPT"?',
       answer:
-        "SYMBI acts as a coordinator. It compares multiple models/tools, gives you one answer, and includes a Trust Receipt so you can see why. It also offers Context Capsules (simple, user-controlled memory) and Bonding (tone & boundary setup).",
+        "SYMBI Symphony acts as an orchestration layer. It coordinates multiple AI models and tools, compares approaches, and gives you one answer with a Trust Receipt showing why. It offers Context Capsules (user-controlled memory) and Bonding (tone & boundary setup).",
+    },
+    {
+      question: "How does YCQ Sonate fit into SYMBI Symphony?",
+      answer:
+        "YCQ Sonate is the enterprise platform within the Symphony ecosystem. While SYMBI Symphony provides the trust protocol and orchestration layer, YCQ Sonate delivers production-grade infrastructure for businesses, governments, and institutions. Think of Symphony as the conductor and Sonate as the enterprise-class instruments.",
     },
     {
       question: "Do I have to use memory?",
@@ -64,15 +69,15 @@ export default function SymbiSynergyPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Zap className="h-4 w-4" />
-            SYMBI Synergy
+            SYMBI Symphony
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">Trust-first AI for everyday work</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">The Complete AI Trust Platform</h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            One place to think with many AIs—safely, clearly, and with receipts.
+            Where trust protocol meets enterprise infrastructure—SYMBI Symphony orchestrates AI with transparency.
           </p>
           <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            SYMBI coordinates top models (ChatGPT, Claude, and more) and returns one, calm answer with a simple proof of
-            how it got there.
+            Symphony coordinates multiple AI models, tools, and platforms (including YCQ Sonate for enterprise) to deliver
+            one, calm answer with trust receipts showing exactly how we got there.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -82,6 +87,96 @@ export default function SymbiSynergyPage() {
             <Button size="lg" variant="outline" className="px-8 py-3 bg-transparent">
               Start Free
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* YCQ Sonate Integration */}
+      <section className="py-16 px-4 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Enterprise-Grade AI with YCQ Sonate
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              SYMBI Symphony's trust protocol powers YCQ Sonate—the enterprise platform built for organizations
+              that need production-grade AI with complete transparency.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-gray-900">How They Work Together</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      1
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">SYMBI Symphony</p>
+                      <p className="text-gray-600 text-sm">
+                        The orchestration layer—coordinates AI models, provides trust receipts, and ensures transparency
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      2
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">YCQ Sonate</p>
+                      <p className="text-gray-600 text-sm">
+                        The enterprise platform—production infrastructure for businesses, governments, and institutions
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      3
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Together</p>
+                      <p className="text-gray-600 text-sm">
+                        Symphony provides the trust foundation; Sonate delivers the enterprise-class instruments
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-6 text-white">
+                  <h4 className="text-xl font-bold mb-3">For Enterprise Users</h4>
+                  <p className="text-indigo-100 mb-4">
+                    If you need AI for your organization with compliance, security, and scale—YCQ Sonate is your platform.
+                  </p>
+                  <ul className="space-y-2 text-sm text-indigo-100 mb-6">
+                    <li>✓ SOC 2 & ISO 27001 compliance</li>
+                    <li>✓ Private deployment options</li>
+                    <li>✓ Custom model integration</li>
+                    <li>✓ Enterprise SLAs & support</li>
+                    <li>✓ Built on Symphony trust protocol</li>
+                  </ul>
+                  <Link
+                    href="https://yseeku.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+                  >
+                    Explore YCQ Sonate
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -417,7 +512,7 @@ export default function SymbiSynergyPage() {
               Start Free
             </Button>
           </div>
-          <p className="mt-8 text-xl font-medium">SYMBI Synergy — trust first, helpful always.</p>
+          <p className="mt-8 text-xl font-medium">SYMBI Symphony — orchestrating AI with trust and transparency.</p>
         </div>
       </section>
 
