@@ -81,9 +81,16 @@ export default function SymbiSymphonyPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-              Try the Demo
-            </Button>
+            <a
+              href="https://symbi-synergy-pa9k82n5m-ycq.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+                Try the Demo
+              </Button>
+            </a>
             <Button size="lg" variant="outline" className="px-8 py-3 bg-transparent">
               Start Free
             </Button>
@@ -482,6 +489,88 @@ export default function SymbiSymphonyPage() {
         </div>
       </section>
 
+      {/* Live Demo Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-blue-600 to-indigo-700">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-white/20">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-green-500/20 text-green-100 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Live Demo Available
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Experience SYMBI Symphony Now</h2>
+              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+                Full trust protocol demonstration with cryptographic receipts, multi-provider AI comparison, and real-time bias detection.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4">Demo Credentials</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-sm text-blue-200 mb-1">Email:</p>
+                    <code className="block bg-black/30 text-green-300 px-3 py-2 rounded font-mono text-sm">
+                      demo@symbi-trust.com
+                    </code>
+                  </div>
+                  <div>
+                    <p className="text-sm text-blue-200 mb-1">Password:</p>
+                    <code className="block bg-black/30 text-green-300 px-3 py-2 rounded font-mono text-sm">
+                      demo123
+                    </code>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4">What You Can Try</h3>
+                <ul className="space-y-2 text-blue-100">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>Cryptographic trust receipts for every AI interaction</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>Multi-provider AI comparison (OpenAI, Anthropic, Perplexity)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>Real-time bias detection and compliance scoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>Interactive audit trail exploration</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a
+                href="https://symbi-synergy-pa9k82n5m-ycq.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors shadow-xl"
+              >
+                Launch Live Demo
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+              <p className="mt-4 text-sm text-blue-200">
+                Demo data is automatically purged every 24 hours • 3 conversations limit • 10 messages per conversation
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Get Started */}
       <section className="py-16 px-4 bg-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
@@ -501,9 +590,16 @@ export default function SymbiSymphonyPage() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="px-8 py-3">
-              Try Demo
-            </Button>
+            <a
+              href="https://symbi-synergy-pa9k82n5m-ycq.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button size="lg" variant="secondary" className="px-8 py-3">
+                Try Demo
+              </Button>
+            </a>
             <Button
               size="lg"
               variant="outline"
