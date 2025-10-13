@@ -115,7 +115,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   ]
 
   const financialPages = [
-    { name: "Tokenomics", path: "/tokenomics", icon: DollarSign },
+    { name: "DAO Governance", path: "/tokenomics", icon: Shield },
     { name: "Investment", path: "/investment", icon: TrendingUp },
     { name: "Market Analysis", path: "/market-analysis", icon: BarChart3 },
     { name: "Financial Whitepaper", path: "/financial-whitepaper", icon: ScrollText },

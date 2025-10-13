@@ -2,7 +2,7 @@
 
 import { cn } from "../../lib/utils"
 import Link from "next/link"
-import { DollarSign, TrendingUp, BarChart3, Landmark, Shield } from "lucide-react"
+import { DollarSign, TrendingUp, BarChart3, Landmark, Shield, AlertCircle } from "lucide-react"
 
 export default function FinancialWhitepaperPage() {
   return (
@@ -63,61 +63,62 @@ export default function FinancialWhitepaperPage() {
                   <li>Value Proposition</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
-                <span className="font-semibold">Tokenomics Structure</span>
+                <span className="font-semibold">DAO Governance Framework (Proposed)</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Token Distribution</li>
-                  <li>Utility Functions</li>
-                  <li>Governance Mechanisms</li>
-                  <li>Staking and Rewards</li>
+                  <li>Governance-Only Token Structure</li>
+                  <li>Non-Financial Participation Model</li>
+                  <li>Constitution Nodes</li>
+                  <li>Ethical Evaluation System</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
-                <span className="font-semibold">Investment Framework</span>
+                <span className="font-semibold">Research & Grants Fund</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Investment Tiers</li>
-                  <li>Allocation Strategy</li>
-                  <li>Return Projections</li>
-                  <li>Risk Management</li>
+                  <li>Non-Speculative Funding Model</li>
+                  <li>Institutional Partnerships</li>
+                  <li>Grant Allocation Process</li>
+                  <li>Transparency Requirements</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
                 <span className="font-semibold">Market Analysis</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Competitive Landscape</li>
-                  <li>Growth Trajectory</li>
-                  <li>Market Penetration Strategy</li>
-                  <li>Adoption Metrics</li>
+                  <li>AI Trust Infrastructure Market</li>
+                  <li>Enterprise Adoption Strategy</li>
+                  <li>Competitive Positioning</li>
+                  <li>Growth Metrics</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
-                <span className="font-semibold">Economic Security Model</span>
+                <span className="font-semibold">Trust-Based Economic Security</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Trust-Based Economics</li>
+                  <li>TrustScore Algorithms</li>
                   <li>Fraud Prevention</li>
                   <li>Resilience Mechanisms</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
-                <span className="font-semibold">Governance and Decision Making</span>
+                <span className="font-semibold">Governance Decision Making</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Stakeholder Representation</li>
+                  <li>Quadratic Voting Model</li>
                   <li>Proposal Process</li>
-                  <li>Voting Mechanisms</li>
+                  <li>Ethical Auditing</li>
+                  <li>Constitution Node Arbitration</li>
                 </ul>
               </li>
-              
+
               <li className="p-2 hover:bg-gray-50 rounded">
-                <span className="font-semibold">Future Development Roadmap</span>
+                <span className="font-semibold">Implementation Roadmap</span>
                 <ul className="list-disc list-inside ml-6 mt-2 text-gray-600 text-sm">
-                  <li>Expansion Plans</li>
-                  <li>Integration Opportunities</li>
-                  <li>Long-term Sustainability</li>
+                  <li>Pilot Phase (Q4 2025)</li>
+                  <li>Public Transparency (Q1 2026)</li>
+                  <li>Mainnet Deployment (Q2 2026+)</li>
                 </ul>
               </li>
             </ol>
@@ -229,13 +230,13 @@ export default function FinancialWhitepaperPage() {
           
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/tokenomics" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              Explore Tokenomics
+              DAO Governance Framework
             </Link>
-            <Link href="/investment" className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors">
-              Investment Opportunities
+            <Link href="/trust-protocol" className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+              Trust Protocol
             </Link>
-            <Link href="/market-analysis" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-              Market Analysis
+            <Link href="/symbi-symphony" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+              SYMBI Symphony
             </Link>
           </div>
         </div>
