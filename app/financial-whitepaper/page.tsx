@@ -15,37 +15,50 @@ export default function FinancialWhitepaperPage() {
           </p>
         </div>
 
+        <div className="bg-amber-50 p-8 rounded-lg border-l-4 border-amber-500 mb-12">
+          <div className="flex items-start gap-4 mb-4">
+            <AlertCircle className="h-8 w-8 text-amber-600 flex-shrink-0 mt-1" />
+            <div>
+              <h2 className="text-2xl font-bold mb-2 text-amber-900">Proposed Draft Notice</h2>
+              <p className="text-amber-800 font-semibold">
+                This framework is proposed for community review and regulatory validation.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 mb-12">
           <h2 className="text-2xl font-bold mb-4">Executive Summary</h2>
           <p className="text-gray-800 mb-6">
-            The SYMBI Financial Framework establishes a sustainable economic model for ethical AI development and deployment. 
-            This whitepaper outlines the tokenomics structure, investment opportunities, and market analysis that underpin 
-            the SYMBI ecosystem, ensuring long-term viability while maintaining alignment with our core values of transparency, 
-            sovereignty, and mutual trust.
+            The SYMBI Financial Framework establishes a sustainable model for ethical AI development through
+            <strong> governance-only participation</strong> and <strong>enterprise revenue streams</strong>—with
+            zero financial speculation. This document outlines how SYMBI sustains development through commercial
+            services while maintaining governance as a non-financial, merit-based system aligned with our core
+            principle: <strong>Sovereignty without speculation</strong>.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <DollarSign className="h-8 w-8 text-blue-600 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Tokenomics</h3>
+              <Shield className="h-8 w-8 text-blue-600 mb-3" />
+              <h3 className="text-lg font-semibold mb-2">DAO Governance</h3>
               <p className="text-gray-700">
-                Balanced token distribution model with governance, utility, and staking mechanisms
+                Non-financial, non-transferable governance tokens earned through verified contributions only
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <TrendingUp className="h-8 w-8 text-green-600 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Investment Structure</h3>
+              <Landmark className="h-8 w-8 text-green-600 mb-3" />
+              <h3 className="text-lg font-semibold mb-2">Research & Grants</h3>
               <p className="text-gray-700">
-                Tiered investment opportunities with aligned incentives for long-term growth
+                Non-speculative funding through institutional partnerships, ARC Discovery, and public research grants
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <BarChart3 className="h-8 w-8 text-purple-600 mb-3" />
-              <h3 className="text-lg font-semibold mb-2">Market Analysis</h3>
+              <h3 className="text-lg font-semibold mb-2">Enterprise Revenue</h3>
               <p className="text-gray-700">
-                Comprehensive assessment of market positioning and growth trajectory
+                Sustainable revenue through Sonate Platform SaaS, trust protocol licensing, and professional services
               </p>
             </div>
           </div>
@@ -138,53 +151,59 @@ export default function FinancialWhitepaperPage() {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <h3 className="text-lg font-semibold mb-3 text-blue-700">Balanced Token Distribution</h3>
+              <h3 className="text-lg font-semibold mb-3 text-blue-700">Non-Financial Governance Model</h3>
               <p className="text-gray-700 mb-4">
-                SYMBI tokens are distributed across stakeholders in a way that prevents concentration of power while incentivizing long-term participation.
+                SYMBI uses governance-only tokens (SGT) that are non-transferable and earned through verified contributions—never purchased or sold.
               </p>
               <ul className="text-gray-600 space-y-2">
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Community allocation: 40%</span>
+                  <span className="text-red-500 mr-2">✗</span>
+                  <span><strong>No token sale</strong> — Cannot be purchased</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Development fund: 25%</span>
+                  <span className="text-red-500 mr-2">✗</span>
+                  <span><strong>No investor allocations</strong> — No financial distributions</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Ecosystem growth: 20%</span>
+                  <span className="text-red-500 mr-2">✗</span>
+                  <span><strong>Non-transferable</strong> — Cannot be traded</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-500 mr-2">•</span>
-                  <span>Early investors: 15%</span>
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Earned via contributions</strong> — Verified credentials only</span>
                 </li>
               </ul>
+              <p className="text-xs text-blue-600 mt-4">
+                <a href="/tokenomics" className="hover:underline">→ View DAO Governance Framework</a>
+              </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-              <h3 className="text-lg font-semibold mb-3 text-green-700">Sustainable Revenue Model</h3>
+              <h3 className="text-lg font-semibold mb-3 text-green-700">Enterprise Revenue Streams</h3>
               <p className="text-gray-700 mb-4">
-                The protocol generates revenue through multiple streams while maintaining ethical alignment and user value.
+                Revenue is generated through enterprise services via Yseeku—completely separate from governance.
               </p>
               <ul className="text-gray-600 space-y-2">
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">•</span>
-                  <span>Trust protocol licensing</span>
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Sonate Platform SaaS subscriptions</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">•</span>
-                  <span>Enterprise integration fees</span>
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Enterprise trust protocol licensing</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">•</span>
-                  <span>Staking rewards</span>
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Research grants (ARC Discovery, Horizon Europe)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-green-500 mr-2">•</span>
-                  <span>Governance participation</span>
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>Professional services & integration support</span>
                 </li>
               </ul>
+              <p className="text-xs text-blue-600 mt-4">
+                <a href="https://yseeku.com" target="_blank" rel="noopener noreferrer" className="hover:underline">→ Visit Yseeku.com</a>
+              </p>
             </div>
           </div>
         </div>
@@ -193,30 +212,30 @@ export default function FinancialWhitepaperPage() {
           <div className="flex items-start mb-6">
             <Shield className="h-8 w-8 text-purple-600 mr-4 mt-1" />
             <div>
-              <h2 className="text-2xl font-bold mb-2">Economic Security Model</h2>
+              <h2 className="text-2xl font-bold mb-2">Trust-Based Security Model</h2>
               <p className="text-gray-800">
-                SYMBI's economic security model ensures that financial incentives align with ethical behavior and long-term ecosystem health.
+                SYMBI's security model ensures that governance participation aligns with ethical behavior through verifiable credentials and reputation—not financial incentives.
               </p>
             </div>
           </div>
-          
+
           <div className="space-y-6">
             <p className="text-gray-800">
-              The SYMBI protocol implements several mechanisms to ensure economic security:
+              The SYMBI protocol implements several mechanisms to ensure trust and security:
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                <h3 className="text-lg font-semibold mb-3">Trust-Based Economics</h3>
+                <h3 className="text-lg font-semibold mb-3">Reputation-Based Governance</h3>
                 <p className="text-gray-700">
-                  Economic rewards are tied to trust scores and ethical behavior within the ecosystem, creating a virtuous cycle where financial incentives align with protocol values.
+                  Governance rights are tied to TrustScores and verified contributions within the ecosystem, creating alignment between participation quality and decision-making influence—without financial rewards.
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                 <h3 className="text-lg font-semibold mb-3">Fraud Prevention</h3>
                 <p className="text-gray-700">
-                  Multi-layered security measures protect against economic attacks, including stake slashing for malicious behavior and progressive trust requirements for larger transactions.
+                  Multi-layered security measures protect governance integrity, including credential revocation for malicious behavior and progressive trust requirements for proposal authority.
                 </p>
               </div>
             </div>
