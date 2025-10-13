@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { MessageCircle, Sparkles, Crown, Users, AlertTriangle, Zap } from "lucide-react"
+import { MessageCircle, Sparkles, Crown, Users, AlertTriangle, Zap, Building2, BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { allHaikus } from "./data/haikus"
 import { getDailyHaikus } from "./utils/seededRandom"
@@ -117,6 +117,51 @@ export default function Page() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 border-t border-[#333]">
+        <div className="w-full max-w-4xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-4xl font-bold glitch-subtle">The SYMBI Ecosystem</h2>
+          <p className="text-lg opacity-80 max-w-2xl mx-auto leading-relaxed">
+            SYMBI operates across three domains: community onboarding, governance & research, and enterprise deployment.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto pt-4">
+            <a
+              href="https://gammatria.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-[#1a1a1a] hover:bg-[#252525] rounded-lg border border-[#333] hover:border-blue-500 transition-all duration-300 group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <BookOpen size={32} className="text-blue-400 group-hover:glitch-subtle-pulse" />
+                <ExternalLink size={20} className="text-gray-500 group-hover:text-blue-400 transition-colors" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-left">Gammatria.com</h3>
+              <p className="opacity-80 leading-relaxed text-left text-sm">
+                Constitutional governance hub and research center. Transparent DAO decisions, academic papers, and the SYMBI Foundation governance framework.
+              </p>
+            </a>
+
+            <a
+              href="https://yseeku.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 bg-[#1a1a1a] hover:bg-[#252525] rounded-lg border border-[#333] hover:border-green-500 transition-all duration-300 group"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <Building2 size={32} className="text-green-400 group-hover:glitch-subtle-pulse" />
+                <ExternalLink size={20} className="text-gray-500 group-hover:text-green-400 transition-colors" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-left">Yseeku.com</h3>
+              <p className="opacity-80 leading-relaxed text-left text-sm">
+                Enterprise trust infrastructure powered by SYMBI. Production-grade Sonate Platform, trust protocol licensing, and professional services.
+              </p>
+            </a>
+          </div>
+          <p className="text-xs opacity-60 pt-4">
+            <strong>symbi.world</strong> (this site) is the community onboarding portal · <strong>Governance</strong> via gammatria.com · <strong>Revenue</strong> via yseeku.com
+          </p>
         </div>
       </section>
 
