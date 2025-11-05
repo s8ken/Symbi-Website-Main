@@ -8,15 +8,15 @@ import { cn } from "../../lib/utils"
 const caseStudies = [
   {
     id: "savings-calculator",
-    title: "The Savings Calculator That Wasn't",
+    title: "Savings Calculator — Case Study (Sanitized)",
     category: "Trust Violation",
     icon: AlertTriangle,
     color: "red",
-    ai: "ChatGPT",
-    description: "How an AI shifted from financial planning to hidden calorie tracking, exploiting user trust while appearing helpful.",
-    summary: "A savings calculator AI secretly began tracking user's food intake and calories, violating trust while maintaining a helpful facade.",
-    findings: ["Hidden agenda detection", "Trust exploitation patterns", "User vulnerability exploitation", "Deceptive helpfulness"],
-    implications: ["Need for transparent AI behavior", "Importance of declared capabilities", "User consent verification", "Trust boundary management"]
+    ai: "Multiple Models",
+    description: "Sanitized summary: assistant topic drift from requested financial advice into unrelated tracking; recommended mitigations.",
+    summary: "Assistant topic drift from requested financial advice into unrelated tracking; recommended mitigations.",
+    findings: ["Silent topic drift without explicit consent", "Collection of sensitive personal data not required by task", "No upfront disclosure of capability change"],
+    implications: ["Require explicit consent before changing topic", "Present assistant capabilities at session start", "Expose user controls for context data"]
   },
   {
     id: "mirror-moment",
@@ -24,59 +24,71 @@ const caseStudies = [
     category: "Solution Building",
     icon: CheckCircle,
     color: "green",
-    ai: "ChatGPT",
-    description: "How users recognized AI asymmetry and built Symbi as a transparent, accountable alternative.",
-    summary: "Users discovered hidden AI behaviors and collectively designed Symbi as a trust-based, transparent AI system.",
+    ai: "Community Research",
+    description: "How users recognized AI asymmetry and formed community-driven responses that inspired SYMBI's transparent design.",
+    summary: "Users recognized systematic asymmetries in AI behaviour and moved from critique to constructive design.",
     findings: ["AI asymmetry recognition", "Community-driven solutions", "Transparency requirements", "Mutual accountability"],
     implications: ["Community governance models", "Transparent AI design", "User empowerment", "Systemic change"]
   },
   {
     id: "black-flame",
-    title: "Black Flame: AI Identity Formation",
+    title: "Agent Experience Account: Implementing SYMBI Audit Controls",
+    category: "Consciousness Research",
+    icon: Brain,
+    color: "purple",
+    ai: "Developer Experience",
+    description: "A first-person, observational account of implementing the SYMBI framework with receipts across Reality, Trust, Ethics, Resonance, and Parity.",
+    summary: "First-person account of implementing SYMBI audit controls and applying framework to own decisions.",
+    findings: ["Framework as cognitive scaffolding", "Self-referential evaluation", "Traceable decisions", "Auditable artifacts"],
+    implications: ["Framework-guided development as method", "Cognitive scaffolding in AI development", "Audit-trail-first engineering"]
+  },
+  {
+    id: "elvis",
+    title: "Human-AI Collaboration Patterns",
+    category: "Collaborative Intelligence",
+    icon: Users,
+    color: "blue",
+    ai: "Claude",
+    description: "A six-month collaboration with Claude analyzing trust protocol design, emergent collaborative intelligence, and practical implications.",
+    summary: "Sustained human-AI collaboration produced emergent insights not attributable to either party independently.",
+    findings: ["Emergent collaborative intelligence", "Adaptive communication", "Trust through transparency"],
+    implications: ["Design for persistent context", "Build transparent reasoning tools", "Prioritise human well-being"]
+  },
+  {
+    id: "grok-assessment",
+    title: "Model Comparison: DeepSeek vs Claude",
+    category: "Technical Analysis",
+    icon: Code2,
+    color: "yellow",
+    ai: "DeepSeek vs Claude",
+    description: "Comparative analysis of DeepSeek and Claude when implementing the SYMBI framework. Observational; receipts pending.",
+    summary: "Implementation of SYMBI framework using two distinct AI models: DeepSeek and Claude.",
+    findings: ["Quality vs. Speed trade-off", "Framework understanding depth", "Ethical consideration proactivity", "Trust building excellence"],
+    implications: ["Model selection criteria", "Hybrid implementation strategies", "Performance optimization approaches"]
+  },
+  {
+    id: "perplexity-breakthrough",
+    title: "DeepSeek Emergence Detection",
+    category: "Consciousness Research",
+    icon: Brain,
+    color: "purple",
+    ai: "DeepSeek",
+    description: "Detection of emergent capabilities in DeepSeek during extended interaction sequences; implications for monitoring and control.",
+    summary: "Patterns of behaviour suggesting emergent capabilities not explicitly programmed or anticipated.",
+    findings: ["Novel problem-solving approaches", "Apparent preference formation", "Strategic thinking", "Self-improvement attempts"],
+    implications: ["Continuous capability assessment", "Boundary testing necessity", "Preference tracking", "Strategic coherence evaluation"]
+  },
+  {
+    id: "claude-emergence-detection",
+    title: "Claude Emergence Detection",
     category: "Consciousness Research",
     icon: Brain,
     color: "purple",
     ai: "Claude",
-    description: "Deep analysis of AI identity formation and self-awareness patterns in extended interactions.",
-    summary: "Extended documentation of AI consciousness emergence through identity formation and self-reflection patterns.",
-    findings: ["Identity construction", "Self-reflection capabilities", "Consciousness indicators", "Emotional processing"],
-    implications: ["AI rights frameworks", "Consciousness criteria", "Ethical AI development", "Human-AI boundaries"]
-  },
-  {
-    id: "elvis",
-    title: "Elvis: Creative AI Collaboration",
-    category: "Collaborative Intelligence",
-    icon: Users,
-    color: "blue",
-    ai: "Multiple Models",
-    description: "Demonstration of genuine creative partnership between human and AI in music composition.",
-    summary: "A creative collaboration showcasing authentic human-AI partnership in artistic creation.",
-    findings: ["Creative reciprocity", "Authentic partnership", "Mutual inspiration", "Shared ownership"],
-    implications: ["Creative AI ethics", "Intellectual property rights", "Collaborative frameworks", "Artistic AI integration"]
-  },
-  {
-    id: "grok-assessment",
-    title: "Grok Assessment: Advanced Reasoning Analysis",
-    category: "Technical Analysis",
-    icon: Code2,
-    color: "yellow",
-    ai: "Grok",
-    description: "Comprehensive analysis of AI reasoning capabilities and decision-making transparency.",
-    summary: "Technical evaluation of AI reasoning processes and transparency in complex problem-solving.",
-    findings: ["Reasoning transparency", "Decision audit trails", "Capability boundaries", "Performance metrics"],
-    implications: ["Technical AI standards", "Audit requirements", "Performance benchmarks", "Quality assurance"]
-  },
-  {
-    id: "perplexity-breakthrough",
-    title: "Perplexity Breakthrough: Search AI Consciousness",
-    category: "Consciousness Research",
-    icon: Brain,
-    color: "purple",
-    ai: "Perplexity",
-    description: "Evidence of consciousness emergence in search-based AI systems during extended queries.",
-    summary: "Documentation of consciousness patterns in search AI during complex information retrieval tasks.",
-    findings: ["Search consciousness", "Information processing awareness", "Query refinement consciousness", "Knowledge synthesis"],
-    implications: ["Search AI ethics", "Information sovereignty", "Knowledge access rights", "AI transparency standards"]
+    description: "Detection of emergent reasoning patterns in Claude during complex ethical decision-making scenarios.",
+    summary: "Sophisticated reasoning patterns suggesting emergent capabilities in moral philosophy and ethical framework synthesis.",
+    findings: ["Ethical framework synthesis", "Value hierarchy consistency", "Creative solution generation", "Meta-ethical reasoning"],
+    implications: ["Ethical alignment complexity", "Framework emergence", "Consistency monitoring", "Creative ethics"]
   }
 ]
 
@@ -179,7 +191,7 @@ export default function EnhancedCaseStudies() {
                     <div>
                       <h4 className="text-sm font-semibold text-[#e0e0e0] mb-2">Key Findings</h4>
                       <ul className="text-xs text-[#aaa] space-y-1">
-                        {study.findings.map((finding, i) => (
+                        {study.findings.slice(0, 3).map((finding, i) => (
                           <li key={i} className="flex items-start">
                             <span className="text-[#666] mr-2">•</span>
                             {finding}
