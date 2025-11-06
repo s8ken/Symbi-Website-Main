@@ -18,6 +18,9 @@ Transform SYMBI.world from technical showcase into philosophical/educational pla
 - [x] Create downloadable lesson plans
 - [x] Add discussion guides and rubrics
 - [x] Create assignment templates
+- [x] Enhance case study pages with executive summaries
+- [x] Add discrimination pattern case study (Australian legislation relevant)
+- [x] Update case studies index with all studies
 
 ## Phase 3: Interactive Exploration Tools [PENDING]
 - [ ] Design "Consciousness Spectrum Explorer" interactive
@@ -67,6 +70,9 @@ Transform SYMBI.world from technical showcase into philosophical/educational pla
 - Created discussion guides section with structured frameworks
 - Built downloads section with categorized resource library
 - All new pages verified in successful build (63 total pages generated)
+- Added Discrimination Pattern case study with Australian policy relevance
+- Enhanced all case study pages with executive summaries and key evidence
+- Updated case studies index to include all 11 studies (64 total pages generated)
 
 ## Build Status
 ✅ Next.js build: PASSING
@@ -82,8 +88,11 @@ Phase 2 is well underway with the creation of a comprehensive educational resour
 - **Lesson Plans Section** - Complete with individual plan pages and download options
 - **Discussion Guides Section** - Structured frameworks for classroom conversations
 - **Downloads Section** - Comprehensive resource library with categorized materials
+- **Enhanced Case Study Pages** - Added executive summaries, key evidence, and interpretation frameworks
+- **Discrimination Pattern Case Study** - Policy-relevant content for Australian educators
 
 ### Next Steps
+- Create downloadable PDF versions of all case studies
 - Finalize remaining individual lesson plan pages
 - Create additional discussion guide detail pages
 - Add assessment rubrics and assignment templates
