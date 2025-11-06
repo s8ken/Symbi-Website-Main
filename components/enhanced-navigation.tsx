@@ -31,7 +31,8 @@ import {
   CheckCircle,
   Brain,
   Search,
-  Scale
+  Scale,
+  GraduationCap
 } from "lucide-react"
 import {
   DropdownMenu,
@@ -129,12 +130,13 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
     { name: "Technology Whitepaper", path: "/technology-whitepaper", icon: ScrollText },
   ]
 
-  const interactivePages = [
-    { name: "Playground", path: "/playground", icon: Gamepad2 },
-    { name: "Memory Bank", path: "/memory", icon: Database },
-    { name: "The Circle", path: "/thecircle", icon: Users },
-    { name: "Sonic Resonance", path: "/playground/sonic-consciousness", icon: Waves },
-  ]
+    const interactivePages = [
+      { name: "Playground", path: "/playground", icon: Gamepad2 },
+      { name: "Memory Bank", path: "/memory", icon: Database },
+      { name: "The Circle", path: "/thecircle", icon: Users },
+      { name: "Sonic Resonance", path: "/playground/sonic-consciousness", icon: Waves },
+      { name: "Educators Hub", path: "/educators", icon: GraduationCap },
+    ]
 
   const utilityPages = [
     { name: "Site Map", path: "/404-sitemap", icon: Search },
