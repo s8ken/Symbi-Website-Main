@@ -15,7 +15,7 @@ export default function WhitepaperPage() {
     const email = formData.get("email")
 
     // Simple mailto fallback for now
-    window.location.href = `mailto:hello@symbi.world?subject=Replication%20Pack%20Request%20v2.0&body=Please%20send%20me%20the%20SYMBI%20Protocol%20replication%20pack.%0A%0AEmail:%20${email}`
+    window.location.href = `mailto:stephen@symbi.world?subject=Replication%20Pack%20Request%20v2.0&body=Please%20send%20me%20the%20SYMBI%20Protocol%20replication%20pack.%0A%0AEmail:%20${email}`
     setEmailSubmitted(true)
   }
 
@@ -299,7 +299,7 @@ export default function WhitepaperPage() {
                         name="email"
                         required
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        placeholder="your@email.com"
+                        placeholder="stephen@symbi.world"
                       />
                     </label>
                     <button
@@ -320,10 +320,10 @@ export default function WhitepaperPage() {
               <p className="text-sm text-gray-600">
                 Prefer email?{" "}
                 <a
-                  href="mailto:hello@symbi.world?subject=Replication%20Pack%20Request%20v2.0"
+                  href="mailto:stephen@symbi.world?subject=Replication%20Pack%20Request%20v2.0"
                   className="text-purple-600 hover:text-purple-800 underline"
                 >
-                  hello@symbi.world
+                  stephen@symbi.world
                 </a>
               </p>
             </section>

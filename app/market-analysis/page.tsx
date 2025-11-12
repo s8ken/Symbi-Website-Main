@@ -380,7 +380,7 @@ export default function MarketAnalysisPage() {
                   Investment Opportunities
                 </button>
               </Link>
-              <a href="mailto:invest@symbi.world">
+              <a href="mailto:stephen@symbi.world">
                 <button className="border border-[#555] text-[#e0e0e0] px-8 py-3 rounded hover:bg-[#1a1a1a] transition-colors">
                   Contact Investment Team
                 </button>

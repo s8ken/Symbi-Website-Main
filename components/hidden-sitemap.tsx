@@ -571,7 +571,7 @@ export default function HiddenSitemap({ reason = "manual" }: HiddenSitemapProps)
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@domain.com"
+                placeholder="stephen@symbi.world"
                 autoComplete="email"
               />
             </div>

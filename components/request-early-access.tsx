@@ -81,7 +81,7 @@ export function RequestEarlyAccess({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@domain.com"
+              placeholder="stephen@symbi.world"
               autoComplete="email"
             />
           </div>

@@ -521,7 +521,7 @@ export default function SymbiSymphonyPage() {
                   <div>
                     <p className="text-sm text-blue-200 mb-1">Email:</p>
                     <code className="block bg-black/30 text-green-300 px-3 py-2 rounded font-mono text-sm">
-                      demo@symbi-trust.com
+                      stephen@symbi.world
                     </code>
                   </div>
                   <div>

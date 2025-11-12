@@ -55,7 +55,7 @@ export default function EnterpriseDemoPage() {
                   <div>
                     <p className="text-sm text-blue-200 mb-2 font-semibold">Email:</p>
                     <code className="block bg-black/40 text-green-300 px-4 py-3 rounded-lg font-mono text-base border border-green-500/30">
-                      demo@symbi-trust.com
+                      stephen@symbi.world
                     </code>
                   </div>
                   <div>

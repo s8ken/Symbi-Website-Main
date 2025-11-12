@@ -238,7 +238,7 @@ export default function InvestmentPage() {
               Contact our investment team to discuss opportunities in ethical AI governance
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:invest@symbi.world">
+              <a href="mailto:stephen@symbi.world">
                 <button className="bg-[#e0e0e0] text-[#0f0f0f] px-8 py-3 rounded hover:bg-white transition-colors font-semibold">
                   Contact Investment Team
                 </button>
