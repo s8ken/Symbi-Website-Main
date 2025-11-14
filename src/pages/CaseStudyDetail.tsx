@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
   Download, 
@@ -9,7 +9,7 @@ import {
   ArrowLeft,
   CheckCircle,
   BookOpen,
-  Presentation,
+
   FileSpreadsheet,
   ExternalLink
 } from 'lucide-react';
@@ -19,19 +19,19 @@ import { Badge } from '../components/ui/badge-simple';
 import TeacherResources from '../components/TeacherResources';
 import PDFViewer from '../components/PDFViewer';
 
-interface SessionPlan {
-  id: string;
-  title: string;
-  duration: string;
-  objectives: string[];
-  materials: string[];
-  activities: {
-    name: string;
-    duration: string;
-    description: string;
-    type: 'Introduction' | 'Activity' | 'Discussion' | 'Assessment' | 'Conclusion';
-  }[];
-}
+// interface SessionPlan {
+//   id: string;
+//   title: string;
+//   duration: string;
+//   objectives: string[];
+//   materials: string[];
+//   activities: {
+//     name: string;
+//     duration: string;
+//     description: string;
+//     type: 'Introduction' | 'Activity' | 'Discussion' | 'Assessment' | 'Conclusion';
+//   }[];
+// }
 
 interface Rubric {
   criteria: {
@@ -563,7 +563,7 @@ const CaseStudyDetail: React.FC = () => {
           )}
 
           {activeTab === 'materials' && (
-            <TeacherResources caseStudyId={id} caseStudyTitle={caseStudy.title} />
+            <TeacherResources caseStudyId={id ?? ''} caseStudyTitle={caseStudy.title} />
           )}
         </div>
       </div>
