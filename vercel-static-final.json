@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "public": true,
+  "outputDirectory": ".",
+  "routes": [
+    {
+      "src": "/educators",
+      "dest": "/educators-hub-deploy.html"
+    },
+    {
+      "src": "/educators-hub",
+      "dest": "/educators-hub-deploy.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/educators-hub-deploy.html"
+    }
+  ]
+}

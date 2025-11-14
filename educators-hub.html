@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYMBI Educators Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6/dist/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module">
+        const { useState } = React;
+        const { BrowserRouter, Routes, Route, Link } = ReactRouterDOM;
+        const { BookOpen, Download, FileText, Users, Clock, Star, Filter, Search } = lucide;
+
+        const caseStudies = [
+            {
+                id: '1',
+                title: 'AI Trust in Healthcare Diagnostics',
+                description: 'Explore how AI systems make medical decisions and learn to evaluate their trustworthiness using SYMBI\'s six-pillar trust model.',
+                subject: 'Computer Science',
+                gradeLevel: 'High School',
+                duration: '90 minutes',
+                difficulty: 'Intermediate',
+                topics: ['AI Ethics', 'Healthcare Technology', 'Trust Scoring', 'Bias Detection'],
+                materials: { sessionPlan: true, rubric: true, worksheet: true, presentation: true },
+                trustScore: 0.85
+            },
+            {
+                id: '2',
+                title: 'Decentralized Identity in Education',
+                description: 'Understanding how blockchain and decentralized identity can secure student records and academic credentials.',
+                subject: 'Technology',
+                gradeLevel: 'College',
+                duration: '120 minutes',
+                difficulty: 'Advanced',
+                topics: ['Blockchain', 'DID', 'Education Security', 'Digital Credentials'],
+                materials: { sessionPlan: true, rubric: true, worksheet: true, presentation: true },
+                trustScore: 0.92
+            },
+            {
+                id: '3',
+                title: 'AI Bias in Financial Services',
+                description: 'Analyze how AI systems can perpetuate or amplify bias in lending decisions and financial risk assessment.',
+                subject: 'Finance',
+                gradeLevel: 'College',
+                duration: '75 minutes',
+                difficulty: 'Advanced',
+                topics: ['AI Bias', 'Financial Ethics', 'Risk Assessment', 'Fair Lending'],
+                materials: { sessionPlan: true, rubric: true, worksheet: true, presentation: false },
+                trustScore: 0.78
+            }
+        ];
+
+        function EducatorsHub() {
+            const [searchTerm, setSearchTerm] = useState('');
+            const [selectedSubject, setSelectedSubject] = useState('All');
+            const [selectedDifficulty, setSelectedDifficulty] = useState('All');
+
+            const filteredCaseStudies = caseStudies.filter(study => {
+                const matchesSearch = study.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    study.description.toLowerCase().includes(searchTerm.toLowerCase());
+                const matchesSubject = selectedSubject === 'All' || study.subject === selectedSubject;
+                const matchesDifficulty = selectedDifficulty === 'All' || study.difficulty === selectedDifficulty;
+                
+                return matchesSearch && matchesSubject && matchesDifficulty;
+            });
+
+            const getTrustScoreColor = (score) => {
+                if (score >= 0.9) return 'text-green-600';
+                if (score >= 0.75) return 'text-blue-600';
+                if (score >= 0.6) return 'text-yellow-600';
+                return 'text-red-600';
+            };
+
+            const getDifficultyColor = (difficulty) => {
+                switch (difficulty) {
+                    case 'Beginner': return 'bg-green-100 text-green-800';
+                    case 'Intermediate': return 'bg-yellow-100 text-yellow-800';
+                    case 'Advanced': return 'bg-red-100 text-red-800';
+                    default: return 'bg-gray-100 text-gray-800';
+                }
+            };
+
+            return React.createElement('div', { className: 'min-h-screen bg-gray-50' },
+                React.createElement('div', { className: 'container mx-auto px-4 py-8' },
+                    React.createElement('div', { className: 'mb-8' },
+                        React.createElement('h1', { className: 'text-4xl font-bold text-gray-900 mb-2' }, 
+                            'SYMBI Educators Hub'
+                        ),
+                        React.createElement('p', { className: 'text-lg text-gray-600' },
+                            'Comprehensive AI trust education resources for teachers and students'
+                        )
+                    ),
+
+                    React.createElement('div', { className: 'mb-8' },
+                        React.createElement('div', { className: 'flex flex-col md:flex-row gap-4 mb-6' },
+                            React.createElement('div', { className: 'relative flex-1' },
+                                React.createElement(Search, { className: 'absolute left-3 top-3 h-4 w-4 text-gray-400' }),
+                                React.createElement('input', {
+                                    type: 'text',
+                                    placeholder: 'Search case studies...',
+                                    className: 'w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent',
+                                    value: searchTerm,
+                                    onChange: (e) => setSearchTerm(e.target.value)
+                                })
+                            ),
+                            React.createElement('select', {
+                                className: 'px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500',
+                                value: selectedSubject,
+                                onChange: (e) => setSelectedSubject(e.target.value)
+                            },
+                                React.createElement('option', { value: 'All' }, 'All Subjects'),
+                                React.createElement('option', { value: 'Computer Science' }, 'Computer Science'),
+                                React.createElement('option', { value: 'Technology' }, 'Technology'),
+                                React.createElement('option', { value: 'Finance' }, 'Finance')
+                            ),
+                            React.createElement('select', {
+                                className: 'px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500',
+                                value: selectedDifficulty,
+                                onChange: (e) => setSelectedDifficulty(e.target.value)
+                            },
+                                React.createElement('option', { value: 'All' }, 'All Levels'),
+                                React.createElement('option', { value: 'Beginner' }, 'Beginner'),
+                                React.createElement('option', { value: 'Intermediate' }, 'Intermediate'),
+                                React.createElement('option', { value: 'Advanced' }, 'Advanced')
+                            )
+                        )
+                    ),
+
+                    React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' },
+                        filteredCaseStudies.map(study =>
+                            React.createElement('div', { key: study.id, className: 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6' },
+                                React.createElement('div', { className: 'mb-4' },
+                                    React.createElement('h3', { className: 'text-xl font-semibold text-gray-900 mb-2' }, study.title),
+                                    React.createElement('p', { className: 'text-gray-600 text-sm mb-3' }, study.description),
+                                    React.createElement('div', { className: 'flex flex-wrap gap-2 mb-3' },
+                                        React.createElement('span', { className: `px-2 py-1 rounded-full text-xs ${getDifficultyColor(study.difficulty)}` }, 
+                                            study.difficulty
+                                        ),
+                                        study.topics.map(topic =>
+                                            React.createElement('span', { key: topic, className: 'px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs' },
+                                                topic
+                                            )
+                                        )
+                                    )
+                                ),
+
+                                React.createElement('div', { className: 'mb-4 space-y-2' },
+                                    React.createElement('div', { className: 'flex items-center text-sm text-gray-600' },
+                                        React.createElement(Users, { className: 'h-4 w-4 mr-2' }),
+                                        study.gradeLevel
+                                    ),
+                                    React.createElement('div', { className: 'flex items-center text-sm text-gray-600' },
+                                        React.createElement(Clock, { className: 'h-4 w-4 mr-2' }),
+                                        study.duration
+                                    ),
+                                    React.createElement('div', { className: 'flex items-center text-sm text-gray-600' },
+                                        React.createElement(Star, { className: 'h-4 w-4 mr-2' }),
+                                        'Trust Score: ',
+                                        React.createElement('span', { className: getTrustScoreColor(study.trustScore) },
+                                            `${Math.round(study.trustScore * 100)}%`
+                                        )
+                                    )
+                                ),
+
+                                React.createElement('div', { className: 'mb-4' },
+                                    React.createElement('h4', { className: 'text-sm font-medium text-gray-900 mb-2' }, 'Available Materials:'),
+                                    React.createElement('div', { className: 'flex flex-wrap gap-2' },
+                                        study.materials.sessionPlan && 
+                                            React.createElement('span', { className: 'flex items-center text-xs text-green-600' },
+                                                React.createElement(FileText, { className: 'h-3 w-3 mr-1' }),
+                                                'Session Plan'
+                                            ),
+                                        study.materials.rubric && 
+                                            React.createElement('span', { className: 'flex items-center text-xs text-green-600' },
+                                                React.createElement(Star, { className: 'h-3 w-3 mr-1' }),
+                                                'Rubric'
+                                            ),
+                                        study.materials.worksheet && 
+                                            React.createElement('span', { className: 'flex items-center text-xs text-green-600' },
+                                                React.createElement(BookOpen, { className: 'h-3 w-3 mr-1' }),
+                                                'Worksheet'
+                                            ),
+                                        study.materials.presentation && 
+                                            React.createElement('span', { className: 'flex items-center text-xs text-green-600' },
+                                                React.createElement('svg', { className: 'h-3 w-3 mr-1', fill: 'currentColor', viewBox: '0 0 24 24' },
+                                                    React.createElement('path', { d: 'M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h16V4H4zm2 2h12v2H6V6zm0 4h12v2H6v-2zm0 4h8v2H6v-2z' })
+                                                ),
+                                                'Presentation'
+                                            )
+                                    )
+                                ),
+
+                                React.createElement(Link, {
+                                    to: `/educators/case-study/${study.id}`,
+                                    className: 'inline-flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+                                },
+                                    'View Case Study',
+                                    React.createElement('svg', { className: 'ml-2 h-4 w-4', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' },
+                                        React.createElement('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: 2, d: 'M9 5l7 7-7 7' })
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+
+        function CaseStudyDetail() {
+            const { id } = ReactRouterDOM.useParams();
+            const study = caseStudies.find(s => s.id === id);
+
+            if (!study) {
+                return React.createElement('div', { className: 'container mx-auto px-4 py-8' },
+                    React.createElement('h1', { className: 'text-2xl font-bold text-red-600' }, 'Case Study Not Found'),
+                    React.createElement(Link, { to: '/educators', className: 'text-blue-600 hover:underline' }, 'Back to Educators Hub')
+                );
+            }
+
+            return React.createElement('div', { className: 'min-h-screen bg-gray-50' },
+                React.createElement('div', { className: 'container mx-auto px-4 py-8' },
+                    React.createElement('div', { className: 'mb-6' },
+                        React.createElement(Link, {
+                            to: '/educators',
+                            className: 'inline-flex items-center text-blue-600 hover:underline mb-4'
+                        },
+                            React.createElement('svg', { className: 'mr-2 h-4 w-4', fill: 'none', stroke: 'currentColor', viewBox: '0 0 24 24' },
+                                React.createElement('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: 2, d: 'M15 19l-7-7 7-7' })
+                            ),
+                            'Back to Educators Hub'
+                        ),
+                        React.createElement('h1', { className: 'text-3xl font-bold text-gray-900 mb-2' }, study.title),
+                        React.createElement('p', { className: 'text-lg text-gray-600 mb-4' }, study.description)
+                    ),
+
+                    React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6 mb-6' },
+                        React.createElement('h2', { className: 'text-2xl font-semibold mb-4' }, 'Learning Objectives'),
+                        React.createElement('ul', { className: 'list-disc list-inside space-y-2' },
+                            React.createElement('li', { className: 'text-gray-700' }, 'Understand the six pillars of AI trust'),
+                            React.createElement('li', { className: 'text-gray-700' }, 'Analyze real-world AI healthcare diagnostic systems'),
+                            React.createElement('li', { className: 'text-gray-700' }, 'Identify potential bias sources in medical AI'),
+                            React.createElement('li', { className: 'text-gray-700' }, 'Evaluate trust scores for different AI systems')
+                        )
+                    ),
+
+                    React.createElement('div', { className: 'bg-white rounded-lg shadow-md p-6' },
+                        React.createElement('h2', { className: 'text-2xl font-semibold mb-4' }, 'Available Resources'),
+                        React.createElement('div', { className: 'grid grid-cols-1 md:grid-cols-2 gap-4' },
+                            study.materials.sessionPlan && 
+                                React.createElement('div', { className: 'border rounded-lg p-4' },
+                                    React.createElement('h3', { className: 'font-semibold mb-2' }, 'Session Plan'),
+                                    React.createElement('p', { className: 'text-sm text-gray-600 mb-3' }, 'Complete 90-minute lesson plan with activities and timing'),
+                                    React.createElement('button', {
+                                        className: 'inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700',
+                                        onClick: () => alert('Session Plan PDF would download here')
+                                    },
+                                        React.createElement(Download, { className: 'mr-2 h-4 w-4' }),
+                                        'Download PDF'
+                                    )
+                                ),
+                            study.materials.rubric && 
+                                React.createElement('div', { className: 'border rounded-lg p-4' },
+                                    React.createElement('h3', { className: 'font-semibold mb-2' }, 'Assessment Rubric'),
+                                    React.createElement('p', { className: 'text-sm text-gray-600 mb-3' }, 'Detailed scoring criteria for student assessment'),
+                                    React.createElement('button', {
+                                        className: 'inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700',
+                                        onClick: () => alert('Rubric PDF would download here')
+                                    },
+                                        React.createElement(Download, { className: 'mr-2 h-4 w-4' }),
+                                        'Download PDF'
+                                    )
+                                ),
+                            study.materials.worksheet && 
+                                React.createElement('div', { className: 'border rounded-lg p-4' },
+                                    React.createElement('h3', { className: 'font-semibold mb-2' }, 'Student Worksheet'),
+                                    React.createElement('p', { className: 'text-sm text-gray-600 mb-3' }, 'Exercises and questions for student practice'),
+                                    React.createElement('button', {
+                                        className: 'inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700',
+                                        onClick: () => alert('Worksheet PDF would download here')
+                                    },
+                                        React.createElement(Download, { className: 'mr-2 h-4 w-4' }),
+                                        'Download PDF'
+                                    )
+                                ),
+                            study.materials.presentation && 
+                                React.createElement('div', { className: 'border rounded-lg p-4' },
+                                    React.createElement('h3', { className: 'font-semibold mb-2' }, 'Presentation Slides'),
+                                    React.createElement('p', { className: 'text-sm text-gray-600 mb-3' }, 'Ready-to-use presentation for classroom instruction'),
+                                    React.createElement('button', {
+                                        className: 'inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700',
+                                        onClick: () => alert('Presentation PDF would download here')
+                                    },
+                                        React.createElement(Download, { className: 'mr-2 h-4 w-4' }),
+                                        'Download PDF'
+                                    )
+                                )
+                        )
+                    )
+                )
+            );
+        }
+
+        function App() {
+            return React.createElement(BrowserRouter, null,
+                React.createElement(Routes, null,
+                    React.createElement(Route, { path: '/educators', element: React.createElement(EducatorsHub) }),
+                    React.createElement(Route, { path: '/educators/case-study/:id', element: React.createElement(CaseStudyDetail) }),
+                    React.createElement(Route, { path: '/', element: React.createElement(EducatorsHub) })
+                )
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>

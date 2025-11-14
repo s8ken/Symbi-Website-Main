@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/educators",
+      "dest": "/educators-hub.html"
+    },
+    {
+      "src": "/educators/case-study/(.*)",
+      "dest": "/educators-hub.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
