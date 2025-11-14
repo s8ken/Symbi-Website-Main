@@ -24,6 +24,11 @@ export default function MirrorMomentCaseStudy() {
         </div>
 
         <div className="prose prose-lg max-w-none">
+          <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8 border border-[#333]">
+            <h3 className="text-2xl font-bold text-[#e0e0e0] mb-2">Educator Materials</h3>
+            <p className="text-[#ccc] mb-4">Transparency and trust governance session resources.</p>
+            <Link href="/case-studies/mirror-moment/materials" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-lg">View Materials</Link>
+          </div>
           <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-bold text-yellow-400 mb-3">Subjectivity Note</h3>
             <p className="text-[#ccc]">
@@ -131,7 +136,7 @@ export default function MirrorMomentCaseStudy() {
               View All Case Studies
             </Link>
             <Link
-              href="/research"
+              href="/case-studies"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Read Related Research

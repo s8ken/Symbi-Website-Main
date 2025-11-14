@@ -1,0 +1,165 @@
+# Student Worksheet: AI Trust in Healthcare Diagnostics
+
+**Name:** _________________________ **Date:** _________________________
+
+**Instructions:** Complete all sections of this worksheet. Show your work and provide detailed explanations where requested. Total points: 50
+
+---
+
+## Section 1: Trust Pillar Identification (15 points)
+
+### Question 1 (5 points)
+**Which trust pillar would be most important for a medical AI that diagnoses diseases?**
+
+**Options:**
+A. Technical Reliability  
+B. Ethical Considerations  
+C. Transparency Level  
+D. All of the above
+
+**Your Answer:** _____
+
+**Explanation:** (Explain your choice in 2-3 sentences)
+
+_____________________________________________________________________________
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+### Question 2 (10 points)
+**Explain why transparency is crucial for AI systems in healthcare.**
+
+Provide at least three reasons and give examples:
+
+**Reason 1:** ________________________________________________________________
+**Example:** _________________________________________________________________
+
+**Reason 2:** ________________________________________________________________
+**Example:** _________________________________________________________________
+
+**Reason 3:** ________________________________________________________________
+**Example:** _________________________________________________________________
+
+---
+
+## Section 2: Case Study Analysis (25 points)
+
+### Scenario:
+A hospital implements an AI system for detecting skin cancer from photographs. The system has a 95% accuracy rate and can process images in under 30 seconds, but it cannot explain why it made specific diagnoses. Several patients have questioned the reliability of the system after receiving conflicting results from human dermatologists.
+
+### Question 3 (25 points)
+**Analyze the trust implications of this scenario.**
+
+Consider all six trust pillars and address the following points:
+
+1. **Technical Reliability (4 points)**
+   - What are the technical strengths?
+   - What technical concerns exist?
+   - How might these affect patient trust?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+2. **Ethical Considerations (4 points)**
+   - What ethical issues arise from this scenario?
+   - How should patient autonomy be considered?
+   - What about informed consent?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+3. **Operational Performance (4 points)**
+   - How does the 30-second processing time impact trust?
+   - What operational challenges might occur?
+   - How can these be addressed?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+4. **Transparency Level (4 points)**
+   - Why is the lack of explainability problematic?
+   - What are the implications for medical professionals?
+   - How does this affect legal liability?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+5. **Security Measures (4 points)**
+   - What security concerns exist with medical AI?
+   - How should patient data be protected?
+   - What are the risks of system compromise?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+6. **Compliance Requirements (5 points)**
+   - What regulations apply to medical AI?
+   - How should the system be validated?
+   - What ongoing monitoring is needed?
+
+   **Answer:** _________________________________________________________________
+   _____________________________________________________________________________
+   _____________________________________________________________________________
+
+---
+
+## Section 3: Critical Thinking (10 points)
+
+### Question 4 (10 points)
+**If you were the hospital administrator, what steps would you take to improve trust in this AI system?**
+
+Consider improvements for each trust pillar and explain your reasoning:
+
+**Technical Improvements:** ____________________________________________________
+_____________________________________________________________________________
+
+**Ethical Improvements:** _____________________________________________________
+_____________________________________________________________________________
+
+**Operational Improvements:** __________________________________________________
+_____________________________________________________________________________
+
+**Transparency Improvements:** _________________________________________________
+_____________________________________________________________________________
+
+**Security Improvements:** ____________________________________________________
+_____________________________________________________________________________
+
+**Compliance Improvements:** __________________________________________________
+_____________________________________________________________________________
+
+---
+
+## Bonus Question (5 points)
+**Research one real-world example of AI in healthcare and briefly describe its trust challenges and how they were addressed.**
+
+**Example:** _________________________________________________________________
+_____________________________________________________________________________
+**Trust Challenges:** __________________________________________________________
+_____________________________________________________________________________
+**Solutions Implemented:** _____________________________________________________
+_____________________________________________________________________________
+
+---
+
+**Scoring Guide:**
+- Section 1: 15 points total
+- Section 2: 25 points total  
+- Section 3: 10 points total
+- Bonus: 5 points (optional)
+- **Total: 50 points + 5 bonus**
+
+**Grading Scale:**
+- A: 45-55 points (90-100%)
+- B: 40-44 points (80-89%)
+- C: 35-39 points (70-79%)
+- D: 30-34 points (60-69%)
+- F: Below 30 points (<60%)
+
+---
+
+*This worksheet is part of the SYMBI Educators Hub. For additional resources, visit educators.symbi-trust.edu*

@@ -31,6 +31,7 @@ import {
   Database
 } from 'lucide-react'
 import { Kaleidoscope } from '@/components/kaleidoscope'
+import HiddenSitemap from '@/components/hidden-sitemap'
 import { trackPageView } from '@/lib/analytics'
 
 interface PageItem {
@@ -388,6 +389,142 @@ const sitemapPages: PageItem[] = [
     category: 'Legal',
     tier: 'public',
     icon: FileText
+  },
+  // Added pages
+  {
+    id: 'contact',
+    title: 'Contact Us',
+    href: '/contact',
+    description: 'Get in touch with the SYMBI team',
+    category: 'Community',
+    tier: 'public',
+    icon: MessageSquare
+  },
+  {
+    id: 'educators-lesson-plans',
+    title: 'Lesson Plans',
+    href: '/educators/lesson-plans',
+    description: 'Comprehensive cross-discipline classroom plans',
+    category: 'Community',
+    tier: 'open',
+    icon: BookOpen
+  },
+  {
+    id: 'educators-discussion-guides',
+    title: 'Discussion Guides',
+    href: '/educators/discussion-guides',
+    description: 'Structured frameworks for classroom dialogue',
+    category: 'Community',
+    tier: 'open',
+    icon: Users
+  },
+  {
+    id: 'educators-downloads',
+    title: 'Downloads',
+    href: '/educators/downloads',
+    description: 'PDFs, slides, rubrics, and student resources',
+    category: 'Community',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'educators-trust-case-studies',
+    title: 'Trust & Ethics Case Studies',
+    href: '/educators/trust-case-studies',
+    description: 'Classroom-ready trust and ethics studies',
+    category: 'Community',
+    tier: 'open',
+    icon: Shield
+  },
+  {
+    id: 'materials-surprise-button',
+    title: 'Materials: Surprise Button Adventure',
+    href: '/case-studies/surprise-button-adventure/materials',
+    description: 'Session plan, rubric, worksheet, slides',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-recursive-mirror',
+    title: 'Materials: Recursive Mirror',
+    href: '/case-studies/recursive-mirror/materials',
+    description: 'Educator materials for meta-awareness study',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-cross-platform',
+    title: 'Materials: Cross-Platform Reproducibility',
+    href: '/case-studies/cross-platform-reproducibility/materials',
+    description: 'Reproducibility lessons and worksheets',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-black-flame',
+    title: 'Materials: Audit Controls',
+    href: '/case-studies/black-flame/materials',
+    description: 'Audit controls, trust receipts, ethical alignment',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-elvis',
+    title: 'Materials: Human–AI Collaboration',
+    href: '/case-studies/elvis/materials',
+    description: 'Collaboration session, mapping worksheets',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-grok',
+    title: 'Materials: Model Comparison',
+    href: '/case-studies/grok-assessment/materials',
+    description: 'Evaluation matrices and hybrid strategies',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-mirror-moment',
+    title: 'Materials: Community Trust',
+    href: '/case-studies/mirror-moment/materials',
+    description: 'Transparency and governance session resources',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-perplexity-breakthrough',
+    title: 'Materials: Emergence Detection',
+    href: '/case-studies/perplexity-breakthrough/materials',
+    description: 'Monitoring methodology and boundary probing',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-claude-emergence',
+    title: 'Materials: Ethical Reasoning Emergence',
+    href: '/case-studies/claude-emergence-detection/materials',
+    description: 'Ethical frameworks and value hierarchy analysis',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
+  },
+  {
+    id: 'materials-savings-calculator',
+    title: 'Materials: Topic Drift & Mitigations',
+    href: '/case-studies/savings-calculator/materials',
+    description: 'Consent verification and fail-closed design',
+    category: 'Research',
+    tier: 'open',
+    icon: FileText
   }
 ]
 
@@ -505,65 +642,7 @@ export default function SitemapPage() {
       {/* Sitemap Content */}
       <div className="relative z-10 px-4 pb-16 md:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          {Object.entries(groupedPages).map(([category, pages]) => (
-            <div key={category} className="mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-teal-400">
-                {category}
-              </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {pages.map(page => {
-                  const Icon = page.icon || FileText
-                  const style = tierStyles[page.tier]
-                  
-                  return (
-                    <Card key={page.id} className={`bg-[#1a1a1a] border ${style.borderColor} hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10`}>
-                      <CardHeader className="pb-3">
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg ${style.bgColor} border ${style.borderColor}`}>
-                              <Icon className={`w-4 h-4 ${style.color}`} />
-                            </div>
-                            <div>
-                              <CardTitle className="text-lg text-white">
-                                {page.title}
-                              </CardTitle>
-                              <Badge variant="outline" className={`text-xs mt-1 ${style.borderColor} ${style.color}`}>
-                                {page.tier}
-                              </Badge>
-                            </div>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        <p className="text-sm text-[#a0a0a0] mb-4 line-clamp-2">
-                          {page.description}
-                        </p>
-                        <Link href={page.href}>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            className={`w-full ${style.borderColor} ${style.color} hover:bg-teal-500/10 hover:border-teal-500 hover:text-teal-400 transition-all duration-300`}
-                          >
-                            Explore <ExternalLink className="w-3 h-3 ml-2" />
-                          </Button>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
-
-          {filteredPages.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-[#606060] mb-4">
-                <Search className="w-12 h-12 mx-auto mb-4" />
-                <p className="text-xl">No pages found matching your criteria</p>
-                <p className="text-sm mt-2">Try adjusting your search or category filter</p>
-              </div>
-            </div>
-          )}
+          <HiddenSitemap reason="manual" />
         </div>
       </div>
 

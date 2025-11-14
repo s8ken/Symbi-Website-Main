@@ -242,7 +242,7 @@ Before posting, replace placeholders in announcement content:
 **Mitigation:** Test thoroughly pre-launch, have quick-fix PR ready, monitor npm stats
 
 **Risk:** Security vulnerabilities reported
-**Mitigation:** security@symbi.world monitored, 24hr response commitment, have patch process ready
+**Mitigation:** stephen@symbi.world monitored, 24hr response commitment, have patch process ready
 
 **Risk:** Critical bugs discovered
 **Mitigation:** Prioritize fixes, communicate transparently, release patch ASAP
@@ -334,8 +334,8 @@ Before posting, replace placeholders in announcement content:
 ### Primary Contacts
 
 - **Technical Questions:** GitHub Discussions
-- **Security Issues:** security@symbi.world
-- **Business Inquiries:** stephen@yseeku.com
+- **Security Issues:** stephen@symbi.world
+- **Business Inquiries:** stephen@symbi.world
 - **Twitter/X:** @symbi_protocol
 - **General Support:** GitHub Issues
 

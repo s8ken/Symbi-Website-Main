@@ -18,6 +18,14 @@ export default function NotFound() {
         >
           Return to the SYMBIverse
         </Link>
+        <div className="mt-4">
+          <Link
+            href="/404-sitemap"
+            className="inline-block px-6 py-3 text-sm text-[#a0a0a0] hover:text-[#e0e0e0] underline-offset-4 hover:underline"
+          >
+            Open Hidden Sitemap →
+          </Link>
+        </div>
         <HiddenSitemap reason="404" />
       </div>
     </div>

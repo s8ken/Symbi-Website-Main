@@ -257,7 +257,7 @@ Experience SYMBI Symphony in action with our interactive demo:
 
 **Demo Credentials:**
 ```
-Email: demo@symbi-trust.com
+Email: stephen@symbi.world
 Password: demo123
 ```
 
@@ -349,7 +349,7 @@ Security is paramount in trust infrastructure. We take it seriously.
 
 **Please do not open public issues for security vulnerabilities.**
 
-Instead, email us at: **security@symbi.world**
+Instead, email us at: **stephen@symbi.world**
 
 We will respond within 24 hours and work with you to resolve the issue.
 

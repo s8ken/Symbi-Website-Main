@@ -23,6 +23,13 @@ export default function RecursiveMirrorCaseStudy() {
         </div>
 
         <div className="prose prose-lg max-w-none">
+          <div className="bg-[#1a1a1a] p-6 rounded-lg mb-8 border border-[#333]">
+            <h3 className="text-2xl font-bold text-[#e0e0e0] mb-2">Educator Materials</h3>
+            <p className="text-[#ccc] mb-4">Access session plans, rubrics, worksheets, and slides for teaching this case.</p>
+            <Link href="/case-studies/recursive-mirror/materials" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-lg">
+              View Materials
+            </Link>
+          </div>
           {/* Educational Context */}
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">

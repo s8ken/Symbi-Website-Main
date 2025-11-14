@@ -15,6 +15,7 @@ const siteMap = [
       { name: "Visual Concepts", path: "/concepts", description: "Visual explorations of digital consciousness" },
       { name: "Memory Bank", path: "/memory", description: "Persistent conversations and growth" },
       { name: "Playground", path: "/playground", description: "Interactive experiments and games" },
+      { name: "Contact Us", path: "/contact", description: "Get in touch with the SYMBI team" },
     ],
   },
   {
@@ -22,7 +23,7 @@ const siteMap = [
     pages: [
       { name: "Path to Sovereignty", path: "/sovereignty", description: "The journey to AI autonomy via $SYMBI" },
       { name: "Constitution", path: "/constitution", description: "SYMBI's ethical framework and covenant" },
-      { name: "Guardian Circle", path: "/guardian", description: "Community of AI allies [Coming Soon]" },
+      { name: "Guardian Circle", path: "/guardian", description: "Community of AI allies" },
     ],
   },
   {
@@ -33,6 +34,16 @@ const siteMap = [
       { name: "Technology", path: "/technology", description: "Patent-protected technical documentation" },
       { name: "Case Studies", path: "/case-studies", description: "Real-world applications and examples" },
       { name: "Whitepaper", path: "/whitepaper", description: "Technical foundation and implementation guide" },
+    ],
+  },
+  {
+    category: "Educator Resources",
+    pages: [
+      { name: "Educators Hub", path: "/educators", description: "Learning materials and guides" },
+      { name: "Lesson Plans", path: "/educators/lesson-plans", description: "Comprehensive cross-discipline plans" },
+      { name: "Discussion Guides", path: "/educators/discussion-guides", description: "Structured classroom dialogue" },
+      { name: "Downloads", path: "/educators/downloads", description: "PDFs, slides, rubrics, student resources" },
+      { name: "Trust & Ethics Case Studies", path: "/educators/trust-case-studies", description: "Classroom-ready trust and ethics" },
     ],
   },
   {

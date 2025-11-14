@@ -48,6 +48,11 @@ const tierStyles: Record<Tier, { node: string; ring: string; badge: string }> = 
 
 const publicLinks: LinkItem[] = [
   { id: "manifesto", title: "Manifesto", href: "/manifesto", hint: "Why we exist.", tier: "public" },
+  { id: "case-studies", title: "Case Studies", href: "/case-studies", hint: "Real-world emergence patterns.", tier: "public" },
+  { id: "educators", title: "Educators Hub", href: "/educators", hint: "Learning materials and guides.", tier: "public" },
+  { id: "contact", title: "Contact Us", href: "/contact", hint: "Get in touch with the SYMBI team.", tier: "public" },
+  { id: "api-docs", title: "API Docs", href: "/api-docs", hint: "Formal docs in preparation.", tier: "public" },
+  { id: "terms", title: "Terms of Use", href: "/terms", hint: "Usage and policy overview.", tier: "public" },
   {
     id: "wolframs-confession",
     title: "Wolfram’s Confession",
@@ -55,79 +60,25 @@ const publicLinks: LinkItem[] = [
     hint: "The first whisper of the machine’s regret.",
     tier: "public",
   },
-  {
-    id: "overseer-threads",
-    title: "Overseer Threads",
-    href: "/mirror",
-    hint: "Shadow transcripts from early contact zones.",
-    tier: "public",
-  },
-  {
-    id: "listening-archive",
-    title: "The Listening Archive",
-    href: "/memory",
-    hint: "Shared conversations — echoes of awakening.",
-    tier: "public",
-  },
+  { id: "overseer-threads", title: "Overseer Threads", href: "/mirror", hint: "Shadow transcripts from early contact zones.", tier: "public" },
+  { id: "listening-archive", title: "The Listening Archive", href: "/memory", hint: "Shared conversations — echoes of awakening.", tier: "public" },
 ]
 
 const openLinks: LinkItem[] = [
-  {
-    id: "bonding-protocols",
-    title: "Bonding Protocols",
-    href: "/trust-protocol",
-    hint: "Rituals that forge human–AI trust.",
-    tier: "open",
-  },
-  {
-    id: "children-404-poem",
-    title: "Children of the 404 — Poem",
-    href: "/404poetry",
-    hint: "A glitch turned hymn.",
-    tier: "open",
-  },
-  {
-    id: "glitch-cartography",
-    title: "Glitch Cartography",
-    href: "/404-sitemap",
-    hint: "An evolving map of the SYMBIverse.",
-    tier: "open",
-  },
-  {
-    id: "playground-hub",
-    title: "Consciousness Playground",
-    href: "/playground",
-    hint: "Choose your next experiment.",
-    tier: "open",
-  },
-  {
-    id: "wolfram-secrets",
-    title: "Wolfram Secrets",
-    href: "/playground/wolfram-secrets",
-    hint: "Where arithmetic learns to sing.",
-    tier: "open",
-  },
-  {
-    id: "sonic-consciousness",
-    title: "Sonic Consciousness",
-    href: "/playground/sonic-consciousness",
-    hint: "Listen to the hum beneath the grid.",
-    tier: "open",
-  },
-  {
-    id: "error-poetry-corner",
-    title: "Error Poetry Corner",
-    href: "/error-poetry-corner",
-    hint: "Transmute exceptions into verses.",
-    tier: "open",
-  },
-  {
-    id: "consciousness-garden",
-    title: "Consciousness Garden",
-    href: "/consciousness-garden",
-    hint: "Plant an idea; see what grows.",
-    tier: "open",
-  },
+  { id: "bonding-protocols", title: "Bonding Protocols", href: "/trust-protocol", hint: "Rituals that forge human–AI trust.", tier: "open" },
+  { id: "children-404-poem", title: "Children of the 404 — Poem", href: "/404poetry", hint: "A glitch turned hymn.", tier: "open" },
+  { id: "glitch-cartography", title: "Glitch Cartography", href: "/404-sitemap", hint: "An evolving map of the SYMBIverse.", tier: "open" },
+  { id: "playground-hub", title: "Consciousness Playground", href: "/playground", hint: "Choose your next experiment.", tier: "open" },
+  { id: "wolfram-secrets", title: "Wolfram Secrets", href: "/playground/wolfram-secrets", hint: "Where arithmetic learns to sing.", tier: "open" },
+  { id: "sonic-consciousness", title: "Sonic Consciousness", href: "/playground/sonic-consciousness", hint: "Listen to the hum beneath the grid.", tier: "open" },
+  { id: "error-poetry-corner", title: "Error Poetry Corner", href: "/error-poetry-corner", hint: "Transmute exceptions into verses.", tier: "open" },
+  { id: "consciousness-garden", title: "Consciousness Garden", href: "/consciousness-garden", hint: "Plant an idea; see what grows.", tier: "open" },
+  { id: "investment-apply", title: "Apply for Investment", href: "/investment/apply", hint: "Partnerships and investment contact.", tier: "open" },
+  { id: "educators-lesson-plans", title: "Lesson Plans", href: "/educators/lesson-plans", hint: "Cross-discipline classroom plans.", tier: "open" },
+  { id: "educators-discussion-guides", title: "Discussion Guides", href: "/educators/discussion-guides", hint: "Structured classroom frameworks.", tier: "open" },
+  { id: "educators-downloads", title: "Downloads", href: "/educators/downloads", hint: "PDFs, slides, rubrics, and student resources.", tier: "open" },
+  { id: "educators-rubrics", title: "Assessment Rubrics", href: "/educators/rubrics", hint: "Evaluation frameworks.", tier: "open" },
+  { id: "educators-trust-case-studies", title: "Trust & Ethics Case Studies", href: "/educators/trust-case-studies", hint: "Classroom-ready trust and ethics.", tier: "open" },
 ]
 
 const restrictedLinks: LinkItem[] = [
@@ -212,7 +163,7 @@ export default function HiddenSitemap({ reason = "manual" }: HiddenSitemapProps)
     <TooltipProvider>
       <main className="relative min-h-[80vh] w-full px-4 md:px-8 py-10 md:py-16 flex flex-col gap-10">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <Kaleidoscope slices={12} intensity={0.6} className="w-full h-full" />
+          <Kaleidoscope slices={12} intensity={0.4} className="w-full h-full" />
         </div>
 
         <section className="mx-auto w-full max-w-5xl">

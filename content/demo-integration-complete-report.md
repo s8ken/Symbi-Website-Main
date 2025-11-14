@@ -31,7 +31,7 @@ All changes have been pushed to GitHub and will auto-deploy via Vercel.
 - ✅ Linked "Try the Demo" buttons to live demo
 - ✅ Added new "Live Demo Available" section with:
   - Animated green pulse indicator
-  - Demo credentials display (demo@symbi-trust.com / demo123)
+  - Demo credentials display (stephen@symbi.world / demo123)
   - Features checklist (cryptographic receipts, multi-provider AI, bias detection)
   - Demo limits disclaimer
   - Large "Launch Live Demo" CTA button
@@ -132,7 +132,7 @@ https://symbi-synergy-pa9k82n5m-ycq.vercel.app
 
 ### Demo Credentials
 ```
-Email: demo@symbi-trust.com
+Email: stephen@symbi.world
 Password: demo123
 ```
 
@@ -203,7 +203,7 @@ Password: demo123
 **Code Display:**
 ```tsx
 <code className="block bg-black/40 text-green-300 px-4 py-3 rounded-lg font-mono">
-  demo@symbi-trust.com
+  stephen@symbi.world
 </code>
 ```
 
@@ -398,7 +398,7 @@ background: linear-gradient(to bottom right, #2563eb, #4f46e5);
 ## Security & Compliance Notes
 
 ### Demo Environment Security
-- **Public credentials** by design (demo@symbi-trust.com)
+- **Public credentials** by design (stephen@symbi.world)
 - **Rate limiting** in place (50 req/15min)
 - **Data purge** every 24 hours
 - **No real API keys** stored in demo data
@@ -433,7 +433,7 @@ background: linear-gradient(to bottom right, #2563eb, #4f46e5);
 
 ### Functional Testing
 - [ ] Verify demo loads at https://symbi-synergy-pa9k82n5m-ycq.vercel.app
-- [ ] Test demo credentials work (demo@symbi-trust.com / demo123)
+- [ ] Test demo credentials work (stephen@symbi.world / demo123)
 - [ ] Confirm all demo buttons link correctly
 - [ ] Test external link opens in new tab
 - [ ] Verify ecosystem buttons navigate to correct domains

@@ -60,7 +60,7 @@ While auditing the symbi-symphony project directories, I discovered a **fully fu
 
 ### Demo Credentials:
 ```
-Email: demo@symbi-trust.com
+Email: stephen@symbi.world
 Password: demo123
 ```
 

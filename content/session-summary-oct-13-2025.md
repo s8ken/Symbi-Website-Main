@@ -28,7 +28,7 @@
 
 **Demo Credentials (Now Visible Everywhere):**
 ```
-Email: demo@symbi-trust.com
+Email: stephen@symbi.world
 Password: demo123
 ```
 
@@ -278,7 +278,7 @@ Added enterprise-grade quality presentation to YCQ website:
 ## 🔒 Security Notes
 
 ### Demo Environment
-- **Public credentials by design** (demo@symbi-trust.com)
+- **Public credentials by design** (stephen@symbi.world)
 - **Rate limiting:** 50 requests per 15 minutes
 - **Data purge:** Every 24 hours automatically
 - **Conversation limits:** 3 conversations, 10 messages each
@@ -361,11 +361,11 @@ All content clearly marked as "Proposed Draft" to prevent securities interpretat
 **For Technical Questions:**
 - GitHub Issues: [repo]/issues
 - GitHub Discussions: [repo]/discussions
-- Email: stephen@yseeku.com
+- Email: stephen@symbi.world
 
 **For Business Inquiries:**
-- Website: https://yseeku.com
-- Email: stephen@yseeku.com
+- Website: https://symbi.world
+- Email: stephen@symbi.world
 - LinkedIn: [To be added]
 
 **For Community:**

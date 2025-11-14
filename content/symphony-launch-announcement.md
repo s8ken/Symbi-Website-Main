@@ -81,7 +81,7 @@ Built for serious AI deployments. 5/8
 Try it yourself (no signup needed):
 
 🌐 Live demo: [demo-link]
-📧 demo@symbi-trust.com
+📧 stephen@symbi.world
 🔑 demo123
 
 Experience:
@@ -167,7 +167,7 @@ Symphony solves these problems using W3C standards (DID Core 1.0, VC Data Model 
 
 We have a fully functional demo (no signup required):
 - https://symbi-synergy-pa9k82n5m-ycq.vercel.app
-- Email: demo@symbi-trust.com
+- Email: stephen@symbi.world
 - Password: demo123
 
 You can test cryptographic trust receipts, multi-provider AI comparison, bias detection, and audit trail exploration.
@@ -256,7 +256,7 @@ This isn't a prototype. It's built for real deployments:
 Try it yourself (no signup):
 
 🌐 **Demo:** https://symbi-synergy-pa9k82n5m-ycq.vercel.app
-📧 **Email:** demo@symbi-trust.com
+📧 **Email:** stephen@symbi.world
 🔑 **Password:** demo123
 
 **What you can try:**
@@ -453,7 +453,7 @@ Experience Symphony in action with our interactive demo:
 
 **Demo Credentials:**
 ```
-Email: demo@symbi-trust.com
+Email: stephen@symbi.world
 Password: demo123
 ```
 
@@ -535,7 +535,7 @@ Looking for:
 - **GitHub:** [repo-link]
 - **Website:** https://symbi.world
 - **Twitter/X:** @symbi_protocol
-- **Email:** stephen@yseeku.com
+- **Email:** stephen@symbi.world
 
 ---
 
@@ -586,7 +586,7 @@ Symphony provides:
 
 🎮 TRY IT LIVE
 Experience it yourself: [demo-link]
-(No signup required - use demo@symbi-trust.com / demo123)
+(No signup required - use stephen@symbi.world / demo123)
 
 💻 OPEN SOURCE
 MIT licensed | GitHub: [repo-link]
@@ -660,7 +660,7 @@ Would you be interested in covering this for your newsletter? I'm happy to provi
 Best regards,
 [Your Name]
 Founder, SYMBI Symphony
-stephen@yseeku.com
+stephen@symbi.world
 ```
 
 ---

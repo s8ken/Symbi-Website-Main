@@ -161,6 +161,33 @@ export default function DownloadsPage() {
         }
       ]
     }
+    ,
+    {
+      id: "trust-case-studies",
+      title: "Trust & Ethics Case Studies",
+      icon: FileText,
+      description: "Materials for AI trust, compliance, and bias detection case studies",
+      resources: [
+        {
+          name: "AI Trust in Healthcare – Session Plan",
+          type: "PDF",
+          size: "2.3 MB",
+          path: "/educators/downloads/ai-trust-healthcare-session-plan.pdf",
+        },
+        {
+          name: "AI Trust in Healthcare – Rubric",
+          type: "PDF",
+          size: "1.1 MB",
+          path: "/educators/downloads/ai-trust-healthcare-rubric.pdf",
+        },
+        {
+          name: "AI Trust in Healthcare – Worksheet",
+          type: "PDF",
+          size: "856 KB",
+          path: "/educators/downloads/ai-trust-healthcare-worksheet.pdf",
+        },
+      ],
+    }
   ]
 
   return (

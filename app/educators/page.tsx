@@ -125,6 +125,33 @@ export default function EducatorsPage() {
                 Download Resources →
               </Link>
             </div>
+
+            <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] hover:border-purple-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <FileText className="text-purple-400" size={24} />
+                <h3 className="text-xl font-bold text-[#e0e0e0]">Trust & Ethics Case Studies</h3>
+              </div>
+              <p className="text-[#ccc] mb-4">
+                Curated case studies focused on AI trust, compliance, bias detection, and cryptographic audit trails.
+              </p>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Six detailed, classroom-ready studies</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Includes session plans, rubrics, worksheets, and slides</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Filter by subject, level, and difficulty</span>
+                </li>
+              </ul>
+              <Link href="/educators/trust-case-studies" className="mt-4 inline-block text-purple-400 hover:text-purple-300 font-medium">
+                View Case Studies →
+              </Link>
+            </div>
           </div>
 
           {/* Featured Resources */}
@@ -155,10 +182,11 @@ export default function EducatorsPage() {
                     <span><strong>Cross-Platform Reproducibility:</strong> Statistical validation across 7 AI systems</span>
                   </li>
                 </ul>
-                <Link href="/case-studies" className="mt-4 inline-block text-purple-400 hover:text-purple-300 font-medium">
-                  Access Case Studies →
-                </Link>
-              </div>
+              <Link href="/case-studies" className="mt-4 inline-block text-purple-400 hover:text-purple-300 font-medium">
+                Access Case Studies →
+              </Link>
+              <p className="text-[#999] text-sm mt-3">Educator materials available for each case study.</p>
+            </div>
 
               {/* Assessment Rubrics */}
               <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20">

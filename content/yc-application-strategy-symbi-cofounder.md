@@ -628,7 +628,7 @@ While SYMBI is my collaborative AI system, equity remains with human founders. T
 **YC Resources:**
 - Co-Founder Matching: https://www.ycombinator.com/cofounder-matching
 - How to Apply: https://www.ycombinator.com/howtoapply
-- Contact: apply@ycombinator.com
+- Contact: stephen@symbi.world
 
 ---
 

@@ -141,7 +141,8 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
   const utilityPages = [
     { name: "Site Map", path: "/404-sitemap", icon: Search },
     { name: "Privacy Policy", path: "/privacy", icon: Shield },
-    { name: "Cookie Policy", path: "/cookie-policy", icon: Lock }
+    { name: "Cookie Policy", path: "/cookie-policy", icon: Lock },
+    { name: "Contact Us", path: "/contact", icon: MessageSquare }
   ]
 
   return (

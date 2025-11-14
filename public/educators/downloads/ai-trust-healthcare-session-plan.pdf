@@ -1,0 +1,146 @@
+# AI Trust in Healthcare Diagnostics - Session Plan
+
+## Session Overview
+**Duration:** 90 minutes  
+**Target Audience:** High School Computer Science Students  
+**Difficulty Level:** Intermediate  
+**Prerequisites:** Basic AI concepts, healthcare terminology familiarity
+
+## Learning Objectives
+By the end of this session, students will be able to:
+
+1. **Understand the six pillars of AI trust** (Technical, Ethical, Operational, Transparency, Security, Compliance)
+2. **Analyze real-world AI healthcare diagnostic systems** and identify their trust challenges
+3. **Apply SYMBI's trust scoring methodology** to evaluate AI system trustworthiness
+4. **Identify potential bias sources** in medical AI applications
+5. **Propose improvements** for enhancing AI system trustworthiness
+
+## Materials Required
+- Computer with internet access for each student
+- Access to SYMBI Trust Platform (https://symbi-trust.edu)
+- Healthcare AI case study materials (provided)
+- Trust scoring worksheets (downloadable)
+- Whiteboard or presentation screen
+- Calculator for trust score calculations
+
+## Session Timeline
+
+### 1. Introduction to AI Trust (15 minutes)
+**Objective:** Establish foundational understanding of AI trust concepts
+
+**Activities:**
+- Welcome and session overview (3 min)
+- Icebreaker: "Would you trust an AI doctor?" discussion (5 min)
+- Introduction to SYMBI's six-pillar trust model (7 min)
+
+**Key Concepts:**
+- Definition of AI trust
+- Importance of trust in healthcare AI
+- Overview of the six trust pillars
+
+### 2. Healthcare AI Case Study Review (20 minutes)
+**Objective:** Examine real healthcare AI systems and their trust challenges
+
+**Activities:**
+- Present three healthcare AI case studies (10 min)
+- Small group analysis of trust challenges (8 min)
+- Group sharing and discussion (2 min)
+
+**Case Studies:**
+1. **Skin Cancer Detection AI:** High accuracy but limited explainability
+2. **Radiology Assistant:** Fast diagnosis but potential bias issues
+3. **Drug Discovery AI:** Innovative but regulatory compliance challenges
+
+### 3. Trust Scoring Exercise (25 minutes)
+**Objective:** Students use SYMBI platform to score different AI systems
+
+**Activities:**
+- Platform login and navigation tutorial (5 min)
+- Individual trust scoring exercise (15 min)
+- Results comparison and discussion (5 min)
+
+**Exercise Details:**
+- Students score each case study using SYMBI platform
+- Compare scores across different systems
+- Identify which trust pillars are most challenging
+
+### 4. Group Discussion (15 minutes)
+**Objective:** Discuss findings and ethical implications of AI in healthcare
+
+**Discussion Questions:**
+- Which trust pillar is most important for healthcare AI?
+- How can we balance accuracy with explainability?
+- What role should patients play in AI trust decisions?
+- How do we address bias in medical AI?
+
+### 5. Assessment Quiz (10 minutes)
+**Objective:** Evaluate understanding of trust concepts and healthcare AI
+
+**Quiz Format:**
+- 5 multiple choice questions
+- 2 short answer questions
+- Immediate feedback provided
+
+### 6. Wrap-up and Homework (5 minutes)
+**Objective:** Summary of key points and assignment of follow-up tasks
+
+**Activities:**
+- Key takeaways summary (3 min)
+- Homework assignment explanation (2 min)
+
+**Homework Assignment:**
+- Research one healthcare AI system not covered in class
+- Write a 500-word analysis using the six-pillar trust model
+- Due next class session
+
+## Assessment Strategy
+
+### Formative Assessment
+- Observation during group activities
+- Participation in discussions
+- Trust scoring exercise completion
+
+### Summative Assessment
+- End-of-session quiz (10 points)
+- Homework assignment (25 points)
+- Participation grade (15 points)
+
+**Total: 50 points**
+
+## Differentiation Strategies
+
+### For Advanced Students
+- Additional case studies with complex scenarios
+- Research opportunities on emerging healthcare AI
+- Leadership roles in group discussions
+
+### For Struggling Students
+- Simplified trust scoring examples
+- Peer tutoring opportunities
+- Additional scaffolding materials
+
+## Technology Integration
+- SYMBI Trust Platform for hands-on experience
+- Online collaboration tools for group work
+- Digital presentation tools for case study sharing
+
+## Safety Considerations
+- Ensure all online activities are supervised
+- Protect student privacy when using external platforms
+- Provide alternative activities for students without internet access
+
+## Extension Activities
+- Field trip to local hospital or medical technology company
+- Guest speaker from healthcare AI industry
+- Student presentations on trust in other AI domains
+
+## Session Evaluation
+Students will complete a brief evaluation form assessing:
+- Session effectiveness
+- Material usefulness
+- Platform usability
+- Suggestions for improvement
+
+---
+
+*This session plan is part of the SYMBI Educators Hub. For questions or support, contact educators@symbi-trust.edu*
