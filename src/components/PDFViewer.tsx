@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Download, ExternalLink, ZoomIn, ZoomOut, RotateCcw, Maximize2 } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Button } from './ui/button-simple';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card-simple';
 
 interface PDFViewerProps {
   fileUrl: string;

@@ -2,8 +2,8 @@ import * as React from "react"
 import { cn } from "../../lib/utils"
 
 const Progress = React.forwardRef<
-  React.ElementRef<typeof import("./progress").default>,
-  React.ComponentPropsWithoutRef<typeof import("./progress").default>
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & { value?: number }
 >(({ className, value, ...props }, ref) => (
   <div
     ref={ref}

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Download, FileText, Star, Presentation, FileSpreadsheet, BookOpen, ExternalLink } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card-simple';
-import { Button } from '../ui/button-simple';
-import { Badge } from '../ui/badge-simple';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card-simple';
+import { Button } from './ui/button-simple';
+import { Badge } from './ui/badge-simple';
 
 interface TeacherResource {
   id: string;
@@ -21,7 +21,7 @@ interface TeacherResourcesProps {
   caseStudyTitle: string;
 }
 
-const TeacherResources: React.FC<TeacherResourcesProps> = ({ caseStudyId, caseStudyTitle }) => {
+const TeacherResources: React.FC<TeacherResourcesProps> = ({ caseStudyTitle }) => {
   const resources: TeacherResource[] = [
     {
       id: '1',

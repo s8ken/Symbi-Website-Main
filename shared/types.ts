@@ -1,4 +1,16 @@
-// Core SYMBI Types
+// Core Agent Types
+export interface Agent {
+  id: string;
+  did: string;
+  name: string;
+  type: 'ai' | 'human' | 'system';
+  trustScore: TrustScore;
+  credentials: Credential[];
+  metadata: Record<string, any>;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export interface TrustScore {
   overall: number;
   confidence: number;
@@ -14,107 +26,46 @@ export interface TrustScore {
   lastUpdated: Date;
 }
 
-export interface Agent {
+export interface Credential {
   id: string;
-  did: string;
-  name: string;
-  type: 'ai' | 'human' | 'organization';
-  trustScore: TrustScore;
-  credentials: VerifiableCredential[];
-  metadata: Record<string, any>;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface VerifiableCredential {
-  id: string;
-  type: string[];
+  type: string;
   issuer: string;
-  issuanceDate: Date;
-  expirationDate?: Date;
-  credentialSubject: {
-    id: string;
-    [key: string]: any;
-  };
-  proof: {
-    type: string;
-    created: Date;
-    verificationMethod: string;
-    proofPurpose: string;
-    proofValue: string;
-  };
-  status?: string;
+  subject: string;
+  claims: Record<string, any>;
+  proof: Proof;
+  issuedAt: Date;
+  expiresAt?: Date;
+  status: 'active' | 'revoked' | 'expired';
 }
 
-export interface TrustDeclaration {
-  id: string;
-  agentId: string;
-  assertion: string;
-  evidence: Evidence[];
-  score: number;
-  confidence: number;
-  verificationStatus: 'pending' | 'verified' | 'rejected';
-  createdAt: Date;
-  verifiedAt?: Date;
+export interface Proof {
+  type: string;
+  created: Date;
+  verificationMethod: string;
+  proofPurpose: string;
+  proofValue: string;
 }
 
-export interface Evidence {
-  type: 'document' | 'signature' | 'attestation' | 'metric';
-  hash: string;
-  metadata: Record<string, any>;
-  timestamp: Date;
-}
-
-export interface AuditEntry {
-  id: string;
-  transactionId: string;
-  action: string;
-  actor: string;
-  target: string;
-  metadata: Record<string, any>;
-  hash: string;
-  previousHash: string;
-  signature: string;
-  timestamp: Date;
-}
-
-export interface AIProvider {
-  id: string;
-  name: string;
-  type: 'openai' | 'anthropic' | 'perplexity' | 'v0';
-  endpoint: string;
-  apiKey?: string;
-  rateLimit: number;
-  status: 'active' | 'inactive' | 'error';
-  metrics: ProviderMetrics;
-}
-
-export interface ProviderMetrics {
-  totalRequests: number;
-  successfulRequests: number;
-  failedRequests: number;
-  averageLatency: number;
-  lastRequestAt?: Date;
-}
-
+// Bias Analysis Types
 export interface BiasAnalysis {
   id: string;
   content: string;
   providerId: string;
-  detectedBiases: BiasResult[];
+  detectedBiases: Bias[];
   overallScore: number;
   confidence: number;
   analyzedAt: Date;
 }
 
-export interface BiasResult {
+export interface Bias {
   type: string;
   severity: 'low' | 'medium' | 'high';
   description: string;
   evidence: string;
-  mitigation?: string;
+  mitigation: string;
 }
 
+// Compliance Types
 export interface ComplianceReport {
   id: string;
   agentId: string;
@@ -127,217 +78,143 @@ export interface ComplianceReport {
 
 export interface ComplianceFinding {
   category: string;
-  severity: 'critical' | 'major' | 'minor';
+  severity: 'minor' | 'major' | 'critical';
   description: string;
   evidence: string;
   recommendation: string;
   status: 'open' | 'resolved' | 'accepted';
 }
 
-export interface DIDDocument {
-  id: string;
-  context: string[];
-  verificationMethod: VerificationMethod[];
-  authentication: string[];
-  assertionMethod: string[];
-  capabilityDelegation: string[];
-  capabilityInvocation: string[];
-  service: ServiceEndpoint[];
-  created: Date;
-  updated: Date;
-}
-
-export interface VerificationMethod {
+// Security Types
+export interface SecurityAlert {
   id: string;
   type: string;
-  controller: string;
-  publicKeyJwk?: Record<string, any>;
-  publicKeyMultibase?: string;
+  severity: 'low' | 'medium' | 'high' | 'critical';
+  message: string;
+  timestamp: Date;
+  source: string;
+  metadata?: Record<string, any>;
 }
 
-export interface ServiceEndpoint {
-  id: string;
-  type: string;
-  serviceEndpoint: string;
+export interface ThreatTrend {
+  timestamp: Date;
+  threatLevel: number;
+  category: string;
+  description: string;
 }
 
 // API Response Types
 export interface ApiResponse<T> {
   success: boolean;
-  data?: T;
-  error?: {
-    code: string;
-    message: string;
-    details?: any;
-  };
-  metadata?: {
-    timestamp: Date;
-    requestId: string;
-    version: string;
-  };
+  data: T;
+  message?: string;
+  error?: string;
 }
 
-// WebSocket Message Types
-export interface WsMessage {
-  type: 'trust_update' | 'compliance_alert' | 'bias_detected' | 'audit_entry';
-  payload: any;
+export interface PaginatedResponse<T> {
+  items: T[];
+  total: number;
+  page: number;
+  limit: number;
+  totalPages: number;
+}
+
+// WebSocket Types
+export interface SocketState {
+  connected: boolean;
+  error: string | null;
+  socketId: string | null;
+}
+
+// Educational Types
+export interface CaseStudy {
+  id: string;
+  title: string;
+  description: string;
+  subject: string;
+  gradeLevel: string;
+  duration: string;
+  difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
+  topics: string[];
+  materials: {
+    sessionPlan: boolean;
+    rubric: boolean;
+    worksheet: boolean;
+    presentation: boolean;
+  };
+  trustScore: number;
+  learningObjectives: string[];
+  prerequisites: string[];
+  assessmentCriteria: string[];
+}
+
+export interface EducationalResource {
+  id: string;
+  type: 'session_plan' | 'rubric' | 'worksheet' | 'presentation' | 'pdf';
+  title: string;
+  description: string;
+  content: string;
+  downloadUrl: string;
+  size?: string;
+  format: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Analytics Types
+export interface AnalyticsData {
+  trustScores: TimeSeriesData[];
+  verifications: VerificationData[];
+  compliance: ComplianceData[];
+  biasDetection: BiasData[];
+}
+
+export interface TimeSeriesData {
   timestamp: Date;
+  value: number;
+  category: string;
+}
+
+export interface VerificationData {
+  id: string;
+  agentId: string;
+  method: string;
+  result: 'success' | 'failure' | 'pending';
+  timestamp: Date;
+  metadata?: Record<string, any>;
+}
+
+export interface ComplianceData {
+  framework: string;
+  score: number;
+  findings: number;
+  status: 'compliant' | 'non_compliant' | 'partial';
+}
+
+export interface BiasData {
+  type: string;
+  count: number;
+  severity: 'low' | 'medium' | 'high';
+  trend: 'increasing' | 'decreasing' | 'stable';
 }
 
 // Error Types
-export class SYMBIError extends Error {
-  constructor(
-    message: string,
-    public code: string,
-    public statusCode: number = 500,
-    public details?: any
-  ) {
-    super(message);
-    this.name = 'SYMBIError';
-  }
-}
-
-export enum ErrorCodes {
-  INVALID_DID = 'INVALID_DID',
-  INVALID_CREDENTIAL = 'INVALID_CREDENTIAL',
-  TRUST_SCORE_TOO_LOW = 'TRUST_SCORE_TOO_LOW',
-  PROVIDER_UNAVAILABLE = 'PROVIDER_UNAVAILABLE',
-  BIAS_DETECTION_FAILED = 'BIAS_DETECTION_FAILED',
-  AUDIT_TRAIL_CORRUPTED = 'AUDIT_TRAIL_CORRUPTED',
-  KMS_OPERATION_FAILED = 'KMS_OPERATION_FAILED',
-  RATE_LIMIT_EXCEEDED = 'RATE_LIMIT_EXCEEDED',
-  UNAUTHORIZED = 'UNAUTHORIZED',
-  FORBIDDEN = 'FORBIDDEN',
-  HANDSHAKE_FAILED = 'HANDSHAKE_FAILED',
-  HANDSHAKE_EXPIRED = 'HANDSHAKE_EXPIRED',
-  INVALID_CHALLENGE_RESPONSE = 'INVALID_CHALLENGE_RESPONSE'
-}
-
-// Trust Handshake Protocol Types
-export interface TrustHandshake {
-  id: string;
-  initiatorDID: string;
-  responderDID: string;
-  phase: HandshakePhase;
-  status: TrustHandshakeStatus;
-  initiatorPublicKey: string;
-  responderPublicKey?: string;
-  trustRequirements: string[];
-  challenges: CryptographicChallenge[];
-  createdAt: Date;
-  updatedAt: Date;
-  metadata: {
-    attempts: number;
-    lastChallengeTimestamp: number;
-    proofOfPossession?: any;
-    zeroKnowledgeProof?: any;
-    multiPartyComputation?: any;
-    trustScore?: number;
-    [key: string]: any;
-  };
-}
-
-export enum HandshakePhase {
-  CHALLENGE_GENERATION = 'CHALLENGE_GENERATION',
-  RESPONSE_VERIFICATION = 'RESPONSE_VERIFICATION',
-  TRUST_ESTABLISHMENT = 'TRUST_ESTABLISHMENT',
-  COMPLETED = 'COMPLETED'
-}
-
-export enum TrustHandshakeStatus {
-  ACTIVE = 'ACTIVE',
-  COMPLETED = 'COMPLETED',
-  FAILED = 'FAILED',
-  EXPIRED = 'EXPIRED'
-}
-
-export interface CryptographicChallenge {
-  id: string;
-  phase: HandshakePhase;
-  type: 'PROOF_OF_POSSESSION' | 'ZERO_KNOWLEDGE_PROOF' | 'MULTI_PARTY_COMPUTATION';
-  nonce?: string;
-  puzzle?: string;
-  difficulty?: number;
-  statement?: string;
-  witness?: string;
-  inputs?: any;
+export interface AppError {
+  code: string;
+  message: string;
+  details?: Record<string, any>;
   timestamp: Date;
-  expiresAt: Date;
-  metadata?: {
-    requiredComputations?: number;
-    estimatedTimeMs?: number;
-    proofSystem?: string;
-    circuit?: string;
-    publicInputs?: string[];
-    computation?: string;
-    parties?: string[];
-    protocol?: string;
-    [key: string]: any;
-  };
 }
 
-// Oracle System Types
-export interface OracleNode {
-  id: string;
-  did: string;
-  endpoint: string;
-  publicKey: string;
-  reputation: number;
-  stake: number;
-  status: 'active' | 'inactive' | 'penalized';
-  lastHeartbeat: Date;
-  submittedData: OracleData[];
-}
-
-export interface OracleData {
-  id: string;
-  oracleId: string;
-  dataType: 'trust_score' | 'credential_status' | 'compliance_status' | 'reputation';
-  data: any;
-  signature: string;
-  timestamp: Date;
-  blockNumber?: number;
-  transactionHash?: string;
-}
-
-export interface OracleConsensus {
-  id: string;
-  dataType: string;
-  targetDID: string;
-  submissions: OracleData[];
-  consensusResult: any;
-  consensusAlgorithm: 'majority' | 'weighted_average' | 'median';
-  threshold: number;
-  finalizedAt: Date;
-  rewardDistributed: boolean;
-}
-
-// 9-Step Scoring Process Types
-export interface ScoringStep {
-  id: number;
-  name: string;
-  description: string;
-  weight: number;
-  inputs: string[];
-  computation: string;
-  outputs: string[];
-  dependencies: number[];
-}
-
-export interface ScoringProcess {
-  id: string;
-  agentDID: string;
-  steps: ScoringStep[];
-  currentStep: number;
-  status: 'pending' | 'in_progress' | 'completed' | 'failed';
-  results: { [stepId: number]: any };
-  finalScore?: number;
-  startedAt: Date;
-  completedAt?: Date;
-  metadata: {
-    oracleData?: OracleData[];
-    blockchainAnchors?: string[];
-    computationProofs?: string[];
-    [key: string]: any;
+// Configuration Types
+export interface AppConfig {
+  apiUrl: string;
+  socketUrl: string;
+  environment: 'development' | 'staging' | 'production';
+  features: {
+    realTimeUpdates: boolean;
+    biasDetection: boolean;
+    complianceMonitoring: boolean;
+    analytics: boolean;
   };
 }

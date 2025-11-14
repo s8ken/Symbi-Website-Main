@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Brain, Send, RefreshCw, BarChart3, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Brain, RefreshCw, BarChart3, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';

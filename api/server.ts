@@ -29,6 +29,7 @@ import blockchainRoutes from './routes/blockchain.js';
 import biasRoutes from './routes/bias.js';
 import zkRoutes from './routes/zk.js';
 import secureMPCRoutes from './routes/secureMPC.js';
+import analyticsRoutes from './routes/analytics.js';
 
 import { setupSocketHandlers } from './services/socket.js';
 import { connectDatabase } from './utils/database.js';
@@ -114,6 +115,7 @@ app.use('/api/blockchain', blockchainRoutes);
 app.use('/api/bias', biasRoutes);
 app.use('/api/zk', zkRoutes);
 app.use('/api/secure-mpc', secureMPCRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // Protected routes (require authentication)
 app.use('/api/admin', authMiddleware, (req, res) => {

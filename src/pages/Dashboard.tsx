@@ -1,30 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { 
-  TrendingUp, 
+
   Shield, 
   Activity, 
   Users, 
-  AlertTriangle, 
   CheckCircle,
-  Clock,
-  BarChart3,
-  PieChart,
-  LineChart,
+  AlertTriangle,
+
+
+
+
+
+
   Brain,
   Key,
   FileCheck,
-  Zap
+
 } from 'lucide-react';
-import { LineChart as RechartsLineChart, Line, AreaChart, Area, BarChart, Bar, PieChart as RechartsPieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useTrustStore } from '../stores/trustStore';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
+
 import { Progress } from '../components/ui/progress';
 import { Button } from '../components/ui/button';
-import { toast } from 'sonner';
+
+
+const TRUST_WEIGHTS = {
+  technical: 0.25,
+  ethical: 0.20,
+  operational: 0.20,
+  transparency: 0.15,
+  security: 0.10,
+  compliance: 0.10
+};
 
 const Dashboard: React.FC = () => {
-  const { agents, overallTrustScore, isLoading, initializeTrustData } = useTrustStore();
+  const [isLoading] = useState(false);
+  const { agents, getOverallTrustScore, initializeTrustData } = useTrustStore();
+  const overallTrustScore = getOverallTrustScore();
   const [selectedTimeframe, setSelectedTimeframe] = useState('24h');
   const [realTimeUpdates, setRealTimeUpdates] = useState(true);
 
@@ -35,7 +48,7 @@ const Dashboard: React.FC = () => {
     if (realTimeUpdates) {
       const interval = setInterval(() => {
         // Simulate trust score fluctuations
-        const randomChange = (Math.random() - 0.5) * 0.02;
+
         // This would be handled by the store in a real implementation
       }, 5000);
       
@@ -110,14 +123,14 @@ const Dashboard: React.FC = () => {
     if (score >= 0.6) return 'text-yellow-500';
     if (score >= 0.4) return 'text-orange-500';
     return 'text-red-500';
-  };
+  // };
 
-  const getTrustScoreBg = (score: number) => {
-    if (score >= 0.9) return 'bg-green-500';
-    if (score >= 0.75) return 'bg-blue-500';
-    if (score >= 0.6) return 'bg-yellow-500';
-    if (score >= 0.4) return 'bg-orange-500';
-    return 'bg-red-500';
+  // const getTrustScoreBg = (score: number) => {
+  //   if (score >= 0.9) return 'bg-green-500';
+  //   if (score >= 0.75) return 'bg-blue-500';
+  //   if (score >= 0.6) return 'bg-yellow-500';
+  //   if (score >= 0.4) return 'bg-orange-500';
+  //   return 'bg-red-500';
   };
 
   if (isLoading) {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { io, Socket } from 'socket.io-client';
-import { EnhancedAlert, EnhancedMetricCard, EnhancedProgressBar, LoadingSpinner } from '../components/ui/enhanced';
+import { useState, useEffect, useCallback } from 'react';
+import { io } from 'socket.io-client';
+import { EnhancedAlert, EnhancedMetricCard, LoadingSpinner } from '../components/ui/enhanced';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from 'recharts';
 import { Shield, TrendingUp, AlertTriangle, CheckCircle, Activity, Users, Target, Zap } from 'lucide-react';
 
@@ -34,7 +34,7 @@ interface Alert {
 }
 
 export function EnhancedDashboard() {
-  const [socket, setSocket] = useState<Socket | null>(null);
+  // const [socket, setSocket] = useState<Socket | null>(null);
   const [metrics, setMetrics] = useState<RealTimeMetrics>({
     trustScore: 85.8,
     complianceRate: 92.0,
@@ -99,7 +99,7 @@ export function EnhancedDashboard() {
       addAlert(alert);
     });
 
-    setSocket(newSocket);
+    // setSocket(newSocket);
 
     return () => {
       newSocket.close();

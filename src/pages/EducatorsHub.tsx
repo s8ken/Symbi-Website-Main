@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Download, FileText, Users, Clock, Star, ChevronRight, Filter, Search } from 'lucide-react';
+import { BookOpen, Download, FileText, Users, Clock, Star, ChevronRight, Search } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card-simple';
 import { Button } from '../components/ui/button-simple';
 import { Badge } from '../components/ui/badge-simple';

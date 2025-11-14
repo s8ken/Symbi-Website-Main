@@ -33,27 +33,27 @@ import PDFViewer from '../components/PDFViewer';
 //   }[];
 // }
 
-interface Rubric {
-  criteria: {
+// interface Rubric {
+//   criteria: {
     name: string;
-    excellent: string;
-    good: string;
-    satisfactory: string;
-    needsImprovement: string;
-    weight: number;
+//     excellent: string;
+//     good: string;
+//     satisfactory: string;
+//     needsImprovement: string;
+//     weight: number;
   }[];
-  totalPoints: number;
+//   totalPoints: number;
 }
 
-interface Worksheet {
-  sections: {
-    title: string;
-    questions: {
-      question: string;
-      type: 'multiple-choice' | 'short-answer' | 'essay' | 'calculation';
-      points?: number;
-      options?: string[];
-    }[];
+// interface Worksheet {
+//   sections: {
+//     title: string;
+//     questions: {
+//       question: string;
+//       type: 'multiple-choice' | 'short-answer' | 'essay' | 'calculation';
+//       points?: number;
+//       options?: string[];
+//     }[];
   }[];
 }
 
@@ -230,22 +230,22 @@ const CaseStudyDetail: React.FC = () => {
     );
   }
 
-  const downloadMaterial = (type: string, format: string) => {
-    // Create download link for API endpoint
-    const link = document.createElement('a');
-    link.href = `/api/educators/download/${id}/${type}`;
-    link.download = `${caseStudy.title.replace(/\s+/g, '-').toLowerCase()}-${type}.${format}`;
-    link.click();
-  };
+  // const downloadMaterial = (type: string, format: string) => {
+  //   // Create download link for API endpoint
+  //   const link = document.createElement('a');
+  //   link.href = `/api/educators/download/${id}/${type}`;
+  //   link.download = `${caseStudy.title.replace(/\s+/g, '-').toLowerCase()}-${type}.${format}`;
+  //   link.click();
+  // };
 
-  const openPdfViewer = (type: string, title: string, size?: string) => {
-    setCurrentPdf({
-      url: `/api/educators/download/${id}/${type}`,
-      name: title,
-      size
-    });
-    setPdfViewerOpen(true);
-  };
+  // const openPdfViewer = (type: string, title: string, size?: string) => {
+  //   setCurrentPdf({
+  //     url: `/api/educators/download/${id}/${type}`,
+  //     name: title,
+  //     size
+  //   });
+  //   setPdfViewerOpen(true);
+  // };
 
   const closePdfViewer = () => {
     setPdfViewerOpen(false);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileCheck, AlertTriangle, TrendingUp, Shield } from 'lucide-react';
+import { FileCheck, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';

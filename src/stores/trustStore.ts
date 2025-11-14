@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Agent, TrustScore, BiasAnalysis, ComplianceReport } from '../../../shared/types';
+import { Agent, TrustScore, BiasAnalysis, ComplianceReport } from '../../shared/types';
 
 interface TrustState {
   agents: Agent[];
@@ -29,6 +29,7 @@ export const useTrustStore = create<TrustState>((set, get) => ({
   complianceReports: [],
   isLoading: false,
   error: null,
+  overallTrustScore: 0,
 
   initializeTrustData: async () => {
     set({ isLoading: true, error: null });

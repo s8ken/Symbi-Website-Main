@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, AlertCircle, CheckCircle, Clock } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 
 const TrustConsole: React.FC = () => {

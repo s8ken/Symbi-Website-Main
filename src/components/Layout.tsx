@@ -7,20 +7,23 @@ import {
   FileCheck, 
   Search, 
   Settings,
-  Activity,
-  Users,
+
+
   BarChart3,
-  Key,
-  CheckCircle,
-  AlertTriangle,
-  BookOpen
+
+
+
+  BookOpen,
+  BarChart,
+  TrendingUp
 } from 'lucide-react';
 import { useTrustStore } from '../stores/trustStore';
 import { useEffect } from 'react';
 
 const Layout: React.FC = () => {
   const location = useLocation();
-  const { overallTrustScore, isLoading } = useTrustStore();
+  const { getOverallTrustScore, isLoading } = useTrustStore();
+  const overallTrustScore = getOverallTrustScore();
 
   useEffect(() => {
     // Initialize trust data
@@ -30,10 +33,13 @@ const Layout: React.FC = () => {
   const navigation = [
     { name: 'Dashboard', href: '/', icon: BarChart3 },
     { name: 'Trust Console', href: '/trust', icon: Shield },
+    { name: 'Trust Dashboard', href: '/trust/dashboard', icon: TrendingUp },
     { name: 'AI Orchestration', href: '/ai', icon: Brain },
     { name: 'DID Manager', href: '/did', icon: IdCard },
     { name: 'Compliance Portal', href: '/compliance', icon: FileCheck },
     { name: 'Audit Explorer', href: '/audit', icon: Search },
+    { name: 'Security Monitor', href: '/security', icon: Shield },
+    { name: 'Analytics', href: '/analytics', icon: BarChart },
     { name: 'Educators Hub', href: '/educators', icon: BookOpen },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];

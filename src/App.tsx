@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -13,6 +13,11 @@ import AuditExplorer from './pages/AuditExplorer';
 import EducatorsHub from './pages/EducatorsHub';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import Settings from './pages/Settings';
+
+// Synergy UI Components
+import { TrustDashboard } from './components/synergy/TrustDashboard';
+import SecurityMonitor from './components/synergy/SecurityMonitor';
+import AnalyticsPage from './components/resonate/AnalyticsPage';
 
 import './App.css';
 
@@ -35,10 +40,13 @@ function App() {
             <Route path="/" element={<Layout />}>
               <Route index element={<Dashboard />} />
               <Route path="trust" element={<TrustConsole />} />
+              <Route path="trust/dashboard" element={<TrustDashboard />} />
               <Route path="ai" element={<AIOrchestration />} />
               <Route path="did" element={<DIDManager />} />
               <Route path="compliance" element={<CompliancePortal />} />
               <Route path="audit" element={<AuditExplorer />} />
+              <Route path="security" element={<SecurityMonitor />} />
+              <Route path="analytics" element={<AnalyticsPage />} />
               <Route path="educators" element={<EducatorsHub />} />
               <Route path="educators/case-study/:id" element={<CaseStudyDetail />} />
               <Route path="settings" element={<Settings />} />

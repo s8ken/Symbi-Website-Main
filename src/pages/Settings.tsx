@@ -1,6 +1,6 @@
 import React from 'react';
-import { Settings, Shield, Key, Bell, User, Database, Globe } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
+import { Shield, Key, Bell, User, Database, Globe } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 
 const Settings: React.FC = () => {
