@@ -1,13 +1,13 @@
 {
-  "name": "symbi-trojan",
+  "name": "symbi-website",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "SYMBI Trojan - Viral Trust Infrastructure Demo Platform",
+  "description": "SYMBI Website - Main website with educators hub",
   "scripts": {
-    "dev": "vite --config vite.config.trojan-final.ts --port 3001",
-    "build": "vite build --config vite.config.trojan-final.ts",
-    "preview": "vite preview --config vite.config.trojan-final.ts --port 3001",
+    "dev": "vite --port 3001",
+    "build": "vite build",
+    "preview": "vite preview --port 3001",
     "vercel-build": "npm run build"
   },
   "dependencies": {

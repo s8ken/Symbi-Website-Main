@@ -14,7 +14,7 @@ export default defineConfig({
     host: true,
   },
   build: {
-    outDir: 'dist-trojan',
+    outDir: 'dist',
     sourcemap: true,
   }
 })
