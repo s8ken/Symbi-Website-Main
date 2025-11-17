@@ -6,163 +6,6 @@ import { Download, FileText, Presentation, BookOpen, FileSpreadsheet, Archive, U
 export default function DownloadsPage() {
   const resourceCategories = [
     {
-      id: "lesson-plans",
-      title: "Lesson Plans",
-      icon: BookOpen,
-      description: "Complete lesson plans with learning objectives, materials, and assessment strategies",
-      resources: [
-        {
-          name: "Educator's Guide",
-          type: "PDF",
-          size: "2.4 MB",
-          path: "/educators/downloads/SYMBI-Educators-Guide.pdf"
-        },
-        {
-          name: "Lesson Plan Collection",
-          type: "PDF",
-          size: "8.7 MB",
-          path: "/educators/downloads/SYMBI-Lesson-Plans-Complete.pdf"
-        },
-        {
-          name: "All Lesson Plans",
-          type: "ZIP",
-          size: "15.2 MB",
-          path: "/educators/downloads/SYMBI-Lesson-Plans.zip"
-        }
-      ]
-    },
-    {
-      id: "discussion-guides",
-      title: "Discussion Guides",
-      icon: Users,
-      description: "Structured frameworks for facilitating meaningful classroom conversations",
-      resources: [
-        {
-          name: "Discussion Guide Collection",
-          type: "PDF",
-          size: "6.3 MB",
-          path: "/educators/downloads/SYMBI-Discussion-Guides.pdf"
-        },
-        {
-          name: "All Discussion Guides",
-          type: "ZIP",
-          size: "12.8 MB",
-          path: "/educators/downloads/SYMBI-Discussion-Guides.zip"
-        },
-        {
-          name: "Prompt Cards",
-          type: "PDF",
-          size: "1.8 MB",
-          path: "/educators/downloads/SYMBI-Discussion-Prompt-Cards.pdf"
-        }
-      ]
-    },
-    {
-      id: "presentation-materials",
-      title: "Presentation Materials",
-      icon: Presentation,
-      description: "Slides, visual aids, and presentation resources for classroom instruction",
-      resources: [
-        {
-          name: "Introduction to AI Consciousness",
-          type: "PPTX",
-          size: "4.2 MB",
-          path: "/educators/downloads/SYMBI-Intro-Consciousness.pptx"
-        },
-        {
-          name: "SYMBI Case Studies Overview",
-          type: "PPTX",
-          size: "5.1 MB",
-          path: "/educators/downloads/SYMBI-Case-Studies.pptx"
-        },
-        {
-          name: "All Presentation Slides",
-          type: "ZIP",
-          size: "22.4 MB",
-          path: "/educators/downloads/SYMBI-Presentation-Slides.zip"
-        }
-      ]
-    },
-    {
-      id: "assessment-tools",
-      title: "Assessment Tools",
-      icon: FileSpreadsheet,
-      description: "Rubrics, evaluation matrices, and assessment templates",
-      resources: [
-        {
-          name: "Critical Thinking Rubric",
-          type: "PDF",
-          size: "0.8 MB",
-          path: "/educators/downloads/SYMBI-Critical-Thinking-Rubric.pdf"
-        },
-        {
-          name: "Ethical Reasoning Assessment",
-          type: "PDF",
-          size: "1.1 MB",
-          path: "/educators/downloads/SYMBI-Ethical-Reasoning-Assessment.pdf"
-        },
-        {
-          name: "All Assessment Tools",
-          type: "ZIP",
-          size: "3.7 MB",
-          path: "/educators/downloads/SYMBI-Assessment-Tools.zip"
-        }
-      ]
-    },
-    {
-      id: "student-resources",
-      title: "Student Resources",
-      icon: FileText,
-      description: "Handouts, study guides, and materials for student use",
-      resources: [
-        {
-          name: "Consciousness Study Guide",
-          type: "PDF",
-          size: "1.4 MB",
-          path: "/educators/downloads/SYMBI-Consciousness-Study-Guide.pdf"
-        },
-        {
-          name: "Case Study Summaries",
-          type: "PDF",
-          size: "2.1 MB",
-          path: "/educators/downloads/SYMBI-Case-Study-Summaries.pdf"
-        },
-        {
-          name: "All Student Resources",
-          type: "ZIP",
-          size: "6.9 MB",
-          path: "/educators/downloads/SYMBI-Student-Resources.zip"
-        }
-      ]
-    },
-    {
-      id: "curriculum-mapping",
-      title: "Curriculum Mapping",
-      icon: Calendar,
-      description: "Integration guides for different academic disciplines and course levels",
-      resources: [
-        {
-          name: "Philosophy Integration",
-          type: "PDF",
-          size: "1.2 MB",
-          path: "/educators/downloads/SYMBI-Philosophy-Integration.pdf"
-        },
-        {
-          name: "Computer Science Integration",
-          type: "PDF",
-          size: "1.5 MB",
-          path: "/educators/downloads/SYMBI-CS-Integration.pdf"
-        },
-        {
-          name: "Complete Curriculum Guide",
-          type: "PDF",
-          size: "4.3 MB",
-          path: "/educators/downloads/SYMBI-Curriculum-Guide.pdf"
-        }
-      ]
-    }
-    ,
-    {
       id: "trust-case-studies",
       title: "Trust & Ethics Case Studies",
       icon: FileText,
@@ -187,7 +30,7 @@ export default function DownloadsPage() {
           path: "/educators/downloads/ai-trust-healthcare-worksheet.pdf",
         },
       ],
-    }
+    },
   ]
 
   return (
@@ -221,15 +64,15 @@ export default function DownloadsPage() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
               <div className="text-center p-4 bg-purple-900/10 rounded-lg">
-                <div className="text-2xl font-bold text-purple-400 mb-2">50+</div>
+                <div className="text-2xl font-bold text-purple-400 mb-2">3</div>
                 <p className="text-[#ccc]">Educational Resources</p>
               </div>
               <div className="text-center p-4 bg-purple-900/10 rounded-lg">
-                <div className="text-2xl font-bold text-purple-400 mb-2">6</div>
+                <div className="text-2xl font-bold text-purple-400 mb-2">1</div>
                 <p className="text-[#ccc]">Resource Categories</p>
               </div>
               <div className="text-center p-4 bg-purple-900/10 rounded-lg">
-                <div className="text-2xl font-bold text-purple-400 mb-2">5</div>
+                <div className="text-2xl font-bold text-purple-400 mb-2">1</div>
                 <p className="text-[#ccc]">File Formats</p>
               </div>
             </div>
@@ -279,28 +122,19 @@ export default function DownloadsPage() {
 
           {/* Complete Library Download */}
           <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#333] text-center">
-            <h2 className="text-3xl font-bold text-[#e0e0e0] mb-4">Complete Resource Library</h2>
+            <h2 className="text-3xl font-bold text-[#e0e0e0] mb-4">More Resources</h2>
             <p className="text-[#ccc] text-lg mb-6 max-w-3xl mx-auto">
-              Download our entire educational resource library including all lesson plans, discussion guides, 
-              presentation materials, assessment tools, and curriculum mapping resources.
+              Additional lesson plans, guides, presentations, and assessment tools are being prepared. Check back soon
+              or browse the Educators Hub for available materials.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                href="/educators/downloads/SYMBI-Educational-Library.zip" 
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2"
-              >
-                <Download size={20} /> Download Complete Library (ZIP)
+              <Link href="/educators" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                Go to Educators Hub
               </Link>
-              <Link 
-                href="/educators/downloads/SYMBI-Educational-Library.pdf" 
-                className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-8 rounded-lg transition-colors border border-[#444] flex items-center justify-center gap-2"
-              >
-                <FileText size={20} /> Download Index (PDF)
+              <Link href="/educators/trust-case-studies" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-8 rounded-lg transition-colors border border-[#444]">
+                View Case Studies Materials
               </Link>
             </div>
-            <p className="text-[#999] text-sm mt-4">
-              Complete library: 87.3 MB | Includes all 50+ resources in multiple formats
-            </p>
           </div>
         </div>
       </div>

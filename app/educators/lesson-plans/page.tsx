@@ -191,16 +191,16 @@ export default function LessonPlansPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
-                href="/educators/downloads/SYMBI-Lesson-Plans-Complete.pdf" 
+                href="/educators/downloads" 
                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2"
               >
-                <Download size={20} /> Download PDF Collection
+                <Download size={20} /> Browse Downloads
               </Link>
               <Link 
-                href="/educators/downloads/SYMBI-Lesson-Plans.zip" 
+                href="/educators/downloads" 
                 className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-8 rounded-lg transition-colors border border-[#444] flex items-center justify-center gap-2"
               >
-                <Download size={20} /> Download ZIP (All Formats)
+                <Download size={20} /> See All Resources
               </Link>
             </div>
             <p className="text-[#999] text-sm mt-4">

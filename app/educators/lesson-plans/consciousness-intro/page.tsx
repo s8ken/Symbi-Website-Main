@@ -288,10 +288,10 @@ export default function ConsciousnessIntroLessonPage() {
           {/* Download Button */}
           <div className="text-center">
             <Link 
-              href="/educators/downloads/SYMBI-Lesson-Plan-Consciousness-Intro.pdf" 
+              href="/educators/downloads" 
               className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
             >
-              <Download size={20} /> Download Complete Lesson Plan (PDF)
+              <Download size={20} /> Browse Downloads
             </Link>
             <p className="text-[#999] text-sm mt-3">
               Includes presentation slides, handouts, assessment rubric, and implementation guide

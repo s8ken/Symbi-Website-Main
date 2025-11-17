@@ -298,10 +298,10 @@ export default function EducatorsPage() {
             </div>
             <div className="mt-8 text-center">
               <Link 
-                href="/educators/downloads/SYMBI-Educators-Guide.pdf" 
+                href="/educators/downloads" 
                 className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
               >
-                Download Educator's Guide (PDF)
+                Browse Downloads
               </Link>
               <p className="text-[#999] text-sm mt-3">
                 Includes curriculum mapping, assessment strategies, and implementation tips
