@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Download, FileText, Presentation, BookOpen, FileSpreadsheet, Archive, Users, Calendar } from "lucide-react"
+import { Download, FileText, Presentation, BookOpen, FileSpreadsheet, Archive, Users, Calendar, Printer, Save } from "lucide-react"
 
 export default function DownloadsPage() {
   const resourceCategories = [
@@ -59,10 +59,10 @@ export default function DownloadsPage() {
           <Link href="/educators" className="text-purple-400 hover:text-purple-300 mb-6 inline-block">
             ← Back to Educators Hub
           </Link>
-          <h1 className="text-5xl font-bold text-[#e0e0e0] mb-6">Downloadable Resources</h1>
+          <h1 className="text-5xl font-bold text-[#e0e0e0] mb-6">Printable Resources</h1>
           <div className="flex items-center gap-3 mb-6">
             <span className="uppercase tracking-[0.2em] text-sm text-white/60">Educational Resources</span>
-            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">Downloads</span>
+            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs">Printables</span>
           </div>
           <p className="text-2xl text-[#ccc] max-w-4xl">
             Comprehensive collection of printable and digital resources for teaching AI consciousness, ethics, and emergence. 
@@ -124,12 +124,14 @@ export default function DownloadsPage() {
                               <span>{resource.size}</span>
                             </div>
                           </div>
-                          <Link 
-                            href={resource.path}
-                            className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-lg transition-colors flex-shrink-0"
-                          >
-                            <Download size={16} />
-                          </Link>
+                          <div className="flex gap-2">
+                            <button onClick={() => window.print()} className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-lg transition-colors flex-shrink-0" title="Print">
+                              <Printer size={16} />
+                            </button>
+                            <button onClick={() => window.print()} className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] p-2 rounded-lg transition-colors border border-[#444] flex-shrink-0" title="Save as PDF">
+                              <Save size={16} />
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -139,20 +141,65 @@ export default function DownloadsPage() {
             })}
           </div>
 
-          {/* Complete Library Download */}
-          <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#333] text-center">
-            <h2 className="text-3xl font-bold text-[#e0e0e0] mb-4">More Resources</h2>
-            <p className="text-[#ccc] text-lg mb-6 max-w-3xl mx-auto">
-              Additional lesson plans, guides, presentations, and assessment tools are being prepared. Check back soon
-              or browse the Educators Hub for available materials.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/educators" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-                Go to Educators Hub
-              </Link>
-              <Link href="/educators/trust-case-studies" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-8 rounded-lg transition-colors border border-[#444]">
-                View Case Studies Materials
-              </Link>
+          {/* Inline Printable Sections */}
+          <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#333] mt-8" id="ai-trust-healthcare-session-plan">
+            <h2 className="text-2xl font-bold text-[#e0e0e0] mb-3">AI Trust in Healthcare – Session Plan</h2>
+            <p className="text-[#ccc] mb-4">90 minutes • Objectives, activities, and assessment</p>
+            <ul className="space-y-2 text-[#ccc]">
+              <li><span className="text-purple-500">•</span> Define trust receipts, consent, and dataset lineage</li>
+              <li><span className="text-purple-500">•</span> Activity: Map receipts across Reality, Trust, Ethics, Resonance, Parity</li>
+              <li><span className="text-purple-500">•</span> Assessment: Reflection on audit-trail-first design</li>
+            </ul>
+            <div className="mt-4 flex gap-3">
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded"><Printer size={16} /> Print</button>
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-[#252525] hover:bg-[#333] text-[#e0e0e0] px-4 py-2 rounded border border-[#444]"><Save size={16} /> Save as PDF</button>
+            </div>
+          </div>
+
+          <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#333] mt-8" id="ai-trust-healthcare-rubric">
+            <h2 className="text-2xl font-bold text-[#e0e0e0] mb-3">AI Trust in Healthcare – Rubric</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left">
+                    <th className="p-2 border-b border-[#333]">Criterion</th>
+                    <th className="p-2 border-b border-[#333]">Exemplary</th>
+                    <th className="p-2 border-b border-[#333]">Proficient</th>
+                    <th className="p-2 border-b border-[#333]">Developing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="p-2 border-b border-[#333]">Receipt Quality</td>
+                    <td className="p-2 border-b border-[#333]">Complete, verifiable receipts across all dimensions</td>
+                    <td className="p-2 border-b border-[#333]">Receipts present; minor gaps</td>
+                    <td className="p-2 border-b border-[#333]">Receipts incomplete or unclear</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2 border-b border-[#333]">Ethical Alignment</td>
+                    <td className="p-2 border-b border-[#333]">Guardrails and consent verified; equity addressed</td>
+                    <td className="p-2 border-b border-[#333]">Guardrails present; partial consent/equity</td>
+                    <td className="p-2 border-b border-[#333]">Missing guardrails or consent</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 flex gap-3">
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded"><Printer size={16} /> Print</button>
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-[#252525] hover:bg-[#333] text-[#e0e0e0] px-4 py-2 rounded border border-[#444]"><Save size={16} /> Save as PDF</button>
+            </div>
+          </div>
+
+          <div className="bg-[#1a1a1a] p-8 rounded-lg border border-[#333] mt-8" id="ai-trust-healthcare-worksheet">
+            <h2 className="text-2xl font-bold text-[#e0e0e0] mb-3">AI Trust in Healthcare – Worksheet</h2>
+            <ol className="space-y-2 text-[#ccc] list-decimal list-inside">
+              <li>Identify data sources and confirm consent lineage</li>
+              <li>Draft trust receipts for a sample pipeline step</li>
+              <li>Evaluate guardrails for privacy and safety</li>
+            </ol>
+            <div className="mt-4 flex gap-3">
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded"><Printer size={16} /> Print</button>
+              <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-[#252525] hover:bg-[#333] text-[#e0e0e0] px-4 py-2 rounded border border-[#444]"><Save size={16} /> Save as PDF</button>
             </div>
           </div>
         </div>
