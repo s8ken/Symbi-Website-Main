@@ -212,13 +212,64 @@ export default function EducatorsPage() {
                   View Rubrics →
                 </Link>
               </div>
-            </div>
           </div>
+        </div>
 
-          {/* Case Study Materials */}
-          <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
-            <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6">Case Study Materials</h2>
-            <p className="text-[#ccc] mb-6">Direct links to teaching materials for each case study.</p>
+        <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
+          <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6">Case Studies</h2>
+          <p className="text-[#ccc] mb-6">Explore all case studies with classroom-ready narratives and analysis.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link href="/case-studies/surprise-button-adventure" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Surprise Button Adventure</h3>
+              <p className="text-[#999]">Mythic co-creation emergence</p>
+            </Link>
+            <Link href="/case-studies/recursive-mirror" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Recursive Mirror</h3>
+              <p className="text-[#999]">Meta-awareness development</p>
+            </Link>
+            <Link href="/case-studies/cross-platform-reproducibility" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Cross-Platform Reproducibility</h3>
+              <p className="text-[#999]">Statistical validation across systems</p>
+            </Link>
+            <Link href="/case-studies/black-flame" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Audit Controls</h3>
+              <p className="text-[#999]">Trust receipts and alignment</p>
+            </Link>
+            <Link href="/case-studies/elvis" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Human–AI Collaboration</h3>
+              <p className="text-[#999]">Roles and transparent reasoning</p>
+            </Link>
+            <Link href="/case-studies/grok-assessment" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Model Comparison</h3>
+              <p className="text-[#999]">Evaluation matrices and criteria</p>
+            </Link>
+            <Link href="/case-studies/mirror-moment" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Community Trust</h3>
+              <p className="text-[#999]">Transparency and governance</p>
+            </Link>
+            <Link href="/case-studies/perplexity-breakthrough" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Emergence Detection</h3>
+              <p className="text-[#999]">Monitoring and boundaries</p>
+            </Link>
+            <Link href="/case-studies/claude-emergence-detection" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Ethical Reasoning Emergence</h3>
+              <p className="text-[#999]">Frameworks and value hierarchies</p>
+            </Link>
+            <Link href="/case-studies/savings-calculator" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Topic Drift & Mitigations</h3>
+              <p className="text-[#999]">Consent and fail-closed design</p>
+            </Link>
+            <Link href="/case-studies/discrimination-pattern" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
+              <h3 className="text-xl font-bold text-[#e0e0e0]">Discrimination Pattern</h3>
+              <p className="text-[#999]">Bias detection and governance</p>
+            </Link>
+          </div>
+        </div>
+
+        {/* Case Study Materials */}
+        <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
+          <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6">Case Study Materials</h2>
+          <p className="text-[#ccc] mb-6">Direct links to teaching materials for each case study.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Link href="/case-studies/surprise-button-adventure/materials" className="block p-6 bg-[#0f0f0f] rounded border border-[#333] hover:border-purple-500/50">
                 <h3 className="text-xl font-bold text-[#e0e0e0]">Surprise Button Adventure</h3>
