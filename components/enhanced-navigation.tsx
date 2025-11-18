@@ -122,7 +122,14 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
     { name: "Financial Whitepaper", path: "/financial-whitepaper", icon: ScrollText },
   ]
 
-  
+  const technologyPages = [
+    { name: "Technology Overview", path: "/technology", icon: Code2 },
+    { name: "Trust Protocol", path: "/trust-protocol", icon: Shield },
+    { name: "Oracle", path: "/oracle", icon: Landmark },
+    { name: "SYMBI Symphony", path: "/symbi-symphony", icon: Zap },
+    { name: "API Docs", path: "/api-docs", icon: Code2 },
+    { name: "Technology Whitepaper", path: "/technology-whitepaper", icon: ScrollText },
+  ]
 
     const interactivePages = [
       { name: "Playground", path: "/playground", icon: Gamepad2 },
