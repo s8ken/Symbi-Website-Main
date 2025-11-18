@@ -31,6 +31,25 @@ export default function DownloadsPage() {
         },
       ],
     },
+    {
+      id: "case-study-materials",
+      title: "Case Study Materials",
+      icon: FileText,
+      description: "Links to materials pages for each case study",
+      resources: [
+        { name: "Surprise Button Adventure", type: "Materials", size: "", path: "/case-studies/surprise-button-adventure/materials" },
+        { name: "Recursive Mirror", type: "Materials", size: "", path: "/case-studies/recursive-mirror/materials" },
+        { name: "Cross-Platform Reproducibility", type: "Materials", size: "", path: "/case-studies/cross-platform-reproducibility/materials" },
+        { name: "Audit Controls", type: "Materials", size: "", path: "/case-studies/black-flame/materials" },
+        { name: "Human–AI Collaboration", type: "Materials", size: "", path: "/case-studies/elvis/materials" },
+        { name: "Model Comparison", type: "Materials", size: "", path: "/case-studies/grok-assessment/materials" },
+        { name: "Community Trust", type: "Materials", size: "", path: "/case-studies/mirror-moment/materials" },
+        { name: "Emergence Detection", type: "Materials", size: "", path: "/case-studies/perplexity-breakthrough/materials" },
+        { name: "Ethical Reasoning Emergence", type: "Materials", size: "", path: "/case-studies/claude-emergence-detection/materials" },
+        { name: "Topic Drift & Mitigations", type: "Materials", size: "", path: "/case-studies/savings-calculator/materials" },
+        { name: "Discrimination Pattern", type: "Materials", size: "", path: "/case-studies/discrimination-pattern/materials" },
+      ]
+    }
   ]
 
   return (
