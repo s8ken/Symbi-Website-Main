@@ -24,19 +24,19 @@ export default function DiscriminationPatternMaterialsPage() {
               <li className="flex items-start gap-2">
                 <FileText className="text-purple-400" size={18} />
                 <span>
-                  <strong>Session Plan:</strong> Bias detection methodology and reporting structure
+                  <strong>Session Plan:</strong> <Link href="/educators/downloads/ai-trust-healthcare-session-plan.pdf" className="text-purple-400 hover:text-purple-300">Discrimination Pattern – Session Plan (PDF)</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Users className="text-purple-400" size={18} />
                 <span>
-                  <strong>Worksheet:</strong> Pattern identification and severity scoring
+                  <strong>Worksheet:</strong> <Link href="/educators/downloads/ai-trust-healthcare-worksheet.pdf" className="text-purple-400 hover:text-purple-300">Discrimination Pattern – Worksheet (PDF)</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Presentation className="text-purple-400" size={18} />
                 <span>
-                  <strong>Slides:</strong> Governance and mitigation frameworks
+                  <strong>Slides:</strong> <Link href="/educators/downloads/ai-trust-healthcare-rubric.pdf" className="text-purple-400 hover:text-purple-300">Discrimination Pattern – Slides (PDF)</Link>
                 </span>
               </li>
             </ul>
@@ -49,9 +49,10 @@ export default function DiscriminationPatternMaterialsPage() {
             <h2 className="text-2xl font-bold text-[#e0e0e0] mb-4">Complete Library</h2>
             <p className="text-[#ccc] mb-4">Access the full Educators resource library, including lesson plans, discussion guides, and assessment tools.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/educators/downloads" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-6 rounded-lg transition-colors border border-[#444]">
-                Browse Downloads
+              <Link href="/educators/downloads" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
+                <Download size={18} /> Browse Complete Library
               </Link>
+              <Link href="/educators" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-6 rounded-lg transition-colors border border-[#444]">Go to Educators Hub</Link>
             </div>
           </div>
         </div>
@@ -59,4 +60,3 @@ export default function DiscriminationPatternMaterialsPage() {
     </div>
   )
 }
-

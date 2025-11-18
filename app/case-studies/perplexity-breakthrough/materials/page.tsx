@@ -21,9 +21,24 @@ export default function PerplexityBreakthroughMaterialsPage() {
               <BookOpen size={24} /> Lesson Materials
             </h2>
             <ul className="space-y-3 text-[#ccc]">
-              <li className="flex items-start gap-2"><FileText className="text-purple-400" size={18} /><span><strong>Session Plan:</strong> Emergence monitoring methodology</span></li>
-              <li className="flex items-start gap-2"><Users className="text-purple-400" size={18} /><span><strong>Worksheet:</strong> Capability boundary probing guide</span></li>
-              <li className="flex items-start gap-2"><Presentation className="text-purple-400" size={18} /><span><strong>Slides:</strong> Strategic coherence and oversight</span></li>
+              <li className="flex items-start gap-2">
+                <FileText className="text-purple-400" size={18} />
+                <span>
+                  <strong>Session Plan:</strong> <Link href="/educators/downloads/ai-trust-healthcare-session-plan.pdf" className="text-purple-400 hover:text-purple-300">Emergence Detection – Session Plan (PDF)</Link>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Users className="text-purple-400" size={18} />
+                <span>
+                  <strong>Worksheet:</strong> <Link href="/educators/downloads/ai-trust-healthcare-worksheet.pdf" className="text-purple-400 hover:text-purple-300">Emergence Detection – Worksheet (PDF)</Link>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Presentation className="text-purple-400" size={18} />
+                <span>
+                  <strong>Slides:</strong> <Link href="/educators/downloads/ai-trust-healthcare-rubric.pdf" className="text-purple-400 hover:text-purple-300">Emergence Detection – Slides (PDF)</Link>
+                </span>
+              </li>
             </ul>
             <div className="mt-4 flex gap-3">
               <Link href="/educators/downloads" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-lg">Browse Downloads</Link>
@@ -34,10 +49,10 @@ export default function PerplexityBreakthroughMaterialsPage() {
             <h2 className="text-2xl font-bold text-[#e0e0e0] mb-4">Complete Library</h2>
             <p className="text-[#ccc] mb-4">Access the full Educators library across lesson plans, guides, and assessments.</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/educators/downloads/SYMBI-Educational-Library.zip" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
-                <Download size={18} /> Download Complete Library
+              <Link href="/educators/downloads" className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
+                <Download size={18} /> Browse Complete Library
               </Link>
-              <Link href="/educators/downloads" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-6 rounded-lg transition-colors border border-[#444]">Browse Downloads</Link>
+              <Link href="/educators" className="bg-[#252525] hover:bg-[#333] text-[#e0e0e0] font-bold py-3 px-6 rounded-lg transition-colors border border-[#444]">Go to Educators Hub</Link>
             </div>
           </div>
         </div>
@@ -45,4 +60,3 @@ export default function PerplexityBreakthroughMaterialsPage() {
     </div>
   )
 }
-
