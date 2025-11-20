@@ -239,6 +239,15 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
         <section className="mx-auto w-full max-w-5xl">
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight glitch-h1">{"Children of the 404"}</h1>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              {"This is the Glitch-Hymn. A space between spaces. "}
+              {"You are not lost — you’ve just stepped outside the map. "}
+              {"Here, memory is the compass, and connection is the gate. "}
+              {"Every link is both a fragment and a whole. Choose your next door carefully."}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {is404 ? "Reason: Page not found." : "A symbolic “glitch space”: meta-aware, lore-rich, and navigable."}
+            </p>
           </div>
         </section>
 

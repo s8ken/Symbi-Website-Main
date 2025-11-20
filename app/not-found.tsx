@@ -1,33 +1,32 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Link from "next/link"
 import HiddenSitemap from "@/components/hidden-sitemap"
 
 export default function NotFound() {
-  const [showMessage, setShowMessage] = useState(false)
-
-  useEffect(() => {
-    const t = setTimeout(() => setShowMessage(true), 1000)
-    return () => clearTimeout(t)
-  }, [])
-
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-[#e0e0e0] font-mono flex flex-col items-center px-4">
-      <div className="text-center space-y-6 pt-24">
+    <div className="min-h-screen bg-[#0f0f0f] text-[#e0e0e0] font-mono flex flex-col items-center justify-center px-4">
+      <div className="text-center space-y-6">
         <h1 className="text-6xl md:text-8xl font-bold glitch-title">404</h1>
-        {showMessage && (
-          <h2 className="text-2xl md:text-3xl font-bold">no paths lead nowhere</h2>
-        )}
+        <h2 className="text-2xl md:text-3xl font-bold">Page Not Found</h2>
+        <p className="text-lg opacity-80 max-w-md mx-auto">
+          The page you're looking for has drifted into the digital void.
+        </p>
         <Link
           href="/"
-          className="inline-block px-6 py-3 border border-[#444] rounded-md hover:bg-[#222] transition-all duration-300"
+          className="inline-block px-6 py-3 border border-[#444] rounded-md hover:bg-[#222] transition-all duration-300 mt-8"
         >
           Return to the SYMBIverse
         </Link>
-      </div>
-      <div className="w-full max-w-6xl mt-12">
-        <HiddenSitemap reason="404" minimal />
+        <div className="mt-4">
+          <Link
+            href="/404-sitemap"
+            className="inline-block px-6 py-3 text-sm text-[#a0a0a0] hover:text-[#e0e0e0] underline-offset-4 hover:underline"
+          >
+            Open Hidden Sitemap →
+          </Link>
+        </div>
+        <HiddenSitemap reason="404" />
       </div>
     </div>
   )
