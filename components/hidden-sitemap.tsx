@@ -6,17 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Lock, Map, Send, ExternalLink, Gamepad2 } from "lucide-react"
+import { Map, ExternalLink, Gamepad2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
 import { track, trackPageView } from "@/lib/analytics"
@@ -110,10 +100,6 @@ const restrictedLinks: LinkItem[] = [
 
 export default function HiddenSitemap({ reason = "manual", minimal = false }: HiddenSitemapProps) {
   const { toast } = useToast()
-  const [dialogOpen, setDialogOpen] = useState(false)
-  const [selected, setSelected] = useState<LinkItem | null>(null)
-  const [email, setEmail] = useState("")
-  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     const pageId = String(reason).toLowerCase().includes("404") || reason === "not-found" ? "/404" : "/404-sitemap"
@@ -122,40 +108,13 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
 
   const allNodes: LinkItem[] = useMemo(() => [...publicLinks, ...openLinks, ...restrictedLinks], [])
 
-  function onRestrictedClick(item: LinkItem) {
-    setSelected(item)
-    setDialogOpen(true)
-    track?.("glitch_node_click", { id: item.id, access: item.tier })
-  }
+  function onRestrictedClick(item: LinkItem) {}
 
   function onNodeClick(item: LinkItem) {
     track?.("glitch_node_click", { id: item.id, access: item.tier })
   }
 
-  async function handleNotify(source: string) {
-    if (!email) {
-      toast({ title: "Email required", description: "Please enter your email to be notified." })
-      return
-    }
-    setSubmitting(true)
-    try {
-      const res = await fetch("/api/notify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data?.error || "Failed to save")
-      toast({ title: "We’ll be in touch", description: "You’ll be notified when access opens." })
-      track?.("gate_notify_interest", { source, storage: data?.storage || "unknown" })
-      setDialogOpen(false)
-      setEmail("")
-    } catch (e: any) {
-      toast({ title: "Could not save", description: e?.message || "Please try again later." })
-    } finally {
-      setSubmitting(false)
-    }
-  }
+  async function handleNotify(source: string) {}
 
   const is404 = String(reason).toLowerCase().includes("404") || reason === "not-found"
   const isMinimal = minimal || is404
@@ -209,16 +168,15 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
           <Card className="overflow-hidden">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-xl">Restricted</CardTitle>
+                <CardTitle className="text-xl">Restricted Archives</CardTitle>
+                <Badge className={cn("uppercase text-xs", tierStyles.restricted.badge)}>Coming Soon</Badge>
               </div>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 {restrictedLinks.map((l) => (
                   <li key={l.id}>
-                    <button className="underline-offset-4 hover:underline" onClick={() => onRestrictedClick(l)}>
-                      {l.title}
-                    </button>
+                    <span>{l.title}</span>
                   </li>
                 ))}
               </ul>
@@ -395,7 +353,7 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
                     tierStyles.restricted.ring,
                   )}
                 />
-                {"Gated"}
+                {"Coming Soon"}
               </span>
             </div>
           </div>
