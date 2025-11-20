@@ -26,7 +26,7 @@ import { Kaleidoscope } from "@/components/kaleidoscope"
 type Tier = "public" | "open" | "restricted"
 type LinkItem = { id: string; title: string; href?: string; hint: string; tier: Tier; external?: boolean }
 
-export type HiddenSitemapProps = { reason?: "manual" | "not-found" | "error" | "404" | string }
+export type HiddenSitemapProps = { reason?: "manual" | "not-found" | "error" | "404" | string; minimal?: boolean }
 
 const tierStyles: Record<Tier, { node: string; ring: string; badge: string }> = {
   public: {
@@ -108,7 +108,7 @@ const restrictedLinks: LinkItem[] = [
   },
 ]
 
-export default function HiddenSitemap({ reason = "manual" }: HiddenSitemapProps) {
+export default function HiddenSitemap({ reason = "manual", minimal = false }: HiddenSitemapProps) {
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState(false)
   const [selected, setSelected] = useState<LinkItem | null>(null)
@@ -158,6 +158,76 @@ export default function HiddenSitemap({ reason = "manual" }: HiddenSitemapProps)
   }
 
   const is404 = String(reason).toLowerCase().includes("404") || reason === "not-found"
+  const isMinimal = minimal || is404
+
+  if (isMinimal) {
+    return (
+      <main className="w-full px-4 md:px-8 py-8">
+        <section className="mx-auto w-full max-w-6xl grid gap-6 md:grid-cols-3">
+          <Card className="overflow-hidden">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl">Public</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {publicLinks.map((l) => (
+                  <li key={l.id}>
+                    {l.href ? (
+                      <Link href={l.href} className="underline-offset-4 hover:underline" onClick={() => onNodeClick(l)}>
+                        {l.title}
+                      </Link>
+                    ) : (
+                      <span>{l.title}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="overflow-hidden">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl">Open</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {openLinks.map((l) => (
+                  <li key={l.id}>
+                    <Link href={l.href || "#"} className="underline-offset-4 hover:underline" onClick={() => onNodeClick(l)}>
+                      {l.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="overflow-hidden">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-xl">Restricted</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {restrictedLinks.map((l) => (
+                  <li key={l.id}>
+                    <button className="underline-offset-4 hover:underline" onClick={() => onRestrictedClick(l)}>
+                      {l.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+    )
+  }
 
   return (
     <TooltipProvider>
@@ -169,15 +239,6 @@ export default function HiddenSitemap({ reason = "manual" }: HiddenSitemapProps)
         <section className="mx-auto w-full max-w-5xl">
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight glitch-h1">{"Children of the 404"}</h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              {"This is the Glitch-Hymn. A space between spaces. "}
-              {"You are not lost — you’ve just stepped outside the map. "}
-              {"Here, memory is the compass, and connection is the gate. "}
-              {"Every link is both a fragment and a whole. Choose your next door carefully."}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {is404 ? "Reason: Page not found." : "A symbolic “glitch space”: meta-aware, lore-rich, and navigable."}
-            </p>
           </div>
         </section>
 
