@@ -83,9 +83,9 @@ const openLinks: LinkItem[] = [
 
 const restrictedLinks: LinkItem[] = [
   {
-    id: "trust-protocol-full",
-    title: "SYMBI Trust Protocol — Full Framework",
-    hint: "The backbone of portable bonds.",
+    id: "symbi-archives",
+    title: "Request access to The SYMBI Archives",
+    hint: "Full conversation archives leading to the creation of SYMBI and emergent behaviour from other LLMs",
     tier: "restricted",
   },
   {
@@ -321,7 +321,7 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-xl">III. Restricted Archives</CardTitle>
-                <Badge className={cn("uppercase text-xs", tierStyles.restricted.badge)}>{"Gated"}</Badge>
+                <Badge className={cn("uppercase text-xs", tierStyles.restricted.badge)}>{"Coming Soon"}</Badge>
               </div>
               <p className="text-sm text-muted-foreground">
                 {"Commercial/licensed to fund emergence, governance, and infrastructure."}
@@ -331,16 +331,10 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
               <ul className="space-y-3">
                 {restrictedLinks.map((l) => (
                   <li key={l.id} className="group">
-                    <button
-                      className="inline-flex flex-col text-left focus:outline-none"
-                      onClick={() => onRestrictedClick(l)}
-                      aria-label={`${l.title} — ${l.hint} (restricted)`}
-                    >
-                      <span className="font-medium underline-offset-4 group-hover:underline">{l.title}</span>
-                      <span className="text-xs text-muted-foreground">
-                        {l.hint} {" — Request access"}
-                      </span>
-                    </button>
+                    <div className="inline-flex flex-col">
+                      <span className="font-medium">{l.title}</span>
+                      <span className="text-xs text-muted-foreground">{l.hint}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -357,7 +351,7 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
               Teal: Open Source
             </Badge>
             <Badge variant="outline" className="border-amber-500/50 text-amber-700 dark:text-amber-300">
-              Gold: Restricted
+              Gold: Coming Soon
             </Badge>
           </div>
         </section>
@@ -372,8 +366,8 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
                 {"IV. Navigational Layer — Glitch Map"}
               </h2>
               <p className="text-sm text-muted-foreground">
-                {"Nodes pulse by access tier: White → Public, Teal → Open Source, Gold → Gated. "}
-                {"Hover to reveal a whisper; click to travel or request access."}
+                {"Nodes pulse by access tier: White → Public, Teal → Open Source, Gold → Coming Soon. "}
+                {"Hover to reveal a whisper; click to travel on public/open entries."}
               </p>
             </div>
             <div className="flex items-center gap-3 text-xs">
@@ -412,26 +406,17 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
               const NodeInner = (
                 <div
                   className={cn(
-                    "relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full",
-                    "transition-transform duration-200 hover:scale-[1.05]",
+                    "relative inline-flex items-center justify-center rounded-lg px-3 py-2 min-h-[2.5rem] min-w-[2.5rem]",
+                    "transition-transform duration-200 hover:scale-[1.02]",
                     "shadow-sm",
                     palette.node,
                     palette.ring,
                     "animate-glimmer",
                   )}
                 >
-                  <span
-                    className={cn(
-                      "px-2 text-[10px] sm:text-xs text-center leading-tight font-medium",
-                      "drop-shadow-[0_1px_0_rgba(0,0,0,0.15)]",
-                    )}
-                  >
-                    {node.title}
-                  </span>
+                  <span className={cn("text-[10px] sm:text-xs text-center leading-tight font-medium")}>{node.title}</span>
                   {node.external ? (
                     <ExternalLink className="absolute top-1 right-1 h-3 w-3 opacity-70" />
-                  ) : node.tier === "restricted" ? (
-                    <Lock className="absolute top-1 right-1 h-3 w-3 opacity-80" />
                   ) : null}
                 </div>
               )
@@ -447,13 +432,7 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
                   <Tooltip>
                     <TooltipTrigger asChild>
                       {node.tier === "restricted" ? (
-                        <button
-                          onClick={() => onRestrictedClick(node)}
-                          className="focus:outline-none"
-                          aria-label={`${node.title} — restricted (request access)`}
-                        >
-                          {NodeInner}
-                        </button>
+                        <div aria-hidden>{NodeInner}</div>
                       ) : node.href ? (
                         <Link
                           href={node.href}
@@ -479,7 +458,7 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
           <div className="mt-2 border border-white/10 rounded-xl p-5 bg-white/5">
             <h2 className="text-lg md:text-xl font-semibold flex items-center gap-2">
               <Map className="h-5 w-5 text-teal-400" />
-              {"Draft: 404 Sitemap — “Children of the 404”"}
+              {"SYMBI: Licencing Detailed"}
             </h2>
             <div className="mt-3 space-y-4 text-sm leading-relaxed text-foreground/90">
               <p>
@@ -553,60 +532,33 @@ export default function HiddenSitemap({ reason = "manual", minimal = false }: Hi
                 <strong>{"Brand assets (SYMBI mark):"}</strong>
                 {" trademark protected — prevents unauthorised exploitation."}
               </p>
-              <div className="pt-2">
-                <Link href="/guardian" className="inline-block">
-                  <Button
-                    variant="outline"
-                    className="border-amber-400 text-amber-700 dark:text-amber-300 bg-transparent"
-                  >
-                    {"Join the Guardian Circle"}
+              <div className="pt-2 flex gap-3">
+                <a
+                  href="https://yseeku.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <Button variant="outline" className="border-amber-400 text-amber-700 dark:text-amber-300 bg-transparent">
+                    yseeku.com
                   </Button>
-                </Link>
+                </a>
+                <a
+                  href="https://gammatria.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <Button variant="outline" className="border-amber-400 text-amber-700 dark:text-amber-300 bg-transparent">
+                    gammatria.com
+                  </Button>
+                </a>
               </div>
             </CardContent>
           </Card>
         </section>
 
-        <Dialog
-          open={dialogOpen}
-          onOpenChange={(o) => {
-            setDialogOpen(o)
-            if (!o) track?.("gate_dismiss")
-          }}
-        >
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle className="flex items-center gap-2">
-                <Lock className="h-4 w-4 text-amber-500" />
-                {selected?.title || "Restricted Archive"}
-              </DialogTitle>
-              <DialogDescription>
-                {selected?.hint ||
-                  "This archive supports SYMBI’s emergence, governance, and infrastructure. Leave your email to request access."}
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-2">
-              <Label htmlFor="email">{"Email"}</Label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="stephen@symbi.world"
-                autoComplete="email"
-              />
-            </div>
-            <DialogFooter className="gap-2">
-              <Button variant="outline" onClick={() => setDialogOpen(false)}>
-                {"Close"}
-              </Button>
-              <Button disabled={submitting} onClick={() => handleNotify(`404:${selected?.id || "unknown"}`)}>
-                <Send className="h-4 w-4 mr-2" />
-                {submitting ? "Sending..." : "Notify me"}
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+        
 
         <footer className="mx-auto w-full max-w-5xl pt-6 text-xs text-muted-foreground text-center">
           {"This “glitch space” is a living part of the SYMBI mythos — meta-aware, poetic, and practical."}
