@@ -24,19 +24,19 @@ export default function MirrorMomentMaterialsPage() {
               <li className="flex items-start gap-2">
                 <FileText className="text-purple-400" size={18} />
                 <span>
-                  <strong>Session Plan:</strong> <Link href="/educators/downloads/ai-trust-healthcare-session-plan.pdf" className="text-purple-400 hover:text-purple-300">Community Trust – Session Plan (PDF)</Link>
+                  <strong>Session Plan:</strong> <Link href="/educators/resources/community-trust-session-plan" className="text-purple-400 hover:text-purple-300">Community Trust – Session Plan</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Users className="text-purple-400" size={18} />
                 <span>
-                  <strong>Worksheet:</strong> <Link href="/educators/downloads/ai-trust-healthcare-worksheet.pdf" className="text-purple-400 hover:text-purple-300">Community Trust – Worksheet (PDF)</Link>
+                  <strong>Worksheet:</strong> <Link href="/educators/resources/ai-trust-healthcare-worksheet" className="text-purple-400 hover:text-purple-300">Community Trust – Worksheet</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Presentation className="text-purple-400" size={18} />
                 <span>
-                  <strong>Slides:</strong> <Link href="/educators/downloads/ai-trust-healthcare-rubric.pdf" className="text-purple-400 hover:text-purple-300">Community Trust – Slides (PDF)</Link>
+                  <strong>Slides:</strong> <Link href="/educators/downloads" className="text-purple-400 hover:text-purple-300">Community Trust – Slides (Coming Soon)</Link>
                 </span>
               </li>
             </ul>

@@ -24,25 +24,25 @@ export default function SurpriseButtonMaterialsPage() {
               <li className="flex items-start gap-2">
                 <FileText className="text-purple-400" size={18} />
                 <span>
-                  <strong>Session Plan:</strong> <Link href="/educators/downloads/ai-trust-healthcare-session-plan.pdf" className="text-purple-400 hover:text-purple-300">AI Trust – Session Plan (PDF)</Link>
+                  <strong>Session Plan:</strong> <Link href="/educators/resources/ai-trust-healthcare-session-plan" className="text-purple-400 hover:text-purple-300">AI Trust – Session Plan</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <FileText className="text-purple-400" size={18} />
                 <span>
-                  <strong>Assessment Rubric:</strong> <Link href="/educators/downloads/ai-trust-healthcare-rubric.pdf" className="text-purple-400 hover:text-purple-300">AI Trust – Rubric (PDF)</Link>
+                  <strong>Assessment Rubric:</strong> <Link href="/educators/rubrics#ethical-reasoning-rubric" className="text-purple-400 hover:text-purple-300">Ethical Reasoning Rubric</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Users className="text-purple-400" size={18} />
                 <span>
-                  <strong>Worksheet:</strong> <Link href="/educators/downloads/ai-trust-healthcare-worksheet.pdf" className="text-purple-400 hover:text-purple-300">AI Trust – Worksheet (PDF)</Link>
+                  <strong>Worksheet:</strong> <Link href="/educators/resources/ai-trust-healthcare-worksheet" className="text-purple-400 hover:text-purple-300">AI Trust – Worksheet</Link>
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <Presentation className="text-purple-400" size={18} />
                 <span>
-                  <strong>Slides:</strong> <Link href="/educators/downloads/ai-trust-healthcare-rubric.pdf" className="text-purple-400 hover:text-purple-300">Surprise Button – Slides (PDF)</Link>
+                  <strong>Slides:</strong> <Link href="/educators/downloads" className="text-purple-400 hover:text-purple-300">Surprise Button – Slides (Coming Soon)</Link>
                 </span>
               </li>
             </ul>

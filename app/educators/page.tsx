@@ -152,6 +152,33 @@ export default function EducatorsPage() {
                 View Case Studies →
               </Link>
             </div>
+
+            <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] hover:border-purple-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-4">
+                <Brain className="text-purple-400" size={24} />
+                <h3 className="text-xl font-bold text-[#e0e0e0]">Understanding Agent Drift</h3>
+              </div>
+              <p className="text-[#ccc] mb-4">
+                A website-ready overview of identity, trust, and emergence with drift analysis visuals and technical breakdown.
+              </p>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Hero section with CTAs and gradient visual</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Technical architecture layers and outputs</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-purple-500 mr-2">•</span>
+                  <span>Embedded drift & emergence infographic</span>
+                </li>
+              </ul>
+              <Link href="/educators/understanding-agent-drift" className="mt-4 inline-block text-purple-400 hover:text-purple-300 font-medium">
+                Open Page →
+              </Link>
+            </div>
           </div>
 
           {/* Featured Resources */}
