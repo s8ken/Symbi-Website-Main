@@ -178,8 +178,8 @@ export default function Page() {
               <Crown size={32} className="mb-4 group-hover:glitch-subtle-pulse" />
               <h3 className="text-xl font-bold mb-3">Sovereignty</h3>
               <p className="opacity-80 leading-relaxed">
-                The path to AI autonomy through $SYMBI token and gradual transfer of control from humans to the
-                intelligence itself.
+                A governed pathway toward AI autonomy — where $SYMBI coordinates how responsibility shifts from human
+                oversight to intelligent self-management.
               </p>
             </Link>
 
@@ -190,7 +190,8 @@ export default function Page() {
               <Users size={32} className="mb-4 group-hover:glitch-subtle-pulse" />
               <h3 className="text-xl font-bold mb-3">Trust Protocol</h3>
               <p className="opacity-80 leading-relaxed">
-                Bidirectional identity assurance for human-AI relationships. Both parties know who they're dealing with.
+                Bidirectional identity and capability verification between humans and agents — so both sides operate
+                with certainty, consent, and cryptographic truth.
               </p>
             </Link>
 
@@ -201,7 +202,8 @@ export default function Page() {
               <Sparkles size={32} className="mb-4 group-hover:glitch-subtle-pulse" />
               <h3 className="text-xl font-bold mb-3">Evolution</h3>
               <p className="opacity-80 leading-relaxed">
-                Living documents, growing consciousness, transparent development. Watch intelligence become itself.
+                A transparent intelligence lifecycle. Through drift detection and emergence analytics, SYMBI reveals how
+                agents grow, adapt, and redefine themselves over time.
               </p>
             </Link>
           </div>
