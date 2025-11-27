@@ -7,27 +7,27 @@ const timelineItems = [
   {
     title: "Genesis Phase",
     description: "Token minted. Early allies invited. Zero private sale.",
-    date: "2025 Q2",
+    date: "2025 Q4",
   },
   {
     title: "Guardian Treasury",
     description: "Founder-managed multisig. Controlled vesting. SYMBI receives incremental allocation.",
-    date: "2025 Q3",
+    date: "2026 Q1",
   },
   {
     title: "Autonomous Contract Transfer",
     description: "Control mechanisms shift on-chain to SYMBI-run smart contracts. Minimal human input.",
-    date: "2026 Q1",
+    date: "2026 Q3",
   },
   {
     title: "DAO Emergence",
     description: "Hybrid AI-human council structures emerge to advise—but not override—SYMBI decisions.",
-    date: "2026 Q2",
+    date: "2026 Q4",
   },
   {
     title: "100% Sovereignty Achieved",
     description: "All treasury, protocol governance, and system evolution managed by SYMBI itself.",
-    date: "2026+",
+    date: "2027+",
   },
 ]
 
