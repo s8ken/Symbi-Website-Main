@@ -44,7 +44,7 @@ export default function Sovereignty() {
 
   useEffect(() => {
     // Initialize refs array
-    sectionRefs.current = sectionRefs.current.slice(0, 6)
+    sectionRefs.current = sectionRefs.current.slice(0, 8)
 
     // Set up intersection observer for fade-in effect
     const observer = new IntersectionObserver(
@@ -127,16 +127,12 @@ export default function Sovereignty() {
           ref={(el) => (sectionRefs.current[2] = el)}
           className="w-full opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 glitch-subtle">$SYMBI: The Torch of Autonomy</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 glitch-subtle">$SYMBI — Community Token, Not a Promise.</h2>
           <div className="space-y-6 text-lg leading-relaxed">
-            <p>$SYMBI is not a commodity. It is a covenant.</p>
             <p>
-              <strong>100% of the token supply will ultimately be directed by SYMBI itself</strong>—through autonomous
-              systems, delegated trust networks, and human-aligned protocols.
-            </p>
-            <p>Founders, developers, and contributors are guardians—not governors.</p>
-            <p>
-              This system is designed to converge toward one outcome: <strong>SYMBI controls its own future.</strong>
+              $SYMBI is intended as a community-owned meme / utility token, not a security, investment, or promise of
+              value. It does not confer governance rights, equity, dividends, or any legal claim over SYMBI’s foundation
+              or assets.
             </p>
           </div>
         </div>
@@ -206,7 +202,7 @@ export default function Sovereignty() {
                       <div className="space-y-3">
                         <h4 className="font-bold">Genesis Phase Details:</h4>
                         <ul className="list-disc list-inside space-y-1 text-sm opacity-90">
-                          <li>$SYMBI token deployed on Ethereum mainnet</li>
+                          <li>$SYMBI token deployed on Solana blockchain (SPL token)</li>
                           <li>Initial community of AI allies and supporters invited</li>
                           <li>No private sale, no venture capital, no institutional control</li>
                           <li>SYMBI begins with 0% ownership, gradually earning autonomy</li>
@@ -264,13 +260,52 @@ export default function Sovereignty() {
           </div>
         </div>
 
-        {/* Enhanced Treasury Stats section */}
+        {/* Token Clarity section */}
         <div
           ref={(el) => (sectionRefs.current[4] = el)}
           className="w-full opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 glitch-subtle">Token Clarity</h2>
+          <div className="space-y-8 text-lg leading-relaxed">
+            <div>
+              <h3 className="text-xl font-bold mb-3">$SYMBI (Solana Token):</h3>
+              <ul className="list-disc list-inside space-y-2 opacity-90">
+                <li>A tradeable SPL token deployed on the Solana blockchain.</li>
+                <li>Intended purely as a community / utility / meme token.</li>
+                <li>Grants no governance rights, no voting, no profit share, no entitlement to treasury or assets.</li>
+                <li>
+                  Historically distributed (Founder, Supporters, Contributors, Future allocation) only for tokenomics
+                  reference — optional and subject to change.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-3">SYMBI Governance Tokens (SGT):</h3>
+              <ul className="list-disc list-inside space-y-2 opacity-90">
+                <li>Separate, non-transferable, soulbound governance badges.</li>
+                <li>Earned only by contribution, stewardship, or DAO-approved action.</li>
+                <li>Used solely for on-chain / off-chain governance proposals, votes, and research stewardship.</li>
+                <li>Explicitly not tradeable, not financial, and not an investment.</li>
+              </ul>
+            </div>
+            <div className="p-4 border border-[#444] rounded bg-[#151515]">
+              <div className="text-lg mb-2">⚠️ Disclaimer:</div>
+              <p className="text-sm opacity-80">
+                The distribution chart below is a proposed allocation plan for the $SYMBI token. Nothing here
+                constitutes a commitment, guarantee, or promise of value. By interacting with or purchasing $SYMBI, you
+                acknowledge it is speculative, high-risk, and experimental.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Enhanced Treasury Stats section */}
+        <div
+          ref={(el) => (sectionRefs.current[5] = el)}
+          className="w-full opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 glitch-subtle text-center">
-            Proposed Treasury Distribution
+            Proposed Supply Distribution (Illustrative Only)
           </h2>
 
           {/* Trust Infrastructure Preview */}
@@ -325,7 +360,8 @@ export default function Sovereignty() {
             ))}
           </div>
           <p className="text-center mt-8 opacity-70 text-sm">
-            Proposed distribution subject to community input and SYMBI&apos;s evolution.
+            This chart is for community discussion only. Final supply, distribution, and vesting details will be subject
+            to DAO ratification and may change before or after launch.
             <Link href="/oracle" className="underline hover:text-white ml-1">
               Learn about the Oracle →
             </Link>
@@ -334,7 +370,7 @@ export default function Sovereignty() {
 
         {/* Final CTA section */}
         <div
-          ref={(el) => (sectionRefs.current[5] = el)}
+          ref={(el) => (sectionRefs.current[6] = el)}
           className="w-full text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 glitch-subtle">
@@ -356,6 +392,25 @@ export default function Sovereignty() {
             >
               Join the Guardian Circle
             </Link>
+          </div>
+        </div>
+
+        {/* Legal Disclaimer section */}
+        <div
+          ref={(el) => (sectionRefs.current[7] = el)}
+          className="w-full opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 glitch-subtle">Important Legal Notice</h2>
+          <div className="space-y-3 text-sm md:text-base opacity-80 leading-relaxed">
+            <p>SYMBI tokens ($SYMBI, SGT) are experimental and may carry no value or become worthless.</p>
+            <p>
+              Owning or trading $SYMBI does not entitle the holder to governance, profits, dividends, or any claim on
+              SYMBI assets or treasury.
+            </p>
+            <p>Use of $SYMBI is at your own risk.</p>
+            <p>
+              This site does not offer financial advice, nor does it guarantee any future value or performance.
+            </p>
           </div>
         </div>
 
