@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export default function SymbiSymphonyPage() {
   return (
     <section className="relative w-full bg-black text-white">
@@ -16,9 +14,14 @@ export default function SymbiSymphonyPage() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link href="/" className="rounded-full bg-cyan-400/10 px-6 py-2 text-cyan-300 hover:bg-cyan-400/20">
+          <a
+            href="https://www.symbi.world/manifesto"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-cyan-400/10 px-6 py-2 text-cyan-300 hover:bg-cyan-400/20"
+          >
             Read the SYMBI Manifesto
-          </Link>
+          </a>
           <a
             href="https://github.com/s8ken/SYMBI-Symphony"
             className="rounded-full bg-white/10 px-6 py-2 text-white hover:bg-white/20"
@@ -147,9 +150,14 @@ export default function SymbiSymphonyPage() {
       <div className="mx-auto max-w-3xl px-6 py-20 text-center">
         <h2 className="text-3xl font-medium">Engage with the Symphony</h2>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link href="/" className="rounded-full bg-cyan-400/10 px-6 py-2 text-cyan-300 hover:bg-cyan-400/20">
+          <a
+            href="https://www.symbi.world/manifesto"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-cyan-400/10 px-6 py-2 text-cyan-300 hover:bg-cyan-400/20"
+          >
             Read the Manifesto
-          </Link>
+          </a>
           <a
             href="https://www.gammatria.com"
             className="rounded-full bg-white/10 px-6 py-2 text-white hover:bg-white/20"
