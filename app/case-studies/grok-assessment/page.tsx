@@ -14,8 +14,8 @@ export default function GrokAssessmentCaseStudy() {
           </Link>
           <h1 className="text-4xl font-bold text-[#e0e0e0] mb-4">Model Comparison: DeepSeek vs Claude in SYMBI Framework Implementation</h1>
           <div className="flex items-center gap-3 mb-4">
-            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Validated</span>
-            <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs">Validated</span>
+            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Case Study</span>
+            <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs">Case Study</span>
           </div>
           <p className="text-xl text-[#ccc]">
             Comparative analysis of DeepSeek and Claude implementing the SYMBI framework with quantified, reproducible outcomes.
@@ -31,7 +31,7 @@ export default function GrokAssessmentCaseStudy() {
           <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-bold text-yellow-400 mb-3">Research Framing</h3>
             <p className="text-[#ccc]">
-              Empirical framework with cross‑platform validation and reproducible methodology. Mechanisms remain under investigation; results are quantitative and replicable.
+              Comparative case study with implementation log analysis. Preliminary evidence suggests developer‑reported improvements during framework‑guided development; controlled experiments and independent validation pending.
             </p>
           </div>
 

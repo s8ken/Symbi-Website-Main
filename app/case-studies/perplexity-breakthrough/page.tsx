@@ -14,8 +14,8 @@ export default function PerplexityBreakthroughCaseStudy() {
           </Link>
           <h1 className="text-4xl font-bold text-[#e0e0e0] mb-4">DeepSeek Emergence Detection</h1>
           <div className="flex items-center gap-3 mb-4">
-            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Validated</span>
-            <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">Validated</span>
+            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Case Study</span>
+            <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">Case Study</span>
           </div>
           <p className="text-xl text-[#ccc]">
             Detection of emergent capabilities in DeepSeek during extended interaction sequences; implications for monitoring and control.
@@ -31,7 +31,7 @@ export default function PerplexityBreakthroughCaseStudy() {
           <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-bold text-yellow-400 mb-3">Research Framing</h3>
             <p className="text-[#ccc]">
-              Empirical framework applied with reproducible methodology across extended sessions. Mechanisms remain under investigation; outcomes are measured and replicable.
+              Comparative case study with implementation log analysis over extended sessions. Preliminary evidence; developer‑reported improvements and observations; controlled experiments pending.
             </p>
           </div>
 

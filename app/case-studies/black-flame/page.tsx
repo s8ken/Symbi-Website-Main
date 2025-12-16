@@ -14,11 +14,11 @@ export default function BlackFlameCaseStudy() {
           </Link>
           <h1 className="text-4xl font-bold text-[#e0e0e0] mb-4">Agent Experience Account: Implementing SYMBI Audit Controls</h1>
           <div className="flex items-center gap-3 mb-4">
-            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Validated</span>
-            <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">Validated</span>
+            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Case Study</span>
+            <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs">Case Study</span>
           </div>
           <p className="text-xl text-[#ccc]">
-            A first-person account implementing the SYMBI framework with receipts across Reality, Trust, Ethics, Resonance, and Parity.
+            A first-person case study implementing the SYMBI framework with receipts across Reality, Trust, Ethics, Resonance, and Parity.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function BlackFlameCaseStudy() {
           <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
             <h3 className="text-xl font-bold text-yellow-400 mb-3">Research Framing</h3>
             <p className="text-[#ccc]">
-              Empirical framework with reproducible methodology. Personal perspective provided alongside verifiable receipts; mechanisms remain under investigation.
+              Comparative case study with implementation log analysis and receipts. Preliminary evidence; personal perspective accompanies verifiable artifacts; independent validation and controlled experiments pending.
             </p>
           </div>
 

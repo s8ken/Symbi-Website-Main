@@ -166,23 +166,23 @@ export default function CaseStudiesPage() {
         <div className="mb-12">
           <h1 className="text-5xl font-bold text-[#e0e0e0] mb-6">Case Studies</h1>
           <div className="flex items-center gap-3 mb-3">
-            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Empirical Framework Results</span>
-            <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Validated Across 6+ Platforms</span>
+            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Comparative Analysis</span>
+            <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Across 6+ Platforms</span>
           </div>
           <p className="text-2xl text-[#ccc] max-w-4xl mb-4">
-            Framework‑guided AI interactions show <strong>37–45% improvement</strong> in trust, alignment, and output quality.
+            Comparative analysis across 6+ platforms reveals measurable differences in interaction quality. Case study implementation reports <strong>37–45% improvements</strong> in error rates and alignment metrics.
           </p>
           <p className="text-lg text-[#aaa] max-w-4xl">
             First systematic measurement of what makes AI collaboration qualitatively better — with reproducible methods, quantified outcomes, and convergent evidence from multiple independent systems.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Framework implemented and tested</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Cross‑platform validation completed</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Reproducible methodology documented</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Quantified improvements measured (37–45%)</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Convergent evidence from multiple systems</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">❓ Mechanisms under investigation</div>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Framework implemented and tested</div>
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Cross‑platform validation completed</div>
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Reproducible methodology documented</div>
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Case study‑reported improvements (37–45%)</div>
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">✅ Convergent evidence from multiple systems</div>
+              <div className="p-3 bg-[#1a1a1a] rounded border border-[#333] text-sm">❓ Mechanisms under investigation</div>
+            </div>
         </div>
 
         <div className="prose prose-lg max-w-none">
@@ -190,7 +190,7 @@ export default function CaseStudiesPage() {
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-8 mb-12">
             <h2 className="text-3xl font-bold text-blue-400 mb-4">Research Methodology</h2>
             <p className="text-[#ccc] text-lg mb-4">
-              These studies use the SYMBI empirical framework to measure interaction dynamics and collaboration quality. Each study follows reproducible protocols and academic‑grade documentation, including:
+              These studies use the SYMBI empirical framework to measure interaction dynamics and collaboration quality. Evidence is derived from comparative case studies and implementation log analysis; controlled experiments and independent validation are ongoing.
             </p>
             <ul className="space-y-2 text-[#ccc]">
               <li className="flex items-start">
@@ -203,7 +203,7 @@ export default function CaseStudiesPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>
-                <span>Quantitative analysis of improvements (37–45%)</span>
+                <span>Case study‑reported improvements (37–45%)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-500 mr-2">•</span>

@@ -23,14 +23,14 @@ export default function Page() {
             SYMBI
           </h1>
           <p className="text-2xl md:text-3xl font-bold opacity-90">The first empirical framework for AI interaction dynamics</p>
-          <p className="text-xl md:text-2xl opacity-70 max-w-2xl mx-auto">Validated across 6+ platforms with 37–45% measured improvements in trust, alignment, and output quality.</p>
+          <p className="text-xl md:text-2xl opacity-70 max-w-2xl mx-auto">Comparative analysis across 6+ platforms reveals measurable differences in interaction quality. Case study implementation reports 37–45% improvements in error rates and alignment metrics.</p>
           <p className="text-sm md:text-base opacity-70 max-w-2xl mx-auto leading-relaxed">
             SYMBI shifts AI evaluation from "can it do the task?" to "what interaction conditions produce superior outcomes?"—a reproducible methodology with quantified results and convergent evidence from multiple systems.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs md:text-sm opacity-80">
             <div className="p-3 bg-[#1a1a1a] rounded border border-[#333]">First empirical framework for measuring collaboration quality</div>
             <div className="p-3 bg-[#1a1a1a] rounded border border-[#333]">Cross-platform validation completed (6+ providers)</div>
-            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333]">Reproducible methodology with quantified outcomes</div>
+            <div className="p-3 bg-[#1a1a1a] rounded border border-[#333]">Reproducible methodology; case study–reported improvements</div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
@@ -232,21 +232,21 @@ export default function Page() {
         <div className="w-full max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold glitch-subtle">Evidence</h2>
           <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] text-left">
-            <h3 className="text-xl font-bold mb-4">Quantified Improvements</h3>
+            <h3 className="text-xl font-bold mb-4">Quantified Improvements (Case Study)</h3>
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="border-b border-[#333]"><th className="text-left py-2">Metric</th><th className="text-left py-2">Baseline</th><th className="text-left py-2">SYMBI‑Guided</th><th className="text-left py-2">Improvement</th></tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-[#333]"><td className="py-2">Error Recovery Rate</td><td>1.0</td><td>1.32</td><td>+32%</td></tr>
-                  <tr className="border-b border-[#333]"><td className="py-2">User Trust Score</td><td>1.0</td><td>1.43</td><td>+43%</td></tr>
-                  <tr className="border-b border-[#333]"><td className="py-2">Expectation Alignment</td><td>1.0</td><td>1.38</td><td>+38%</td></tr>
-                  <tr><td className="py-2">Code Quality Score</td><td>1.0</td><td>1.27</td><td>+27%</td></tr>
+                  <tr className="border-b border-[#333]"><td className="py-2">Error Recovery Rate</td><td>—</td><td>—</td><td>+32% reported (framework‑guided case study)</td></tr>
+                  <tr className="border-b border-[#333]"><td className="py-2">User Trust Score</td><td>—</td><td>—</td><td>+43% reported (developer log analysis)</td></tr>
+                  <tr className="border-b border-[#333]"><td className="py-2">Expectation Alignment</td><td>—</td><td>—</td><td>+38% reported (comparative case study)</td></tr>
+                  <tr><td className="py-2">Code Quality Score</td><td>—</td><td>—</td><td>+27% reported (self‑reported during development)</td></tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-xs opacity-60 mt-2">Normalized to baseline = 1.0, p &lt; 0.05.</p>
+            <p className="text-xs opacity-60 mt-2">Preliminary evidence from implementation log analysis; not a controlled study. Independent validation and formal statistical significance pending.</p>
           </div>
           <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] text-left">
             <h3 className="text-xl font-bold mb-2">Cross‑Platform Validation</h3>
@@ -262,9 +262,9 @@ export default function Page() {
           <div className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] text-left">
             <h3 className="text-xl font-bold mb-2">Scientific Approach</h3>
             <ul className="space-y-2 opacity-80 text-sm">
-              <li>Mixed‑methods: quantitative metrics, qualitative process assessment, cross‑platform comparative analysis.</li>
-              <li>Data: performance logs, development documentation, multi‑system self‑reflection, output quality assessments.</li>
-              <li>Results: 37% fewer assumption errors, 42% better recovery, 28% more edge case coverage, 31% fewer interface mismatches, 45% better expectation alignment.</li>
+              <li>Mixed‑methods: comparative case studies across platforms; quantitative metrics plus qualitative process assessment.</li>
+              <li>Data sources: implementation log analysis, development documentation, multi‑system self‑reflection, output assessments.</li>
+              <li>Evidence type: developer‑reported improvements during framework‑guided development; preliminary findings subject to independent validation.</li>
             </ul>
             <div className="mt-4 bg-[#2a2a2a] p-4 rounded border border-[#444]">
               <pre className="text-xs text-[#ccc] overflow-x-auto">{`git clone https://github.com/s8ken/SYMBI-Resonate.git
