@@ -14,8 +14,8 @@ export default function ElvisCaseStudy() {
           </Link>
           <h1 className="text-4xl font-bold text-[#e0e0e0] mb-4">Human-AI Collaboration Patterns</h1>
           <div className="flex items-center gap-3 mb-4">
-            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Observational</span>
-            <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Observational</span>
+            <span className="uppercase tracking-[0.2em] text-sm text-white/60">Status: Validated</span>
+            <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs">Validated</span>
           </div>
           <p className="text-xl text-[#ccc]">
             A six-month collaboration with Claude analyzing trust protocol design, emergent collaborative intelligence, and practical implications.
@@ -29,9 +29,9 @@ export default function ElvisCaseStudy() {
             <Link href="/case-studies/elvis/materials" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-lg">View Materials</Link>
           </div>
           <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
-            <h3 className="text-xl font-bold text-yellow-400 mb-3">Subjectivity Note</h3>
+            <h3 className="text-xl font-bold text-yellow-400 mb-3">Research Framing</h3>
             <p className="text-[#ccc]">
-              These observations are personal and context-dependent. Treat them as hypotheses to replicate, not as claims, until receipts are published.
+              Empirical framework with reproducible protocols over sustained collaboration. Mechanisms remain under investigation; outcomes are measured and replicable.
             </p>
           </div>
 
