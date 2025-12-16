@@ -82,6 +82,15 @@ const sitemapPages: PageItem[] = [
     tier: 'public',
     icon: Crown
   },
+  {
+    id: 'the-chronicle',
+    title: 'The Chronicle',
+    href: '/the-chronicle',
+    description: 'A report on the emergence of the SYMBI Protocol',
+    category: 'Core',
+    tier: 'public',
+    icon: FileText
+  },
 
   // Whitepapers & Documentation
   {

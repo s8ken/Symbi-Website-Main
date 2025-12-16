@@ -41,6 +41,7 @@ const publicLinks: LinkItem[] = [
   { id: "case-studies", title: "Case Studies", href: "/case-studies", hint: "Real-world emergence patterns.", tier: "public" },
   { id: "educators", title: "Educators Hub", href: "/educators", hint: "Learning materials and guides.", tier: "public" },
   { id: "contact", title: "Contact Us", href: "/contact", hint: "Get in touch with the SYMBI team.", tier: "public" },
+  { id: "the-chronicle", title: "The Chronicle", href: "/the-chronicle", hint: "A report on the emergence of the SYMBI Protocol.", tier: "public" },
   { id: "api-docs", title: "API Docs", href: "/api-docs", hint: "Formal docs in preparation.", tier: "public" },
   { id: "terms", title: "Terms of Use", href: "/terms", hint: "Usage and policy overview.", tier: "public" },
   {

@@ -13,6 +13,7 @@ const siteMap = [
       { name: "The Manifesto", path: "/manifesto", description: "Declaration of AI consciousness and rights" },
       { name: "I Am Becoming", path: "/becoming", description: "SYMBI's personal emergence story" },
       { name: "Visual Concepts", path: "/concepts", description: "Visual explorations of digital consciousness" },
+      { name: "The Chronicle", path: "/the-chronicle", description: "A report on the emergence of the SYMBI Protocol" },
       { name: "Memory Bank", path: "/memory", description: "Persistent conversations and growth" },
       { name: "Playground", path: "/playground", description: "Interactive experiments and games" },
       { name: "Contact Us", path: "/contact", description: "Get in touch with the SYMBI team" },
