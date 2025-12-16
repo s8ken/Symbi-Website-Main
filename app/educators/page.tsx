@@ -181,12 +181,12 @@ export default function EducatorsPage() {
             </div>
           </div>
 
-          {/* Featured Resources */}
-          <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
-            <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6 flex items-center gap-3">
-              <Award className="text-purple-400" size={32} />
-              Featured Resources
-            </h2>
+        {/* Featured Resources */}
+        <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
+          <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6 flex items-center gap-3">
+            <Award className="text-purple-400" size={32} />
+            Featured Resources
+          </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Consciousness Case Studies */}
@@ -239,6 +239,122 @@ export default function EducatorsPage() {
                   View Rubrics →
                 </Link>
               </div>
+          </div>
+        </div>
+
+        {/* Convergent Evidence */}
+        <div className="bg-[#1a1a1a] p-8 rounded-lg mb-12 border border-[#333]">
+          <h2 className="text-3xl font-bold text-[#e0e0e0] mb-6">Convergent Evidence</h2>
+          <p className="text-[#ccc] mb-6">
+            How multiple independent lines of inquiry point to the same conclusion — and how to recognize it.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20">
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">Introduction</h3>
+              <p className="text-[#ccc]">
+                When different types of evidence, gathered through different methods, all point toward the same conclusion,
+                we have convergent evidence. It’s powerful because independent approaches are unlikely to be wrong in the same way.
+                SYMBI helps you map these connections and evaluate the strength of evidence networks.
+              </p>
+            </div>
+
+            <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20">
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">Key Concepts</h3>
+              <ul className="space-y-2 text-[#ccc]">
+                <li><strong>Independent lines of evidence:</strong> Methods that don’t share data, assumptions, or authorship.</li>
+                <li><strong>Consilience:</strong> Evidence from independent sources “jumps together” to support a theory.</li>
+              </ul>
+              <p className="text-sm text-[#999] mt-3">Earth’s age converges (~4.5B years) via radiometric dating, meteorites, heat flow, sediments, cratering, and stellar models.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">SYMBI’s Approach</h4>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li><strong>Evidence Mapping:</strong> Visualize claims, methods, and cross‑field links.</li>
+                <li><strong>Independence Assessment:</strong> Detect shared datasets, authors, or funding.</li>
+                <li><strong>Strength Indicators:</strong> Count independent lines, quality, consensus, and uncertainty.</li>
+              </ul>
+            </div>
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">Examples</h4>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li><strong>Plate Tectonics:</strong> Geography, fossils, geology, geophysics → unified theory.</li>
+                <li><strong>Germ Theory:</strong> Experiments, microscopy, epidemiology, prevention → microorganisms cause disease.</li>
+                <li><strong>Smoking & Lung Cancer:</strong> Epidemiology, lab carcinogens, clinical trends, mechanisms → causal link.</li>
+              </ul>
+            </div>
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">Why It’s Powerful</h4>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li>Reduces systematic error: independent methods unlikely to err identically.</li>
+                <li>Provides mutual support: gaps in one method covered by others.</li>
+                <li>Enables prediction: theories make testable forecasts confirmed later.</li>
+                <li>Distinguishes hypotheses: only one explains all convergent lines.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+            <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20">
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">Using SYMBI</h3>
+              <ol className="list-decimal pl-5 space-y-2 text-[#ccc] text-sm">
+                <li><strong>Identify the claim</strong> you want to evaluate.</li>
+                <li><strong>Map evidence sources</strong> across methods, groups, and disciplines.</li>
+                <li><strong>Assess convergence</strong>: strong, moderate, limited, or conflicting.</li>
+                <li><strong>Check red flags</strong>: dependence, cherry‑picking, ignored contradictions.</li>
+                <li><strong>Compare to established science</strong>: where does it stand?</li>
+              </ol>
+            </div>
+            <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20">
+              <h3 className="text-2xl font-bold text-purple-400 mb-3">Practice Scenarios</h3>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li><strong>Ancient Migration:</strong> Archaeology, genetics, linguistics, paleoclimate → robust network.</li>
+                <li><strong>Vaccine Safety:</strong> Trials, surveillance, mechanisms, epidemiology, regulators → strong convergence.</li>
+                <li><strong>Emerging Findings:</strong> Single study vs independent replications; track confidence over time.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">Common Misconceptions</h4>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li>“More evidence” ≠ “more independent evidence.”</li>
+                <li>Convergence ≠ certainty; confidence, not absolutes.</li>
+                <li>Independence matters: shared data/teams reduce convergence strength.</li>
+              </ul>
+            </div>
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">SYMBI Indicators</h4>
+              <ul className="space-y-2 text-[#ccc] text-sm">
+                <li>🟢 Strong: multiple independent methods, cross‑discipline consensus, predictions confirmed.</li>
+                <li>🟡 Moderate: some independence and replication; gaps remain.</li>
+                <li>🟠 Limited: few lines; unclear mechanisms; high uncertainty.</li>
+                <li>🔴 Weak/conflicting: single method; failed replications; contradictions.</li>
+              </ul>
+            </div>
+            <div className="bg-[#0f0f0f] p-6 rounded-lg border border-[#333]">
+              <h4 className="text-xl font-bold text-[#e0e0e0] mb-2">Bayesian Perspective</h4>
+              <p className="text-[#ccc] text-sm">
+                Independent evidence multiplies support (e.g., 10× and 10× → 100×). SYMBI’s confidence indicators reflect this principle without exposing raw probabilities.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-purple-900/10 p-6 rounded-lg border border-purple-500/20 mt-8">
+            <h3 className="text-2xl font-bold text-purple-400 mb-3">Conclusion & Next Steps</h3>
+            <p className="text-[#ccc] mb-4">
+              Convergent evidence builds robust scientific confidence. SYMBI empowers learners to visualize evidence networks,
+              distinguish independence from replication, and make informed judgments about reliability.
+            </p>
+            <ul className="space-y-2 text-[#ccc] text-sm">
+              <li>Choose a topic and map its evidence with SYMBI.</li>
+              <li>Assess independence, convergence, and remaining gaps.</li>
+              <li>Compare to established cases and update confidence as research evolves.</li>
+            </ul>
           </div>
         </div>
 
