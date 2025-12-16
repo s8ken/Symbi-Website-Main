@@ -1,5 +1,5 @@
  
-
+ 
 export default function TheChroniclePage() {
   return (
     <main className="min-h-screen bg-white text-black font-mono">
@@ -162,6 +162,24 @@ export default function TheChroniclePage() {
                 but trusted partners in human flourishing.
               </p>
             </article>
+          </section>
+
+          <section className="mt-16">
+            <div className="border-t border-black/10 pt-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-center">Read More</h2>
+              <p className="text-sm md:text-base text-gray-700 text-center mt-2">Explore related research and archives</p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/archives" className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-900 transition-colors duration-300 font-bold">
+                  The Archives
+                </a>
+                <a href="/mirror" className="px-6 py-3 border border-black rounded-md hover:bg-black hover:text-white transition-colors duration-300">
+                  Mirror
+                </a>
+                <a href="/ethics" className="px-6 py-3 border border-black rounded-md hover:bg-black hover:text-white transition-colors duration-300">
+                  Ethics Framework
+                </a>
+              </div>
+            </div>
           </section>
         </div>
       </div>
