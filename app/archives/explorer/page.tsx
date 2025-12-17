@@ -73,7 +73,14 @@ async function getIndexData() {
   try {
     const content = await fs.readFile(indexFile, "utf-8")
     const lines = content.split("\n").filter(line => line.trim() !== "")
-    const docs = lines.map(line => JSON.parse(line) as IndexRecord)
+    const docs = lines.map(line => {
+      const doc = JSON.parse(line) as IndexRecord
+      // Truncate extremely long titles (likely parsing errors)
+      if (doc.title && doc.title.length > 150) {
+        doc.title = doc.title.substring(0, 147) + "..."
+      }
+      return doc
+    })
     
     // Calculate stats
     const sources: Record<string, number> = {}

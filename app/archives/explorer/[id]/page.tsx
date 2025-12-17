@@ -61,7 +61,13 @@ async function getDocMetadata(docId: string) {
     const lines = content.split("\n").filter(line => line.trim() !== "")
     for (const line of lines) {
       const doc = JSON.parse(line) as IndexRecord
-      if (doc.doc_id === docId) return doc
+      if (doc.doc_id === docId) {
+        // Truncate extremely long titles
+        if (doc.title && doc.title.length > 150) {
+          doc.title = doc.title.substring(0, 147) + "..."
+        }
+        return doc
+      }
     }
     return null
   } catch {
