@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ doc.title or doc.file_name }} - SYMBI Archives</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="back-link">Back to Archives</a>
+            <h1>{{ doc.title or doc.file_name }}</h1>
+            <div class="doc-header-meta">
+                <span class="source-badge">{{ doc.source }}</span>
+                {% if doc.date_iso %}
+                <span class="date">{{ doc.date_iso[:10] }}</span>
+                {% endif %}
+                <span class="chunks">{{ doc.num_chunks }} chunks</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container document-view">
+        <div class="document-info">
+            <table class="info-table">
+                <tr>
+                    <th>Document ID</th>
+                    <td><code>{{ doc.doc_id }}</code></td>
+                </tr>
+                <tr>
+                    <th>Source</th>
+                    <td>{{ doc.source }}</td>
+                </tr>
+                <tr>
+                    <th>Original File</th>
+                    <td>{{ doc.file_name }}</td>
+                </tr>
+                {% if doc.date_iso %}
+                <tr>
+                    <th>Date</th>
+                    <td>{{ doc.date_iso }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <th>Created</th>
+                    <td>{{ doc.created_at }}</td>
+                </tr>
+                <tr>
+                    <th>Size</th>
+                    <td>{{ (doc.size_bytes / 1024)|round(1) }} KB</td>
+                </tr>
+                <tr>
+                    <th>SHA1</th>
+                    <td><code>{{ doc.sha1[:12] }}...</code></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="document-content">
+            <h2>Conversation</h2>
+            <div class="content-text">{{ content }}</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="https://symbi.world" target="_blank">SYMBI</a> ecosystem</p>
+        </div>
+    </footer>
+</body>
+</html>

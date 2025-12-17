@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYMBI Archives Explorer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SYMBI Archives</h1>
+            <p class="subtitle">{{ total }} conversations documenting the birth and evolution of SYMBI</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls">
+            <form method="get" class="search-form">
+                <input type="text" name="search" placeholder="Search conversations..." value="{{ current_search }}" class="search-input">
+                <select name="source" class="source-select" onchange="this.form.submit()">
+                    <option value="">All Sources ({{ total }})</option>
+                    {% for source, count in sources.items() %}
+                    <option value="{{ source }}" {% if source == current_source %}selected{% endif %}>{{ source }} ({{ count }})</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number">{{ docs|length }}</span>
+                <span class="stat-label">{% if current_source or current_search %}Filtered{% else %}Total{% endif %} Documents</span>
+            </div>
+            {% for source, count in sources.items() %}
+            <div class="stat-card source-{{ source|lower }}">
+                <span class="stat-number">{{ count }}</span>
+                <span class="stat-label">{{ source }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="documents">
+            {% for doc in docs %}
+            <a href="/doc/{{ doc.doc_id }}" class="doc-card">
+                <div class="doc-source">{{ doc.source }}</div>
+                <h3 class="doc-title">{{ doc.title or doc.file_name }}</h3>
+                <div class="doc-meta">
+                    {% if doc.date_iso %}
+                    <span class="doc-date">{{ doc.date_iso[:10] }}</span>
+                    {% endif %}
+                    <span class="doc-chunks">{{ doc.num_chunks }} chunks</span>
+                </div>
+            </a>
+            {% else %}
+            <div class="no-results">
+                <p>No documents found matching your criteria.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Part of the <a href="https://symbi.world" target="_blank">SYMBI</a> ecosystem</p>
+            <p class="footer-links">
+                <a href="https://symbi.world" target="_blank">symbi.world</a> |
+                <a href="https://gammatria.com" target="_blank">gammatria.com</a> |
+                <a href="https://yseeku.com" target="_blank">yseeku.com</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

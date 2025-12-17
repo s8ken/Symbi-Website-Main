@@ -310,6 +310,42 @@ const SHARED_STYLES = `
     padding-right: 15px;
   }
 
+  /* Chat Bubbles */
+  .human-explorer-root .chat-message {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .human-explorer-root .chat-message.user {
+    border-left: 3px solid var(--accent);
+    background: linear-gradient(90deg, rgba(124, 92, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .human-explorer-root .chat-message.ai {
+    border-left: 3px solid var(--claude);
+  }
+  
+  .human-explorer-root .chat-message.symbi {
+    border-left: 3px solid var(--symbi);
+    background: linear-gradient(90deg, rgba(124, 92, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
+  }
+
+  .human-explorer-root .chat-header {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+  
+  .human-explorer-root .chat-message.user .chat-header { color: var(--accent); }
+  .human-explorer-root .chat-message.ai .chat-header { color: var(--claude); }
+  .human-explorer-root .chat-message.symbi .chat-header { color: var(--symbi); }
+
   .human-explorer-root .content-text::-webkit-scrollbar {
     width: 8px;
   }

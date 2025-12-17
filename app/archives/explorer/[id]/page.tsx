@@ -17,6 +17,12 @@ interface IndexRecord {
   sha1: string
 }
 
+interface ConversationSegment {
+  speaker: string
+  text: string
+  type: 'user' | 'ai' | 'symbi' | 'misc'
+}
+
 async function getDocMetadata(docId: string) {
   const indexFile = path.join(process.cwd(), "public", "archives", "index.jsonl")
   try {
@@ -38,31 +44,93 @@ async function getDocMetadata(docId: string) {
   }
 }
 
-async function getDocContent(docId: string) {
-  // In a real implementation, we would seek into the large JSONL files using offsets
-  // For this prototype, we'll scan the combined file. 
-  // NOTE: This is inefficient for production but works for the prototype without a database.
+async function getDocContent(docId: string): Promise<string> {
   const combinedFile = path.join(process.cwd(), "public", "archives", "all_text.jsonl")
   try {
     const content = await fs.readFile(combinedFile, "utf-8")
     const lines = content.split("\n")
     
-    // Simple matching: look for the doc_id in the line (assuming lines are JSON or tagged)
-    // The current all_text.jsonl structure is: {"id":..., "text":...} or similar.
-    // If the chunks are just raw text lines, we can't easily map doc_id -> content without offsets.
-    // However, the `index.jsonl` implies we have `num_chunks`.
-    // Let's assume for this prototype we are just displaying "Content for doc {docId} not fully indexed in prototype".
-    // OR: If the lines in all_text.jsonl contain the doc_id, we can filter them.
-    
-    const matchingLines = lines.filter(line => line.includes(docId))
-    if (matchingLines.length > 0) {
-      return matchingLines.join("\n")
+    for (const line of lines) {
+      if (!line.trim()) continue;
+      if (line.includes(docId)) {
+        try {
+          const json = JSON.parse(line);
+          if (json.doc_id === docId) {
+            return json.text || "";
+          }
+        } catch (e) {
+          continue;
+        }
+      }
     }
     
-    return "Content extraction for this document is not yet fully implemented in this static prototype.\nPlease use the raw JSONL files or the chunked viewer."
+    return "Content not found in archives."
   } catch {
     return "Error reading archive file."
   }
+}
+
+function parseConversation(fullText: string): ConversationSegment[] {
+  const segments: ConversationSegment[] = [];
+  const text = fullText.replace(/\r\n/g, "\n");
+  
+  // Regex matches "You said:", "Symbi said:", etc. at start of line or after double newline
+  const regex = /(?:^|\n\n)(You|Symbi|ChatGPT|System|User|Assistant|Model) said:\n\n?/g;
+  
+  let match;
+  let matches = [];
+  
+  // Collect all matches first
+  while ((match = regex.exec(text)) !== null) {
+      matches.push({
+          speaker: match[1],
+          index: match.index,
+          length: match[0].length
+      });
+  }
+  
+  if (matches.length === 0) {
+      return [{ speaker: "Document", text: text, type: 'misc' }];
+  }
+  
+  // Handle preamble (text before first speaker)
+  if (matches[0].index > 0) {
+       segments.push({
+          speaker: "Preamble",
+          text: text.substring(0, matches[0].index).trim(),
+          type: 'misc'
+      });
+  }
+  
+  // Process segments
+  for (let i = 0; i < matches.length; i++) {
+      const current = matches[i];
+      const next = matches[i + 1];
+      
+      const start = current.index + current.length;
+      const end = next ? next.index : text.length;
+      
+      const content = text.substring(start, end).trim();
+      
+      let type: ConversationSegment['type'] = 'misc';
+      const lowerSpeaker = current.speaker.toLowerCase();
+      
+      if (lowerSpeaker === 'you' || lowerSpeaker === 'user') {
+          type = 'user';
+      } else if (lowerSpeaker === 'symbi') {
+          type = 'symbi';
+      } else if (['chatgpt', 'assistant', 'model', 'system'].includes(lowerSpeaker)) {
+          type = 'ai';
+      }
+      
+      segments.push({
+          speaker: current.speaker,
+          text: content,
+          type: type
+      });
+  }
+  
+  return segments;
 }
 
 export default async function DocumentPage({ params }: { params: Promise<{ id: string }> }) {
@@ -71,7 +139,8 @@ export default async function DocumentPage({ params }: { params: Promise<{ id: s
   
   if (!doc) notFound()
   
-  const content = await getDocContent(id)
+  const rawContent = await getDocContent(id)
+  const conversation = parseConversation(rawContent)
 
   return (
     <>
@@ -127,7 +196,14 @@ export default async function DocumentPage({ params }: { params: Promise<{ id: s
 
         <div className="document-content">
           <h2>Conversation</h2>
-          <div className="content-text">{content}</div>
+          <div className="conversation-container">
+            {conversation.map((segment, idx) => (
+              <div key={idx} className={`chat-message ${segment.type}`}>
+                <div className="chat-header">{segment.speaker}</div>
+                <div className="content-text">{segment.text}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
 
