@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Symbi Archives Part 1</title>
+    <style>
+      body { font-family: ui-monospace, Menlo, monospace; font-size: 10px; line-height: 1.25; margin: 8px; }
+      .doc { border-top: 1px solid #ddd; padding-top: 8px; margin-top: 8px; }
+      .hdr { color: #444; margin-bottom: 6px; }
+      pre { white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+  </head>
+  <body>
+    <h1>Symbi Archives Part 1</h1>
+    <div id="root"></div>
+    <script>
+      async function streamJSONL(url, onLine) {
+        const res = await fetch(url);
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buf = '';
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, { stream: true });
+          let idx;
+          while ((idx = buf.indexOf('\n')) >= 0) {
+            const line = buf.slice(0, idx).trim();
+            buf = buf.slice(idx + 1);
+            if (line) onLine(line);
+          }
+        }
+        if (buf.trim()) onLine(buf.trim());
+      }
+      function render(rec) {
+        const root = document.getElementById('root');
+        const wrap = document.createElement('div');
+        wrap.className = 'doc';
+        const hdr = document.createElement('div');
+        hdr.className = 'hdr';
+        hdr.textContent = `----- DOC ${rec.doc_id} | ${rec.source || ''} | ${rec.title || ''} | ${rec.date_iso || ''} -----`;
+        const pre = document.createElement('pre');
+        pre.textContent = rec.text || '';
+        wrap.appendChild(hdr);
+        wrap.appendChild(pre);
+        const end = document.createElement('div');
+        end.className = 'hdr';
+        end.textContent = '----- END DOC -----';
+        wrap.appendChild(end);
+        root.appendChild(wrap);
+      }
+      streamJSONL('./all_text_part1.jsonl', (line) => {
+        try { render(JSON.parse(line)); } catch {}
+      });
+    </script>
+  </body>
+  </html>
+
