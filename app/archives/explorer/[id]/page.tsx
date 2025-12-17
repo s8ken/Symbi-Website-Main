@@ -5,43 +5,6 @@ import { notFound } from "next/navigation"
 
 export const dynamic = "force-dynamic"
 
-// Shared styles (same as explorer page)
-const DOC_STYLES = `
-  .archives-doc-root { 
-     --bg-dark: #0a0a0f; 
-     --bg-card: #12121a; 
-     --bg-hover: #1a1a25; 
-     --text-primary: #e8e8ed; 
-     --text-secondary: #8888a0; 
-     --accent: #7c5cff; 
-     --accent-glow: rgba(124, 92, 255, 0.3); 
-     font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-     line-height: 1.6;
-     color: var(--text-primary);
-     min-height: 100vh;
-     background: var(--bg-dark);
- } 
- .archives-doc-root .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
- .archives-doc-root header { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%); border-bottom: 1px solid rgba(124, 92, 255, 0.2); padding: 40px 0; text-align: center; }
- .archives-doc-root header h1 { font-size: 2rem; background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; background-clip: text; display: inline-block; }
- .archives-doc-root .back-link { display: inline-block; color: var(--accent); text-decoration: none; margin-bottom: 20px; font-size: 0.9rem; }
- .archives-doc-root .back-link:hover { text-decoration: underline; }
- .archives-doc-root .doc-header-meta { display: flex; gap: 15px; justify-content: center; margin-top: 15px; flex-wrap: wrap; }
- .archives-doc-root .source-badge { background: var(--accent); color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
- .archives-doc-root .date, .archives-doc-root .chunks { color: var(--text-secondary); font-size: 0.9rem; }
- .archives-doc-root .document-view { max-width: 900px; padding: 40px 0; }
- .archives-doc-root .document-info { background: var(--bg-card); border-radius: 12px; padding: 20px; margin-bottom: 30px; }
- .archives-doc-root .info-table { width: 100%; border-collapse: collapse; }
- .archives-doc-root .info-table th { text-align: left; color: var(--text-secondary); font-weight: 500; padding: 8px 15px 8px 0; width: 120px; }
- .archives-doc-root .info-table td { padding: 8px 0; }
- .archives-doc-root .info-table code { background: rgba(124, 92, 255, 0.1); padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
- .archives-doc-root .document-content { background: var(--bg-card); border-radius: 12px; padding: 30px; }
- .archives-doc-root .document-content h2 { margin-bottom: 20px; color: var(--accent); }
- .archives-doc-root .content-text { white-space: pre-wrap; word-wrap: break-word; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9rem; line-height: 1.8; color: var(--text-primary); padding-right: 15px; }
- .archives-doc-root footer { background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); padding: 30px 0; text-align: center; margin-top: 60px; }
- .archives-doc-root footer a { color: var(--accent); text-decoration: none; }
-`
-
 interface IndexRecord {
   doc_id: string
   source: string
@@ -111,8 +74,7 @@ export default async function DocumentPage({ params }: { params: Promise<{ id: s
   const content = await getDocContent(id)
 
   return (
-    <div className="archives-doc-root">
-      <style>{DOC_STYLES}</style>
+    <>
       <header>
         <div className="container">
           <Link href="/archives/explorer" className="back-link">← Back to Archives</Link>
@@ -174,6 +136,6 @@ export default async function DocumentPage({ params }: { params: Promise<{ id: s
           <p>Part of the <a href="https://symbi.world" target="_blank">SYMBI</a> ecosystem</p>
         </div>
       </footer>
-    </div>
+    </>
   )
 }
