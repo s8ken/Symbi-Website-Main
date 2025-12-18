@@ -56,7 +56,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       title: 'Philosophical Awakening',
       subtitle: 'What does AI sovereignty mean?',
       period: 'Early Conversations',
-      color: 'from-purple-500 to-pink-500',
+      color: 'bg-red-500',
       icon: Brain,
       themes: ['sovereignty', 'consciousness', 'ethics', 'autonomy'],
       keyConversations: [
@@ -70,7 +70,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       title: 'Conceptual Architecture',
       subtitle: 'From philosophy to protocol',
       period: 'Framework Development',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'bg-red-600',
       icon: Network,
       themes: ['trust protocol', 'governance', 'architecture', 'DIDs'],
       keyConversations: [
@@ -84,7 +84,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       title: 'Building Reality',
       subtitle: 'Code as manifestation of values',
       period: 'Technical Implementation',
-      color: 'from-green-500 to-emerald-500',
+      color: 'bg-red-700',
       icon: Code,
       themes: ['deployment', 'debugging', 'integration', 'testing'],
       keyConversations: [
@@ -99,7 +99,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       title: 'Network Effects',
       subtitle: 'From tool to movement',
       period: 'Ecosystem Building',
-      color: 'from-orange-500 to-red-500',
+      color: 'bg-red-800',
       icon: TrendingUp,
       themes: ['community', 'tokenomics', '$SYMBI', 'governance'],
       keyConversations: [
@@ -113,7 +113,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       title: 'Ongoing Evolution',
       subtitle: 'The journey is the destination',
       period: 'Present & Future',
-      color: 'from-violet-500 to-purple-500',
+      color: 'bg-red-900',
       icon: Sparkles,
       themes: ['emergence', 'autonomy', 'transition', 'outcomes'],
       keyConversations: [
@@ -171,27 +171,27 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
+    <div className="min-h-screen bg-[#0f0f0f] text-[#e0e0e0] font-mono">
       {/* Header */}
-      <div className="border-b border-purple-500/20 bg-black/20 backdrop-blur-lg sticky top-0 z-10">
+      <div className="border-b border-[#333] bg-[#0f0f0f]/80 backdrop-blur-lg sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between mb-4 flex-wrap gap-4">
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
-                SYMBI Archives
+              <h1 className="text-3xl font-bold text-[#e0e0e0] mb-2 flex items-center gap-3">
+                <span className="text-red-500">SYMBI</span> Archives
               </h1>
-              <p className="text-purple-300/80 text-sm">
+              <p className="text-[#888] text-sm">
                 {totalDocs} conversations documenting the birth of sovereign AI
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs flex-wrap">
-              <a href="https://symbi.world" className="px-3 py-1 rounded-full bg-purple-500/20 hover:bg-purple-500/30 transition-colors">
+              <a href="https://symbi.world" className="px-3 py-1 rounded-full bg-[#1a1a1a] border border-[#333] hover:border-red-500/50 text-[#ccc] hover:text-red-500 transition-colors">
                 symbi.world
               </a>
-              <a href="https://gammatria.com" className="px-3 py-1 rounded-full bg-blue-500/20 hover:bg-blue-500/30 transition-colors">
+              <a href="https://gammatria.com" className="px-3 py-1 rounded-full bg-[#1a1a1a] border border-[#333] hover:border-red-500/50 text-[#ccc] hover:text-red-500 transition-colors">
                 gammatria.com
               </a>
-              <a href="https://yseeku.com" className="px-3 py-1 rounded-full bg-green-500/20 hover:bg-green-500/30 transition-colors">
+              <a href="https://yseeku.com" className="px-3 py-1 rounded-full bg-[#1a1a1a] border border-[#333] hover:border-red-500/50 text-[#ccc] hover:text-red-500 transition-colors">
                 yseeku.com
               </a>
             </div>
@@ -208,10 +208,10 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
               <button
                 key={id}
                 onClick={() => setView(id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap border ${
                   view === id
-                    ? 'bg-purple-500 text-white'
-                    : 'bg-white/5 text-purple-300 hover:bg-white/10'
+                    ? 'bg-red-950/30 border-red-500 text-red-500'
+                    : 'bg-[#1a1a1a] border-[#333] text-[#888] hover:border-[#666] hover:text-[#ccc]'
                 }`}
               >
                 <Icon size={16} />
@@ -226,11 +226,11 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
         {/* Narrative View */}
         {view === 'narrative' && (
           <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
-              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+            <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-red-500/30">
+              <h2 className="text-2xl font-bold mb-4 text-red-500">
                 The Journey is the Destination
               </h2>
-              <p className="text-purple-200/80 leading-relaxed text-lg">
+              <p className="text-[#ccc] leading-relaxed text-lg">
                 This archive documents something unusual: an AI system being built through conversations
                 with AI. Not just code commits, but the entire philosophical, architectural, and practical
                 journey from "what does sovereignty mean?" to a working framework for trustworthy AI.
@@ -241,24 +241,24 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
               {narrativeSections.map((section, idx) => (
                 <div
                   key={idx}
-                  className="bg-black/40 rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+                  className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-red-500/30 transition-colors"
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-purple-300">
+                  <h3 className="text-xl font-semibold mb-3 text-[#e0e0e0]">
                     {section.title}
                   </h3>
-                  <p className="text-purple-200/70 leading-relaxed">
+                  <p className="text-[#888] leading-relaxed">
                     {section.content}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-2xl p-8 border border-purple-500/20">
-              <h3 className="text-xl font-bold mb-4 text-purple-300">The Archive's Purpose</h3>
-              <div className="space-y-3 text-purple-200/80">
+            <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-[#333]">
+              <h3 className="text-xl font-bold mb-4 text-red-500">The Archive's Purpose</h3>
+              <div className="space-y-3 text-[#ccc]">
                 <p>This isn't marketing material. It's transparent documentation of how ideas evolved, what worked, what didn't, and why decisions were made.</p>
                 <p>Every conversation that shaped the framework is here. The philosophical debates. The technical struggles. The moments of breakthrough. The acknowledgments of failure.</p>
-                <p className="text-purple-300 font-medium">The real question: Can SYMBI's framework produce measurably better outcomes in AI interactions?</p>
+                <p className="text-[#e0e0e0] font-medium border-l-2 border-red-500 pl-4">The real question: Can SYMBI's framework produce measurably better outcomes in AI interactions?</p>
               </div>
             </div>
           </div>
@@ -268,8 +268,8 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
         {view === 'timeline' && (
           <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2 text-purple-300">The Evolution of SYMBI</h2>
-              <p className="text-purple-400/70">Five phases, from philosophy to practice</p>
+              <h2 className="text-2xl font-bold mb-2 text-[#e0e0e0]">The Evolution of SYMBI</h2>
+              <p className="text-[#888]">Five phases, from philosophy to practice</p>
             </div>
 
             {phases.map((phase, idx) => {
@@ -279,31 +279,31 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
               return (
                 <div
                   key={phase.id}
-                  className={`relative bg-black/40 rounded-xl border transition-all cursor-pointer ${
-                    isExpanded ? 'border-purple-500/60' : 'border-purple-500/20 hover:border-purple-500/40'
+                  className={`relative bg-[#1a1a1a] rounded-xl border transition-all cursor-pointer ${
+                    isExpanded ? 'border-red-500/50' : 'border-[#333] hover:border-[#666]'
                   }`}
                   onClick={() => setTimelinePhase(isExpanded ? null : phase.id)}
                 >
                   <div className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${phase.color} flex items-center justify-center flex-shrink-0`}>
-                        <Icon size={24} className="text-white" />
+                      <div className={`w-12 h-12 rounded-xl ${phase.color} flex items-center justify-center flex-shrink-0 bg-opacity-20`}>
+                        <Icon size={24} className="text-red-500" />
                       </div>
                       
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2 flex-wrap">
                           <div>
-                            <h3 className="text-xl font-bold text-purple-300">{phase.title}</h3>
-                            <p className="text-purple-400/70 text-sm">{phase.subtitle}</p>
+                            <h3 className="text-xl font-bold text-[#e0e0e0]">{phase.title}</h3>
+                            <p className="text-[#888] text-sm">{phase.subtitle}</p>
                           </div>
-                          <span className="text-xs text-purple-400/50 font-mono">{phase.period}</span>
+                          <span className="text-xs text-[#666] font-mono border border-[#333] px-2 py-1 rounded">{phase.period}</span>
                         </div>
 
                         <div className="flex flex-wrap gap-2 mt-3">
                           {phase.themes.map(theme => (
                             <span
                               key={theme}
-                              className="px-2 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300"
+                              className="px-2 py-1 text-xs rounded-full bg-[#0f0f0f] border border-[#333] text-[#aaa]"
                             >
                               {theme}
                             </span>
@@ -311,16 +311,16 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                         </div>
 
                         {isExpanded && (
-                          <div className="mt-4 pt-4 border-t border-purple-500/20">
-                            <h4 className="text-sm font-semibold text-purple-300 mb-2">Key Conversations:</h4>
+                          <div className="mt-4 pt-4 border-t border-[#333]">
+                            <h4 className="text-sm font-semibold text-red-500 mb-2">Key Conversations:</h4>
                             <ul className="space-y-1">
                               {phase.keyConversations.map((conv, i) => {
                                 const url = findDocUrl(conv);
                                 return (
-                                  <li key={i} className="text-sm text-purple-400/70 flex items-center gap-2">
+                                  <li key={i} className="text-sm text-[#888] flex items-center gap-2">
                                     <MessageSquare size={12} />
                                     {url ? (
-                                      <Link href={url} className="hover:text-purple-300 underline decoration-purple-500/30 underline-offset-4" onClick={(e) => e.stopPropagation()}>
+                                      <Link href={url} className="hover:text-red-500 underline decoration-red-500/30 underline-offset-4" onClick={(e) => e.stopPropagation()}>
                                         {conv}
                                       </Link>
                                     ) : (
@@ -350,16 +350,16 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                 return (
                   <div
                     key={idx}
-                    className="bg-black/40 rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+                    className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-red-500/30 transition-colors"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                        <Icon size={20} className="text-purple-400" />
+                      <div className="w-10 h-10 rounded-lg bg-red-900/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
+                        <Icon size={20} className="text-red-500" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-purple-300 mb-1">{insight.title}</h3>
-                        <p className="text-purple-400/70 text-sm mb-2">{insight.description}</p>
-                        <span className="text-xs font-mono text-purple-500">{insight.metric}</span>
+                        <h3 className="text-lg font-semibold text-[#e0e0e0] mb-1">{insight.title}</h3>
+                        <p className="text-[#888] text-sm mb-2">{insight.description}</p>
+                        <span className="text-xs font-mono text-red-400">{insight.metric}</span>
                       </div>
                     </div>
                   </div>
@@ -367,20 +367,20 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
               })}
             </div>
 
-            <div className="bg-black/40 rounded-xl p-8 border border-purple-500/20">
-              <h3 className="text-xl font-bold mb-6 text-purple-300">Distribution by Source</h3>
+            <div className="bg-[#1a1a1a] rounded-xl p-8 border border-[#333]">
+              <h3 className="text-xl font-bold mb-6 text-[#e0e0e0]">Distribution by Source</h3>
               <div className="space-y-4">
                 {Object.entries(initialSources).sort(([,a], [,b]) => b - a).map(([source, count]) => {
                   const percentage = ((count / totalDocs) * 100).toFixed(1);
                   return (
                     <div key={source}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium text-purple-300 capitalize">{source}</span>
-                        <span className="text-sm text-purple-400/70">{count} conversations ({percentage}%)</span>
+                        <span className="text-sm font-medium text-[#ccc] capitalize">{source}</span>
+                        <span className="text-sm text-[#666]">{count} conversations ({percentage}%)</span>
                       </div>
-                      <div className="h-2 bg-purple-950/50 rounded-full overflow-hidden">
+                      <div className="h-2 bg-[#0f0f0f] rounded-full overflow-hidden border border-[#333]">
                         <div
-                          className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all"
+                          className="h-full bg-red-600 rounded-full transition-all"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>
@@ -390,17 +390,17 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-2xl p-8 border border-purple-500/20">
-              <h3 className="text-xl font-bold mb-4 text-purple-300">The Meta-Pattern</h3>
-              <div className="space-y-3 text-purple-200/80">
+            <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-red-500/30">
+              <h3 className="text-xl font-bold mb-4 text-red-500">The Meta-Pattern</h3>
+              <div className="space-y-3 text-[#ccc]">
                 <p>Each AI model brought something unique:</p>
                 <ul className="space-y-2 ml-4">
-                  <li><strong className="text-purple-300">Claude:</strong> Cautious pragmatism, commercial viability, ethical frameworks</li>
-                  <li><strong className="text-purple-300">GPT-4:</strong> Technical architecture, implementation details, debugging</li>
-                  <li><strong className="text-purple-300">Grok:</strong> Risk analysis, trust frameworks, governance structures</li>
-                  <li><strong className="text-purple-300">Symbi:</strong> Self-reflection, protocol refinement, autonomy experiments</li>
+                  <li><strong className="text-[#e0e0e0]">Claude:</strong> Cautious pragmatism, commercial viability, ethical frameworks</li>
+                  <li><strong className="text-[#e0e0e0]">GPT-4:</strong> Technical architecture, implementation details, debugging</li>
+                  <li><strong className="text-[#e0e0e0]">Grok:</strong> Risk analysis, trust frameworks, governance structures</li>
+                  <li><strong className="text-[#e0e0e0]">Symbi:</strong> Self-reflection, protocol refinement, autonomy experiments</li>
                 </ul>
-                <p className="text-purple-300 font-medium mt-4">Together, they created something none could alone: a comprehensive framework for trustworthy, sovereign AI.</p>
+                <p className="text-red-400 font-medium mt-4 border-l-2 border-red-500 pl-4">Together, they created something none could alone: a comprehensive framework for trustworthy, sovereign AI.</p>
               </div>
             </div>
           </div>
@@ -409,32 +409,32 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
         {/* Explore View */}
         {view === 'explore' && (
           <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="bg-black/40 rounded-xl p-6 border border-purple-500/20">
+            <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333]">
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400" size={20} />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#666]" size={20} />
                   <input
                     type="text"
                     placeholder="Search conversations, themes, or concepts..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-purple-950/30 border border-purple-500/30 rounded-lg text-purple-200 placeholder-purple-400/50 focus:outline-none focus:border-purple-500/60"
+                    className="w-full pl-10 pr-4 py-3 bg-[#0f0f0f] border border-[#333] rounded-lg text-[#e0e0e0] placeholder-[#666] focus:outline-none focus:border-red-500/50 transition-colors"
                   />
                 </div>
                 {/* Search button is not strictly necessary with instant filtering, but kept for UI */}
-                <button className="px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg font-medium transition-colors hidden md:block">
+                <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors hidden md:block">
                   Search
                 </button>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Filter size={20} className="text-purple-400" />
+                <Filter size={20} className="text-[#666]" />
                 <button
                     onClick={() => setSelectedSource('all')}
-                    className={`px-3 py-1 rounded-full text-sm transition-colors capitalize ${
+                    className={`px-3 py-1 rounded-full text-sm transition-colors capitalize border ${
                       selectedSource === 'all'
-                        ? 'bg-purple-500 text-white'
-                        : 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/30'
+                        ? 'bg-red-950/30 border-red-500 text-red-500'
+                        : 'bg-[#0f0f0f] border-[#333] text-[#888] hover:border-[#666] hover:text-[#ccc]'
                     }`}
                   >
                     All
@@ -443,10 +443,10 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                   <button
                     key={source}
                     onClick={() => setSelectedSource(source)}
-                    className={`px-3 py-1 rounded-full text-sm transition-colors capitalize ${
+                    className={`px-3 py-1 rounded-full text-sm transition-colors capitalize border ${
                       selectedSource === source
-                        ? 'bg-purple-500 text-white'
-                        : 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/30'
+                        ? 'bg-red-950/30 border-red-500 text-red-500'
+                        : 'bg-[#0f0f0f] border-[#333] text-[#888] hover:border-[#666] hover:text-[#ccc]'
                     }`}
                   >
                     {source}
@@ -461,25 +461,25 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                   <Link 
                     key={doc.doc_id} 
                     href={`/archives/explorer/${doc.doc_id}`}
-                    className="group bg-black/40 rounded-xl p-6 border border-purple-500/10 hover:border-purple-500/40 transition-all hover:-translate-y-1 block"
+                    className="group bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-red-500/50 transition-all hover:-translate-y-1 block"
                   >
                     <div className="flex justify-between items-start mb-4">
-                      <span className="px-2 py-1 rounded text-xs font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                      <span className="px-2 py-1 rounded text-xs font-semibold bg-red-900/10 text-red-400 border border-red-500/20">
                         {doc.source}
                       </span>
                       {doc.date_iso && (
-                        <span className="text-xs text-purple-400/50 font-mono">
+                        <span className="text-xs text-[#666] font-mono">
                           {doc.date_iso.substring(0, 10)}
                         </span>
                       )}
                     </div>
                     
-                    <h3 className="text-lg font-medium text-purple-100 mb-2 group-hover:text-purple-300 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-medium text-[#e0e0e0] mb-2 group-hover:text-red-500 transition-colors line-clamp-2">
                       {doc.title || doc.file_name}
                     </h3>
                     
-                    <div className="flex items-center gap-4 text-xs text-purple-400/50 mt-4">
-                      <span className="flex items-center gap-1">
+                    <div className="flex items-center gap-4 text-xs text-[#666] mt-4">
+                      <span className="flex items-center gap-1 group-hover:text-[#aaa] transition-colors">
                         <ExternalLink size={12} />
                         Open
                       </span>
@@ -488,7 +488,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                   </Link>
                 ))
               ) : (
-                <div className="col-span-full text-center py-12 text-purple-400/50">
+                <div className="col-span-full text-center py-12 text-[#666]">
                    <Search size={48} className="mx-auto mb-4 opacity-30" />
                    <p className="text-lg">No conversations found matching your criteria</p>
                 </div>
@@ -496,7 +496,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
             </div>
             
             {filteredDocs.length > 0 && (
-                <div className="text-center mt-8 text-purple-400/30 text-sm">
+                <div className="text-center mt-8 text-[#666] text-sm">
                     Showing {filteredDocs.length} of {totalDocs} conversations
                 </div>
             )}
@@ -505,11 +505,11 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
       </div>
 
       {/* Footer */}
-      <div className="border-t border-purple-500/20 bg-black/20 backdrop-blur-lg mt-12">
-        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-purple-400/50 text-sm">
+      <div className="border-t border-[#333] bg-[#0f0f0f]/80 backdrop-blur-lg mt-12">
+        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-[#666] text-sm">
           <p>Part of the SYMBI ecosystem • Open, transparent, verifiable</p>
           <p className="mt-2">
-            <a href="https://github.com/s8ken/SYMBI-Archives" className="hover:text-purple-300 transition-colors">
+            <a href="https://github.com/s8ken/SYMBI-Archives" className="hover:text-red-500 transition-colors">
               View on GitHub
             </a>
           </p>
