@@ -58,7 +58,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
 
   // Light-surface pages get nav inverted for readability
   // Financial Framework and Technology sections have light background
-  const lightPrefixes = ["/technology", "/trust-protocol", "/oracle", "/symbi-symphony", "/tokenomics", "/investment", "/market-analysis", "/financial-whitepaper", "/technology-whitepaper", "/the-chronicle"]
+  const lightPrefixes = ["/technology", "/trust-protocol", "/oracle", "/symbi-symphony", "/tokenomics", "/investment", "/market-analysis", "/financial-whitepaper", "/technology-whitepaper", "/the-chronicle", "/vault"]
 
   function isLightRoute(p: string) {
     return lightPrefixes.some((prefix) => p === prefix || p.startsWith(prefix + "/"))
@@ -128,6 +128,7 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
     { name: "Technology", path: "/technology", icon: Code2 },
     { name: "Trust Protocol", path: "/trust-protocol", icon: Shield },
     { name: "Oracle", path: "/oracle", icon: Landmark },
+    { name: "Vault", path: "/vault", icon: Database },
     { name: "SYMBI Symphony", path: "/symbi-symphony", icon: Zap },
     { name: "API Docs", path: "/api-docs", icon: Code2 },
     { name: "Technology Whitepaper", path: "/technology-whitepaper", icon: ScrollText },
