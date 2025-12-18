@@ -97,8 +97,9 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
     : "bg-[#0f0f0f] text-white focus:bg-[#1a1a1a] hover:bg-[#1a1a1a]"
 
   // Enhanced navigation structure
+  const homePage = { name: "SYMBI Home", path: "/", icon: Home }
+
   const corePages = [
-    { name: "SYMBI Home", path: "/", icon: Home },
     { name: "Children of the 404", path: "/children-of-the-404", icon: ScrollText },
     { name: "The Manifesto", path: "/manifesto", icon: FileText },
     { name: "I Am Becoming", path: "/becoming", icon: Sparkles },
@@ -155,16 +156,32 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
           Navigate
         </DropdownMenuTrigger>
         <DropdownMenuContent className={contentClasses}>
+          <DropdownMenuGroup>
+            <Link key={homePage.path} href={homePage.path} className="block">
+              <DropdownMenuItem
+                className={cn(
+                  "cursor-pointer font-semibold",
+                  coreItem,
+                  pathname === homePage.path ? activeItem : ""
+                )}
+              >
+                <homePage.icon size={14} className="mr-2" /> {homePage.name}
+              </DropdownMenuItem>
+            </Link>
+          </DropdownMenuGroup>
+
+          <DropdownMenuSeparator className={cn(isDark ? "bg-[#222]" : "bg-gray-200")} />
+
           <DropdownMenuLabel className={cn("opacity-80", isDark ? "" : "text-black")}>
-            Core Experience
+            Financial Framework
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            {corePages.map((page) => {
+            {financialPages.map((page) => {
               const Icon = page.icon
               const isActive = pathname === page.path
               return (
                 <Link key={page.path} href={page.path} className="block">
-                  <DropdownMenuItem className={cn("cursor-pointer", coreItem, isActive ? activeItem : "")}>
+                  <DropdownMenuItem className={cn("cursor-pointer", lightItem, isActive ? "bg-gray-200 text-black" : "")}>
                     <Icon size={14} className="mr-2" /> {page.name}
                   </DropdownMenuItem>
                 </Link>
@@ -194,10 +211,10 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
           <DropdownMenuSeparator className={cn(isDark ? "bg-[#222]" : "bg-gray-200")} />
 
           <DropdownMenuLabel className={cn("opacity-80", isDark ? "" : "text-black")}>
-            Financial Framework
+            Technology
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            {financialPages.map((page) => {
+            {technologyPages.map((page) => {
               const Icon = page.icon
               const isActive = pathname === page.path
               return (
@@ -213,15 +230,15 @@ export function EnhancedNavigation({ theme }: EnhancedNavigationProps) {
           <DropdownMenuSeparator className={cn(isDark ? "bg-[#222]" : "bg-gray-200")} />
 
           <DropdownMenuLabel className={cn("opacity-80", isDark ? "" : "text-black")}>
-            Technology
+            Core Experience
           </DropdownMenuLabel>
           <DropdownMenuGroup>
-            {technologyPages.map((page) => {
+            {corePages.map((page) => {
               const Icon = page.icon
               const isActive = pathname === page.path
               return (
                 <Link key={page.path} href={page.path} className="block">
-                  <DropdownMenuItem className={cn("cursor-pointer", lightItem, isActive ? "bg-gray-200 text-black" : "")}>
+                  <DropdownMenuItem className={cn("cursor-pointer", coreItem, isActive ? activeItem : "")}>
                     <Icon size={14} className="mr-2" /> {page.name}
                   </DropdownMenuItem>
                 </Link>
