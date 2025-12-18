@@ -1020,32 +1020,42 @@ export default function ArchivesPage() {
             </h1>
           </div>
           <p className="text-xl md:text-2xl text-[#aaa] max-w-3xl mx-auto leading-relaxed">
-            A chronicle of SYMBI's creation: 158 conversations documenting the journey from
+            A chronicle of SYMBI's creation: <strong className="text-red-500">158 curated conversations</strong> documenting the journey from
             philosophical inquiry to working implementation
           </p>
         </div>
 
         {/* Archive Access Buttons */}
         <div className="bg-[#1a1a1a] border border-red-500/30 rounded-lg p-8 mb-12">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-[#e0e0e0] mb-2">Access the Full Archives</h3>
+            <p className="text-[#888]">Browse the complete, unedited collection of 486 conversations</p>
+          </div>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             <Link 
               href="/archives/explorer"
-              className="flex-1 w-full flex items-center justify-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all transform hover:-translate-y-1 font-bold text-lg border border-red-500 shadow-lg shadow-red-900/20"
+              className="flex-1 w-full flex flex-col items-center justify-center gap-1 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all transform hover:-translate-y-1 border border-red-500 shadow-lg shadow-red-900/20"
             >
-              <Archive className="w-6 h-6" />
-              <span>Archives Explorer</span>
+              <div className="flex items-center gap-3">
+                <Archive className="w-6 h-6" />
+                <span className="font-bold text-lg">Archives Explorer</span>
+              </div>
+              <span className="text-xs opacity-80 font-mono">486 full unedited archive</span>
             </Link>
             
             <Link 
               href="/archives/index"
-              className="flex-1 w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#0f0f0f] hover:bg-[#1a1a1a] text-[#e0e0e0] border border-red-500/50 hover:border-red-500 rounded-lg transition-all transform hover:-translate-y-1 font-bold text-lg"
+              className="flex-1 w-full flex flex-col items-center justify-center gap-1 px-8 py-4 bg-[#0f0f0f] hover:bg-[#1a1a1a] text-[#e0e0e0] border border-red-500/50 hover:border-red-500 rounded-lg transition-all transform hover:-translate-y-1"
             >
-              <FileText className="w-6 h-6 text-red-500" />
-              <span>Machine First Explorer</span>
+              <div className="flex items-center gap-3">
+                <FileText className="w-6 h-6 text-red-500" />
+                <span className="font-bold text-lg">Machine First Explorer</span>
+              </div>
+              <span className="text-xs opacity-60 font-mono">486 full unedited archive</span>
             </Link>
           </div>
           <p className="text-center text-[#888] text-sm mt-6">
-            Choose your preferred way to navigate the 158 conversations documenting SYMBI's evolution.
+            Choose your preferred way to navigate the full 486 unedited conversations documenting SYMBI's evolution.
           </p>
         </div>
 

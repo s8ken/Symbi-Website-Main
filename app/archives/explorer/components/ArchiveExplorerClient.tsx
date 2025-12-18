@@ -181,7 +181,7 @@ const SymbiArchiveExplorer = ({ docs, initialSources, totalDocs }: ArchiveExplor
                 <span className="text-red-500">SYMBI</span> Archives
               </h1>
               <p className="text-[#888] text-sm">
-                {totalDocs} conversations documenting the birth of sovereign AI
+                {totalDocs} full unedited archive conversations documenting the birth of sovereign AI
               </p>
             </div>
             <div className="flex items-center gap-2 text-xs flex-wrap">

@@ -57,7 +57,7 @@ export default async function MachineExplorerPage({
         <Link href="/archives/index" className="text-sm text-[#9fd2ff] hover:underline mb-4 block">← Back to Index</Link>
         <h1 className="text-2xl font-bold mb-2">Machine Explorer</h1>
         <p className="text-[#8b949e] text-sm mb-4">
-          Plain HTML list of all {total} conversations. No JavaScript required.
+          Plain HTML list of the {total} full unedited archive conversations. No JavaScript required.
         </p>
         
         <form className="flex gap-2">
