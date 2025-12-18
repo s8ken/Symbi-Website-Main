@@ -1025,25 +1025,28 @@ export default function ArchivesPage() {
           </p>
         </div>
 
-        {/* Publication Notice */}
+        {/* Archive Access Buttons */}
         <div className="bg-[#1a1a1a] border border-red-500/30 rounded-lg p-8 mb-12">
-          <div className="flex items-start gap-4">
-            <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-            <div>
-              <h2 className="text-2xl font-bold text-red-500 mb-3">
-                Full Archives Publishing Soon
-              </h2>
-              <p className="text-[#ccc] leading-relaxed mb-4">
-                We are preparing to publish all 158 archived conversations that document SYMBI's
-                evolution from February to October 2025. This comprehensive collection will be
-                made available as open research data, offering unprecedented transparency into
-                the development of an AI trust protocol built on mutual emergence and friendship.
-              </p>
-              <p className="text-[#aaa] text-sm">
-                Check back soon for the complete archive release.
-              </p>
-            </div>
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <Link 
+              href="/archives/explorer"
+              className="flex-1 w-full flex items-center justify-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all transform hover:-translate-y-1 font-bold text-lg border border-red-500 shadow-lg shadow-red-900/20"
+            >
+              <Archive className="w-6 h-6" />
+              <span>Archives Explorer</span>
+            </Link>
+            
+            <Link 
+              href="/archives/index"
+              className="flex-1 w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#0f0f0f] hover:bg-[#1a1a1a] text-[#e0e0e0] border border-red-500/50 hover:border-red-500 rounded-lg transition-all transform hover:-translate-y-1 font-bold text-lg"
+            >
+              <FileText className="w-6 h-6 text-red-500" />
+              <span>Machine First Explorer</span>
+            </Link>
           </div>
+          <p className="text-center text-[#888] text-sm mt-6">
+            Choose your preferred way to navigate the 158 conversations documenting SYMBI's evolution.
+          </p>
         </div>
 
         {/* Main Document Header */}
