@@ -1046,6 +1046,23 @@ export default function ArchivesPage() {
           </div>
         </div>
 
+        <div className="text-center mb-12">
+          <div className="inline-flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/archives/explorer"
+              className="inline-flex items-center gap-3 bg-red-600 text-white px-6 py-3 rounded-md font-bold hover:bg-red-700 transition-colors"
+            >
+              Archives Explorer
+            </a>
+            <a
+              href="/archives/machineexplorer"
+              className="inline-flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition-colors"
+            >
+              Machine First Explorer
+            </a>
+          </div>
+        </div>
+
         {/* Main Document Header */}
         <div className="bg-[#1a1a1a] border border-[#333] rounded-lg p-8 md:p-12 mb-12">
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-[#333]">
