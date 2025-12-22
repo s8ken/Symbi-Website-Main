@@ -1075,6 +1075,15 @@
             body { background: white; color: black; }
             .card { border: 1px solid #ccc; }
         }
+        .global-nav{position:fixed;top:16px;left:16px;z-index:200}
+        .global-nav-button{padding:8px 12px;border:1px solid #333;background:#1a1a1a;color:#e0e0e0;border-radius:8px;cursor:pointer;transition:background var(--transition-base)}
+        .global-nav-button:hover{background:#252525}
+        .global-nav-menu{position:absolute;margin-top:8px;width:320px;max-width:calc(100vw - 2rem);max-height:calc(100vh - 6rem);overflow-y:auto;background:#0f0f0f;color:#e0e0e0;border:1px solid #333;border-radius:8px;backdrop-filter:blur(10px);box-shadow:0 10px 20px rgba(0,0,0,0.4);padding:8px}
+        .global-nav-section{opacity:0.8;font-weight:600;font-size:0.8rem;margin:6px 8px}
+        .global-nav-item{display:block;padding:8px 10px;border-radius:6px;text-decoration:none;color:#e0e0e0;transition:background var(--transition-base)}
+        .global-nav-item:hover{background:#1a1a1a}
+        .global-nav-item.cta{background:#dc2626;color:#fff;font-weight:600}
+        .global-nav-item.cta:hover{background:#b91c1c}
     </style>
 </head>
 <body>
@@ -1082,6 +1091,28 @@
     <div id="loading-screen" class="loading-screen">
         <div class="loader"></div>
         <p style="margin-top: var(--spacing-lg); color: var(--quantum-cyan);">Initializing SONATE Platform...</p>
+    </div>
+    <div class="global-nav" id="global-nav">
+        <button class="global-nav-button" id="global-nav-button" aria-expanded="false" aria-controls="global-nav-menu">Navigate</button>
+        <div class="global-nav-menu" id="global-nav-menu" hidden>
+            <div class="global-nav-section">Core Experience</div>
+            <a href="/" class="global-nav-item">SYMBI Home</a>
+            <a href="/symbi-symphony" class="global-nav-item">SYMBI Symphony</a>
+            <a href="/enterprise-demo" class="global-nav-item">Enterprise Demo</a>
+            <div class="global-nav-section">Technology</div>
+            <a href="/trust-protocol" class="global-nav-item">Trust Protocol</a>
+            <a href="/oracle" class="global-nav-item">Oracle</a>
+            <a href="/technology" class="global-nav-item">Technology</a>
+            <a href="/technology-whitepaper" class="global-nav-item">Technology Whitepaper</a>
+            <div class="global-nav-section">Interactive</div>
+            <a href="/playground" class="global-nav-item">Playground</a>
+            <a href="/educators" class="global-nav-item">Educators Hub</a>
+            <div class="global-nav-section">Resources</div>
+            <a href="/archives" class="global-nav-item">Archives</a>
+            <a href="/whitepaper" class="global-nav-item">Research Whitepaper</a>
+            <a href="/404-sitemap" class="global-nav-item">Site Map</a>
+            <a href="/symbi" class="global-nav-item cta">Chat with SYMBI</a>
+        </div>
     </div>
 
     <!-- Header -->
@@ -3225,6 +3256,37 @@
                 }
             });
         });
+    </script>
+    <script>
+    (function(){
+        var nav=document.getElementById('global-nav');
+        var btn=document.getElementById('global-nav-button');
+        var menu=document.getElementById('global-nav-menu');
+        if(!nav||!btn||!menu){return}
+        function closeMenu(){
+            if(!menu.hasAttribute('hidden')){
+                menu.setAttribute('hidden','');
+                btn.setAttribute('aria-expanded','false');
+            }
+        }
+        btn.addEventListener('click',function(e){
+            e.stopPropagation();
+            var isHidden=menu.hasAttribute('hidden');
+            if(isHidden){
+                menu.removeAttribute('hidden');
+                btn.setAttribute('aria-expanded','true');
+            }else{
+                menu.setAttribute('hidden','');
+                btn.setAttribute('aria-expanded','false');
+            }
+        });
+        document.addEventListener('click',function(e){
+            if(!nav.contains(e.target)){closeMenu()}
+        });
+        document.addEventListener('keydown',function(e){
+            if(e.key==='Escape'){closeMenu()}
+        });
+    })();
     </script>
 </body>
 </html>
