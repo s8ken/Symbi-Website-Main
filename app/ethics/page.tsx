@@ -1,3 +1,9 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Scale, Shield, Users, Eye, AlertTriangle, CheckCircle, Brain } from "lucide-react"
+import { cn } from "../../lib/utils"
 import EnhancedEthicsPage from "./enhanced-page"
 
 export default function Page() {
