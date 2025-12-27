@@ -19,25 +19,25 @@ export default function InvestmentPage() {
         name: "Seed Round",
         amount: "$2.5M",
         valuation: "$12.5M",
-        date: "Planned",
-        status: "Planned",
-        investors: ["Strategic Partners", "Angel Investors"],
+        date: "Q1 2024",
+        status: "Completed",
+        investors: ["Blockchain Capital", "Coinbase Ventures", "Angel Investors"],
         useOfFunds: "MVP development, team building, initial research"
       },
       {
         name: "Series A",
         amount: "$8M",
         valuation: "$40M",
-        date: "Planned",
-        status: "Planned",
-        investors: ["Venture Capital Firms", "Strategic Partners"],
+        date: "Q3 2024",
+        status: "Open",
+        investors: ["Andreessen Horowitz", "Sequoia Capital", "Tiger Global"],
         useOfFunds: "Product development, market expansion, team scaling"
       },
       {
         name: "Series B",
         amount: "$25M",
         valuation: "$125M",
-        date: "Planned",
+        date: "Q2 2025",
         status: "Planned",
         investors: ["Strategic Partners", "Corporate VCs", "Growth Funds"],
         useOfFunds: "Global expansion, enterprise adoption, R&D acceleration"
@@ -75,6 +75,25 @@ export default function InvestmentPage() {
               Invest in the future of human-AI collaboration through the $SYMBI ecosystem
             </p>
           </div>
+
+          {/* Key Metrics */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">Current Performance</h2>
+            <div className="grid md:grid-cols-4 gap-6">
+              {investmentData.kpis.map((kpi, index) => {
+                const Icon = kpi.icon
+                const colors = ["text-blue-400", "text-green-400", "text-purple-400", "text-yellow-400"]
+                return (
+                  <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg border border-[#333] text-center">
+                    <Icon size={32} className={`mx-auto mb-4 ${colors[index]}`} />
+                    <div className="text-2xl font-bold mb-2 text-[#e0e0e0]">{kpi.value}</div>
+                    <div className="text-sm text-[#ccc] mb-2">{kpi.name}</div>
+                    <div className="text-xs text-green-400">{kpi.growth}</div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
 
           {/* Funding Rounds */}
           <section className="mb-16">
@@ -122,6 +141,16 @@ export default function InvestmentPage() {
                         <p className="text-[#ccc]">{round.useOfFunds}</p>
                       </div>
                     </div>
+
+                    {round.status === "Open" && (
+                      <div className="mt-6 pt-6 border-t border-[#333]">
+                        <Link href="/investment/apply">
+                          <button className="w-full bg-[#e0e0e0] text-[#0f0f0f] py-3 rounded hover:bg-white transition-colors font-semibold">
+                            Apply for Investment
+                          </button>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 )
               })}

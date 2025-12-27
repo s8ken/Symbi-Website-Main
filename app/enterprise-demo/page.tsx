@@ -99,7 +99,7 @@ export default function EnterpriseDemoPage() {
 
             <div className="mt-10 text-center">
               <a
-                href="https://symbi-synergy-pa9k82n5m-ycq.vercel.app"
+                href="/comprehensive-demo2.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-10 py-5 rounded-xl font-bold text-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 shadow-2xl hover:shadow-green-500/50"
@@ -309,7 +309,7 @@ export default function EnterpriseDemoPage() {
             Ready to experience enterprise AI trust infrastructure?
           </p>
           <a
-            href="https://symbi-synergy-pa9k82n5m-ycq.vercel.app"
+            href="/comprehensive-demo2.html"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-lg"

@@ -391,10 +391,10 @@ export default function DAOGovernancePage() {
             <h2 className="text-3xl font-bold mb-8">Implementation Timeline</h2>
             <div className="space-y-6">
               {[
-                { phase: "Phase 1", period: "Q1 2026", title: "Governance Specification", status: "current" },
-                { phase: "Phase 2", period: "Q2 2026", title: "Pilot Activation", status: "upcoming" },
-                { phase: "Phase 3", period: "Q2 2026", title: "Public Transparency", status: "upcoming" },
-                { phase: "Phase 4", period: "Q3 2026", title: "Constitution Ratification", status: "upcoming" },
+                { phase: "Phase 1", period: "Oct-Nov 2025", title: "Governance Specification", status: "current" },
+                { phase: "Phase 2", period: "Dec 2025-Jan 2026", title: "Pilot Activation", status: "upcoming" },
+                { phase: "Phase 3", period: "Q1 2026", title: "Public Transparency", status: "upcoming" },
+                { phase: "Phase 4", period: "Q2 2026", title: "Constitution Ratification", status: "upcoming" },
                 { phase: "Phase 5", period: "Post-Ratification", title: "Mainnet Deployment", status: "upcoming" }
               ].map((item, i) => (
                 <div key={i} className={`flex items-start gap-6 p-6 rounded-lg border-2 ${item.status === 'current' ? 'bg-blue-50 border-blue-300' : 'bg-gray-50 border-gray-200'}`}>

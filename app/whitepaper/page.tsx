@@ -25,7 +25,7 @@ export default function WhitepaperPage() {
       <div className="skip">
         <a href="#main">Skip to content</a>
       </div>
-      <div className="min-h-screen bg-white text-black">
+      <div className="min-h-screen bg-white">
         <div className="container mx-auto max-w-4xl px-6 pt-24 pb-8" id="main">
           <header className="bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg p-12 mb-8">
             <h1 className="text-4xl font-light mb-2">SYMBI Protocol (YCQ)</h1>
