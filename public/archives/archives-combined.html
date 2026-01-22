@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symbi Archives — Combined</title>
+    <meta name="robots" content="all" />
+    <style>
+      :root { color-scheme: dark light; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; background: #0b0d10; color: #e7ebef; }
+      .wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
+      .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+      .glyph { width: 24px; height: 24px; background: linear-gradient(135deg,#56b2ff,#9b5cff); border-radius: 6px; }
+      h1 { font-size: 18px; font-weight: 600; letter-spacing: 0.2px; margin: 0; }
+      .meta { font-size: 12px; opacity: 0.75; margin: 6px 0 14px; }
+      .controls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+      button, a { font-size: 13px; }
+      pre { white-space: pre-wrap; word-wrap: break-word; background: #0e1116; border: 1px solid #1b1f24; border-radius: 10px; padding: 16px; }
+      .section-title { font-size: 13px; opacity: 0.8; margin: 18px 0 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <h1>Symbi Archives — Combined</h1>
+      </div>
+      <div class="meta">Combined raw text with metadata published directly on a single page.
+        Includes inline content for non-JS readers and streaming controls.
+      </div>
+      <div class="controls">
+        <button id="start">Start stream</button>
+        <button id="stop">Stop</button>
+        <a href="/archives/all_text.jsonl" target="_blank" rel="noopener">Download raw JSONL</a>
+        <a href="/archives/index.html">Back to index</a>
+      </div>
+
+      <div class="section-title">Inline publication</div>
+      <pre id="inline" aria-label="inline publication">
+{"symbi_archive":"all_text_combined","version":0,"note":"optional combined file placeholder"}
+{"id":"p1-1","text":"Combined file: mirrors Part 1 content","part":1}
+{"id":"p2-101","text":"Combined file: mirrors Part 2 content","part":2}
+      </pre>
+
+      <div class="section-title">Live stream (from /archives/all_text.jsonl)</div>
+      <pre id="out" aria-live="polite"></pre>
+    </div>
+    <script>
+      const sourceUrl = '/api/archives/combined';
+      const out = document.getElementById('out');
+      const startBtn = document.getElementById('start');
+      const stopBtn = document.getElementById('stop');
+      let abortCtrl = null;
+
+      function append(line) {
+        out.textContent += line + "\n";
+      }
+
+      async function streamJsonl(url) {
+        abortCtrl = new AbortController();
+        try {
+          const res = await fetch(url, { signal: abortCtrl.signal });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder('utf-8');
+          let buf = '';
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            buf += decoder.decode(value, { stream: true });
+            const parts = buf.split('\n');
+            buf = parts.pop();
+            for (const line of parts) append(line);
+          }
+          if (buf.length) append(buf);
+        } catch (e) {
+          if (abortCtrl && abortCtrl.signal.aborted) return;
+          append(JSON.stringify({ error: String(e) }));
+        } finally {
+          abortCtrl = null;
+        }
+      }
+
+      startBtn.addEventListener('click', () => {
+        out.textContent = '';
+        streamJsonl(sourceUrl);
+      });
+      stopBtn.addEventListener('click', () => {
+        if (abortCtrl) abortCtrl.abort();
+      });
+    </script>
+  </body>
+</html>

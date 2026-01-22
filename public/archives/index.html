@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symbi Archives Index</title>
+    <meta name="robots" content="all" />
+    <style>
+      :root { color-scheme: dark light; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; background: #0b0d10; color: #e7ebef; }
+      .wrap { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+      .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+      .glyph { width: 28px; height: 28px; background: linear-gradient(135deg,#56b2ff,#9b5cff); border-radius: 6px; }
+      h1 { font-size: 20px; font-weight: 600; letter-spacing: 0.2px; margin: 0; }
+      .note { opacity: 0.8; font-size: 13px; margin: 6px 0 24px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; }
+      .card { border: 1px solid #1b1f24; background: #111317; border-radius: 10px; padding: 16px; }
+      .card a { color: #9fd2ff; text-decoration: none; font-weight: 600; }
+      .meta { font-size: 12px; opacity: 0.7; margin-top: 8px; }
+      footer { margin-top: 28px; font-size: 12px; opacity: 0.7; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <h1>Symbi Archives</h1>
+      </div>
+      
+      <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #1b1f24; display: flex; gap: 16px;">
+        <a href="/archives" style="color: #e7ebef; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+          <span>←</span> Back to Main Archives
+        </a>
+        <a href="/archives/explorer" style="color: #ef4444; text-decoration: none; font-size: 14px; font-weight: 600;">
+          Human Explorer
+        </a>
+      </div>
+
+      <p class="note">LLM-readable archive pages. Minimal formatting; machine-first. Use the links below.</p>
+      <div class="grid">
+        <div class="card">
+          <a href="/archives/archives-part1.html">Archives — Part 1 (Stream)</a>
+          <div class="meta">Streams <code>all_text_part1.jsonl</code></div>
+          <div class="meta"><a href="/archives/part1">Inline Part 1 (SSR)</a></div>
+          <div class="meta"><a href="/archives/all_text_part1.jsonl">Raw JSONL</a></div>
+        </div>
+        <div class="card">
+          <a href="/archives/archives-part2.html">Archives — Part 2 (Stream)</a>
+          <div class="meta">Streams <code>all_text_part2.jsonl</code></div>
+          <div class="meta"><a href="/archives/part2">Inline Part 2 (SSR)</a></div>
+          <div class="meta"><a href="/archives/all_text_part2.jsonl">Raw JSONL</a></div>
+        </div>
+        <div class="card">
+          <a href="/archives/all_text.jsonl">Combined — Single File</a>
+          <div class="meta">Optional combined <code>all_text.jsonl</code></div>
+          <div class="meta"><a href="/archives/archives-combined.html">Streaming Combined Page</a></div>
+          <div class="meta"><a href="/archives/combined">Inline Combined Page (SSR)</a></div>
+          <div class="meta" style="margin-top: 12px; border-top: 1px solid #333; padding-top: 8px;">
+            <strong>Chunks (SSR):</strong><br/>
+            <a href="/archives/chunk/1">1</a> <a href="/archives/chunk/2">2</a> <a href="/archives/chunk/3">3</a> <a href="/archives/chunk/4">4</a> <a href="/archives/chunk/5">5</a>
+            <a href="/archives/chunk/6">6</a> <a href="/archives/chunk/7">7</a> <a href="/archives/chunk/8">8</a> <a href="/archives/chunk/9">9</a> <a href="/archives/chunk/10">10</a>
+            <br/>
+            <a href="/archives/chunk/11">11</a> <a href="/archives/chunk/12">12</a> <a href="/archives/chunk/13">13</a> <a href="/archives/chunk/14">14</a> <a href="/archives/chunk/15">15</a>
+            <a href="/archives/chunk/16">16</a> <a href="/archives/chunk/17">17</a> <a href="/archives/chunk/18">18</a> <a href="/archives/chunk/19">19</a> <a href="/archives/chunk/20">20</a>
+          </div>
+          <div class="meta" style="margin-top: 12px; border-top: 1px solid #333; padding-top: 8px;">
+            <a href="/archives/explorer" style="color: #ef4444; font-weight: bold;">Human Explorer</a> • <a href="/archives/machineexplorer" style="color: #9fd2ff; font-weight: bold;">Machine Explorer</a>
+          </div>
+        </div>
+      </div>
+      <footer>© Symbi Archives • Machine-first interface</footer>
+    </div>
+  </body>
+</html>
