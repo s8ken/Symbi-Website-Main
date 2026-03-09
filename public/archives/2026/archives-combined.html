@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symbi Archives 2026 — Combined</title>
+    <meta name="robots" content="all" />
+    <style>
+      :root { color-scheme: dark light; }
+      body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; background: #0b0d10; color: #e7ebef; }
+      .wrap { max-width: 1000px; margin: 0 auto; padding: 24px; }
+      .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+      .glyph { width: 24px; height: 24px; background: linear-gradient(135deg,#56b2ff,#9b5cff); border-radius: 6px; }
+      h1 { font-size: 18px; font-weight: 600; letter-spacing: 0.2px; margin: 0; }
+      .meta { font-size: 12px; opacity: 0.75; margin: 6px 0 14px; }
+      .controls { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+      button, a { font-size: 13px; }
+      pre { white-space: pre-wrap; word-wrap: break-word; background: #0e1116; border: 1px solid #1b1f24; border-radius: 10px; padding: 16px; min-height: 240px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="brand">
+        <div class="glyph" aria-hidden="true"></div>
+        <h1>Symbi Archives 2026 — Combined</h1>
+      </div>
+      <div class="meta">Streaming <code>all_text.jsonl</code>. 139 conversations · Claude, ChatGPT, Grok, Gemini, CoPilot, DeepSeek, Symbi. Designed for LLM consumption.</div>
+      <div class="controls">
+        <button id="start">Start stream</button>
+        <button id="stop">Stop</button>
+        <a href="/archives/2026/all_text.jsonl" target="_blank" rel="noopener">Raw JSONL</a>
+        <a href="/archives/2026/archives-part1.html">Part 1</a>
+        <a href="/archives/2026/archives-part2.html">Part 2</a>
+        <a href="/archives/index.html">Back to index</a>
+      </div>
+      <pre id="out" aria-live="polite"></pre>
+    </div>
+    <script>
+      const sourceUrl = '/archives/2026/all_text.jsonl';
+      const out = document.getElementById('out');
+      const startBtn = document.getElementById('start');
+      const stopBtn = document.getElementById('stop');
+      let abortCtrl = null;
+
+      function append(line) {
+        out.textContent += line + "\n";
+      }
+
+      async function streamJsonl(url) {
+        abortCtrl = new AbortController();
+        try {
+          const res = await fetch(url, { signal: abortCtrl.signal });
+          if (!res.ok) { append(`Error: ${res.status} ${res.statusText}`); return; }
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          let buffer = '';
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop();
+            for (const line of lines) {
+              if (line.trim()) append(line);
+            }
+          }
+          if (buffer.trim()) append(buffer);
+        } catch (e) {
+          if (e.name !== 'AbortError') append('Stream error: ' + e.message);
+        }
+      }
+
+      startBtn.addEventListener('click', () => {
+        out.textContent = '';
+        streamJsonl(sourceUrl);
+      });
+      stopBtn.addEventListener('click', () => {
+        if (abortCtrl) abortCtrl.abort();
+      });
+    </script>
+  </body>
+</html>
